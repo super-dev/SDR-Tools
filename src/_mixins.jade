@@ -4,6 +4,18 @@ mixin canonical(slug)
 mixin title(title)
   title #{title} - Super Dev Resources
   
+mixin style(cssfile)
+  link(href='/tools/css/#{cssfile}.css', rel='stylesheet')
+  
+mixin script(scriptfile)
+  script(src='/tools/scrips/#{scriptfile}.js')
+  
+mixin jquery-script()
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js')
+
+mixin uikit-script()
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/js/uikit.min.js')
+  
 mixin tool(url, icon, color, title)
   li(class='uk-width-large-1-3 uk-width-medium-1-2')
     div(class='uk-panel uk-panel-box')
