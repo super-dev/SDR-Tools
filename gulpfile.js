@@ -13,6 +13,8 @@ var DEST        = './../htdocs/tools/';
 var DEST_JADE   = DEST;
 var DEST_SCSS   = DEST + 'css';
 
+var WATCH_JADE  = SRC + '**/*.jade';
+
 gutil.log(SRC_JADE);
 
 /**
@@ -53,5 +55,5 @@ gulp.task('default', ['sass', 'templates'], function () {
     browserSync.init({proxy: "http://local.superdevresources.dev/tools/", browser: "chrome"});
 
     gulp.watch(SRC_SCSS,      ['sass']);
-    gulp.watch(SRC_JADE,      ['jade-watch']);
+    gulp.watch(WATCH_JADE,    ['jade-watch']);
 });

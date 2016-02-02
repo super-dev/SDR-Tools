@@ -13,4 +13,11 @@ html(lang='en-US')
     link(rel='apple-touch-icon-precomposed', href='https://superdevresources.com/wp-content/uploads/2016/01/cropped-superdev-logo-180x180.png')
     meta(name='msapplication-TileImage', content='https://superdevresources.com/wp-content/uploads/2016/01/cropped-superdev-logo-270x270.png')
   body
+    div(class='tools-head')
+      a(href='/tools/', class='head-home uk-align-right')
+        i(class='uk-icon-th-large') 
+        span Tools
+      a(href='/', class='head-logo uk-align-left', rel='home')
+        img.tm-logo(src='https://superdevresources.com/wp-content/uploads/2016/01/super-dev-resources-logo.png', alt='Super Dev Resources Tools', scale='0')
+      block pagetitle
     block content
