@@ -1,0 +1,25 @@
+{
+  "name": "sdr-tools",
+  "version": "1.0.0",
+  "description": "Tools section of https://superdevresources.com/",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/super-dev/sdr-tools.git"
+  },
+  "author": "Kanishk Kunal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/super-dev/sdr-tools/issues"
+  },
+  "homepage": "https://superdevresources.com/tools/",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.1.1"
+  }
+}
