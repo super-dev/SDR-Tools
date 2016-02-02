@@ -43,6 +43,10 @@ a.head-home i {
   height: 48px;
 }
 
+.main-content {
+  min-height: 600px;
+}
+
 .tools-list {
   .uk-panel-box {
     padding: 0;
@@ -80,4 +84,14 @@ i.icon-green {
 i.icon-gray {
   background: #E6E9ED;
   color: #AAB2BD;
+}
+
+.site-footer {
+    padding: 10px 15px;
+    text-align: center;
+    color: #999;
+
+    a {
+      color: #ddd;
+    }
 }
