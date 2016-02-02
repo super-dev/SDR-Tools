@@ -5,7 +5,6 @@ document.getElementById("select-all").addEventListener('click', select_all);
 
 document.getElementById("jpg-download").addEventListener('click', download_jpg);
 document.getElementById("png-download").addEventListener('click', download_png);
-document.getElementById("preview-image").addEventListener('click', preview_image);
 
 var target = document.getElementById("drop-target");
 target.addEventListener("dragover", function(e){e.preventDefault();}, true);
@@ -109,11 +108,4 @@ function download_png() {
 		var canv = cropper.getCroppedCanvas();
 		window.open(canv.toDataURL());
 	}
-}
-
-function preview_image() {
-		if(cropper != null) {
-			var canv = cropper.getCroppedCanvas();
-			document.getElementById('mypreviewimage').src =	canv.toDataURL("image/jpeg", 0.9);
-		}
 }

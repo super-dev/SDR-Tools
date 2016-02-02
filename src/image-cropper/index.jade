@@ -30,7 +30,7 @@ block content
           |         Width: 
           span#img-width 0
           | px
-        button#select-all(type='button') Select All
+        button#select-all(type='button', class='uk-button') Select All
       .section
         h3.section-title Aspect Ratio
         form.uk-form(name='aspectform')
@@ -42,15 +42,19 @@ block content
           |  4:3
       .section
         h3.section-title Download
-        button#jpg-download(type='button') JPG
-        button#png-download(type='button') PNG
-        button#preview-image(type='button') Preview      
-      p
-        | Instructions: Drag and drop image in the canvas to begin crop
+        button#jpg-download(type='button', class='uk-button uk-button-success uk-margin-small-right') JPG
+        button#png-download(type='button', class='uk-button uk-button-primary') PNG
+      .section
+        h3.section-title Instructions
+        ul
+          li Drag and drop image from your local system to the canvas in the left
+          li Use the Aspect Ratio options to choose aspect ratio of Crop Tool
+          li You can increase the Crop Tool size by dragging the corners and edges
+          li Move the crop tool by holding the mouse button over it and dragging
+          li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
+          li Cropped image will open in a new tab of your browser. Right click and do "Save As" to save the cropped image.
     #drop-target
       img#myimage
-    #preview-panel
-      img#mypreviewimage
 
 block scripts
   +vendor-script('cropperjs/cropper.min.js')
