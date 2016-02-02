@@ -5,12 +5,53 @@ block canonical
   +canonical('image-cropper')
 
 block title
-  +title('Image Cropper')
+  +title('Image Cropper Online')
   
 block description
   meta(name='description', content='Free Online Image Cropping Tool using HTML Canvas by Super Dev Resources Team')
+  
+block styles
+  +vendor-css('cropperjs/cropper.min.css')
+  +style('image-cropper')
 
 block pagetitle
   h1 Image Cropper
 
 block content
+  div(class='uk-container uk-container-center')
+    #tools    
+      .section
+        h3.section-title Image Dimesions
+        p
+          | Height: 
+          span#img-height 0
+          | px
+          br
+          |         Width: 
+          span#img-width 0
+          | px
+        button#select-all(type='button') Select All
+      .section
+        h3.section-title Aspect Ratio
+        form.uk-form(name='aspectform')
+          input(type='radio', name='aspectratio', value='Free', checked='')
+          |  Free
+          input(type='radio', name='aspectratio', value='16:9')
+          |  16:9
+          input(type='radio', name='aspectratio', value='4:3')
+          |  4:3
+      .section
+        h3.section-title Download
+        button#jpg-download(type='button') JPG
+        button#png-download(type='button') PNG
+        button#preview-image(type='button') Preview      
+      p
+        | Instructions: Drag and drop image in the canvas to begin crop
+    #drop-target
+      img#myimage
+    #preview-panel
+      img#mypreviewimage
+
+block scripts
+  +vendor-script('cropperjs/cropper.min.js')
+  +script('image-cropper')

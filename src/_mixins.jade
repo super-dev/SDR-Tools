@@ -10,6 +10,12 @@ mixin style(cssfile)
 mixin script(scriptfile)
   script(src='/tools/js/#{scriptfile}.js')
   
+mixin vendor-css(file)
+  link(href='/tools/vendor/#{file}', rel='stylesheet')
+    
+mixin vendor-script(file)
+  script(src='/tools/vendor/#{file}')
+  
 mixin jquery-script()
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js')
 

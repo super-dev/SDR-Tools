@@ -1,0 +1,41 @@
+@import 'variables.scss';
+
+#drop-target {
+  min-width: 300px;
+  max-width: 800px;
+  min-height: 400px;
+  margin-left: 340px;
+  display: block;
+  background: #eee;
+  text-align: center;
+  font-size:0;
+}
+
+#tools {
+  color: #fff;
+  float: left;
+  text-align: left;
+  width: 320px;
+}
+
+#preview-panel {
+    display: inline-block;
+    float: right;
+}
+
+.section {
+  padding: 0 15px 15px 15px;
+  margin-bottom: 25px;
+  background: #fff;
+  color: $global-color;
+  font-size: 1em;
+}
+
+h3.section-title {
+  display: block;
+  padding: 5px 15px;
+  background: #eee;
+  margin: 0 -15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
