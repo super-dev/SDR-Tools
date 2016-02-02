@@ -8,14 +8,23 @@ var reload      = browserSync.reload;
 var SRC         = './src/';
 var SRC_JADE    = SRC + '**/!(_)*.jade';
 var SRC_SCSS    = SRC + 'sass/**/*.scss';
+var SRC_PUBLIC  = './public/**/*';
 
 var DEST        = './../htdocs/tools/';
 var DEST_JADE   = DEST;
 var DEST_SCSS   = DEST + 'css';
+var DEST_PUBLIC = DEST;
 
 var WATCH_JADE  = SRC + '**/*.jade';
 
-gutil.log(SRC_JADE);
+gutil.log(SRC_PUBLIC);
+
+/**
+ * Copy static files to destination
+ */
+gulp.task('copy', function(){
+    return gulp.src(SRC_PUBLIC).pipe(gulp.dest(DEST_PUBLIC));
+});
 
 /**
  * Compile jade files into HTML
@@ -50,10 +59,11 @@ gulp.task('sass', function () {
 /**
  * Serve and watch the scss/jade files for changes
  */
-gulp.task('default', ['sass', 'templates'], function () {
+gulp.task('default', ['copy', 'sass', 'templates'], function () {
 
     browserSync.init({proxy: "http://local.superdevresources.dev/tools/", browser: "chrome"});
 
+    gulp.watch(SRC_PUBLIC,    ['copy']);
     gulp.watch(SRC_SCSS,      ['sass']);
     gulp.watch(WATCH_JADE,    ['jade-watch']);
 });
