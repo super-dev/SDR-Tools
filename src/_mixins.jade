@@ -1,2 +1,13 @@
 mixin canonical(slug)
-  link(rel='canonical', href='https://superdevresources.com/tools/#{slug}')
+  link(rel='canonical', href='https://superdevresources.com/tools/#{slug}/')
+
+mixin title(title)
+  title #{title} - Super Dev Resources
+  
+mixin tool(url, icon, color, title)
+  li(class='uk-width-large-1-3 uk-width-medium-1-2')
+    div(class='uk-panel uk-panel-box')
+      a(href='/tools/#{url}/')
+        h2
+          i(class='uk-icon-#{icon} icon-#{color}')
+          span #{title}
