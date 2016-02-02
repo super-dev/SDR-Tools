@@ -1,6 +1,14 @@
-html
-    head
-        title Hi Gulp, SASS + Jade Templates
-        link(href='/tools/css/main.css', rel='stylesheet')
-    body
-        h1 Hello Gulp, SASS + Jade Templates
+extends ./_layout.jade
+include ./_mixins.jade
+
+block canonical
+  +canonical('')
+
+block title
+  title Super Dev Tools - App & Web Development Tools
+  
+block description
+  meta(name='description', content='Free Tools for App and Web Developers by Super Dev Resources Team')
+
+block content
+  h1 Super Dev Tools

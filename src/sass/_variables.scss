@@ -1,0 +1,24 @@
+// Variables modifiers
+// ========================================================================
+
+//
+// Color
+//
+$global-background-color:                       #2e3436;
+$global-primary-color:                          #ffbb00;
+
+$global-color: 								                  lighten($global-background-color, 10);
+
+$global-link-color:                             #3081B7;
+$global-link-hover-color:                       $global-primary-color;
+
+$global-border:                                 #eeeeee;
+$global-border-radius:							            3px;
+
+$global-primary-background:                     $global-link-color;
+$global-success-background:                     #79935E;
+
+$global-grid-gutter:                            30px;
+$global-grid-gutter-large:                      40px;
+
+$global-text-on-background-color:               #f6f6f6;

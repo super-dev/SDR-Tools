@@ -6,7 +6,7 @@ var gutil       = require('gulp-util');
 var reload      = browserSync.reload;
 
 var SRC         = './src/';
-var SRC_JADE    = SRC + '**/*.jade';
+var SRC_JADE    = SRC + '**/!(_)*.jade';
 var SRC_SCSS    = SRC + 'sass/**/*.scss';
 
 var DEST        = './../htdocs/tools/';
