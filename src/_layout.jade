@@ -14,11 +14,11 @@ html(lang='en-US')
     meta(name='msapplication-TileImage', content='https://superdevresources.com/wp-content/uploads/2016/01/cropped-superdev-logo-270x270.png')
   body
     div(class='tools-head')
+      a(href='/', class='head-logo uk-align-left uk-hidden-small', rel='home')
+        img.tm-logo(src='https://superdevresources.com/wp-content/uploads/2016/01/super-dev-resources-logo.png', alt='Super Dev Resources Tools', scale='0')
       a(href='/tools/', class='head-home uk-align-right')
         i(class='uk-icon-th-large') 
         span Tools
-      a(href='/', class='head-logo uk-align-left', rel='home')
-        img.tm-logo(src='https://superdevresources.com/wp-content/uploads/2016/01/super-dev-resources-logo.png', alt='Super Dev Resources Tools', scale='0')
       block pagetitle
     block content
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js')
