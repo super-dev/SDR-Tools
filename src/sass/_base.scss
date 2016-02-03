@@ -1,3 +1,13 @@
 body, html {
   background: $global-background-color;
 }
+
+a:hover {
+  color: $global-primary-color;
+  text-decoration: none;
+  -webkit-transition: color .2s linear;
+  -moz-transition: color .2s linear;
+  -ms-transition: color .2s linear;
+  -o-transition: color .2s linear;
+  transition: color .2s linear;
+}

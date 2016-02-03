@@ -1,6 +1,9 @@
 .site-footer {
+    background: darken($global-header-color, 5);
     padding: 10px 15px;
     text-align: center;
+    font-size: 12.5px;
+    line-height: 18px;
     color: #999;
 
     a {
