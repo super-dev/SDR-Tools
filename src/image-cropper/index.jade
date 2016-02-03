@@ -20,54 +20,56 @@ block pagetitle
     | Image Cropper
 
 block content
-  div(class='uk-container uk-container-center')
-    #tools    
-      .sidebar-section
-        h3.section-title Image Dimesions
-        p
-          | Height: 
-          span#img-height 0
-          | px
-          br
-          |         Width: 
-          span#img-width 0
-          | px
-        button#select-all(type='button', class='uk-button') Select All
-      .sidebar-section
-        h3.section-title Aspect Ratio
-        form.uk-form(name='aspectform')
-          input(type='radio', name='aspectratio', value='Free', checked='')
-          |  Free
-          input(type='radio', name='aspectratio', value='16:9')
-          |  16:9
-          input(type='radio', name='aspectratio', value='4:3')
-          |  4:3
-      .sidebar-section
-        h3.section-title Download
-        button#jpg-download(type='button', class='uk-button uk-button-success uk-margin-small-right') JPG
-        button#png-download(type='button', class='uk-button uk-button-primary') PNG
-      +adlinks1('tm-sidebar-link-ad')
-      .sidebar-section
-        h3.section-title Instructions
-        ul
-          li Drag and drop image from your local system to the canvas in the left
-          li Use the Aspect Ratio options to choose aspect ratio of Crop Tool
-          li You can increase the Crop Tool size by dragging the corners and edges
-          li Move the crop tool by holding the mouse button over it and dragging
-          li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
-          li Cropped image will open in a new tab of your browser. Right click and do "Save As" to save the cropped image.
-      .sidebar-section
-        h3.section-title Credits
-        ul
-          li
-            a(href='https://github.com/fengyuanchen/cropperjs', target='_blank') CropperJS
-            |  - JavaScript image cropper
-          li
-            a(href='https://github.com/uikit/uikit', target='_blank') UIkit
-            |  - A lightweight and modular front-end framework for developing fast and powerful web interfaces
-    #drop-target
-      img#myimage
-
+  div#wrapper(class='uk-container uk-container-center')
+    #content-wrapper
+      #content
+        .canvas-container
+          #drop-target
+            img#myimage        
+        .section
+          h3.section-title Instructions
+          ul
+            li Drag and drop image from your local system to the canvas above
+            li Use the Aspect Ratio options to choose aspect ratio of Crop Tool
+            li You can increase the Crop Tool size by dragging the corners and edges
+            li Move the crop tool by holding the mouse button over it and dragging
+            li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
+            li Cropped image will open in a new tab of your browser. Right click and do "Save As" to save the cropped image.
+    #sidebar    
+        .section
+          h3.section-title Image Dimesions
+          p
+            | Height: 
+            span#img-height 0
+            | px
+            br
+            |         Width: 
+            span#img-width 0
+            | px
+          button#select-all(type='button', class='uk-button') Select All
+        .section
+          h3.section-title Aspect Ratio
+          form.uk-form(name='aspectform')
+            input(type='radio', name='aspectratio', value='Free', checked='')
+            |  Free
+            input(type='radio', name='aspectratio', value='16:9')
+            |  16:9
+            input(type='radio', name='aspectratio', value='4:3')
+            |  4:3
+        .section
+          h3.section-title Download
+          button#jpg-download(type='button', class='uk-button uk-button-success uk-margin-small-right') JPG
+          button#png-download(type='button', class='uk-button uk-button-primary') PNG
+        +adlinks1('tm-sidebar-link-ad')
+        .section
+          h3.section-title Credits
+          ul
+            li
+              a(href='https://github.com/fengyuanchen/cropperjs', target='_blank') CropperJS
+              |  - JavaScript image cropper
+            li
+              a(href='https://github.com/uikit/uikit', target='_blank') UIkit
+              |  - A lightweight and modular front-end framework for developing fast and powerful web interfaces
 block scripts
   +vendor-script('cropperjs/cropper.min.js')
   +script('image-cropper')

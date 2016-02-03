@@ -1,3 +1,26 @@
+#wrapper {
+  position: relative;
+}
+
+#content-wrapper {
+  float: left;
+  width: 100%;
+}
+
+#content {
+  margin-right: 330px;
+  clear: both;
+  overflow: auto;
+}
+
+#sidebar {
+  position: relative;
+  width: 300px;
+  margin-left: -300px;
+  float: right;
+  overflow: hidden;
+}
+
 .main-content {
   min-height: 600px;
   background: $global-background-color;
