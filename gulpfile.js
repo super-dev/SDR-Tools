@@ -67,3 +67,8 @@ gulp.task('default', ['copy', 'sass', 'templates'], function () {
     gulp.watch(SRC_SCSS,      ['sass']);
     gulp.watch(WATCH_JADE,    ['jade-watch']);
 });
+
+/**
+ * Build task
+ */
+ gulp.task('build', ['copy', 'sass', 'templates']);
