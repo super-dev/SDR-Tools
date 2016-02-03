@@ -11,6 +11,10 @@
   color: $global-text-on-background-color;
   text-transform: uppercase;
 
+  i {
+    padding-right: 8px;
+  }
+
   @media (max-width: $breakpoint-medium-max) {
     text-align: left;
     padding-left: 25px;

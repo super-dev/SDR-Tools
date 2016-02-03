@@ -1,5 +1,5 @@
 body, html {
-  background: $global-background-color;
+  background: darken($global-header-color, 5);
 }
 
 a:hover {
