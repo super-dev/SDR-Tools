@@ -20,7 +20,7 @@ block pagetitle
 block content
   div(class='uk-container uk-container-center')
     #tools    
-      .section
+      .sidebar-section
         h3.section-title Image Dimesions
         p
           | Height: 
@@ -31,7 +31,7 @@ block content
           span#img-width 0
           | px
         button#select-all(type='button', class='uk-button') Select All
-      .section
+      .sidebar-section
         h3.section-title Aspect Ratio
         form.uk-form(name='aspectform')
           input(type='radio', name='aspectratio', value='Free', checked='')
@@ -40,11 +40,11 @@ block content
           |  16:9
           input(type='radio', name='aspectratio', value='4:3')
           |  4:3
-      .section
+      .sidebar-section
         h3.section-title Download
         button#jpg-download(type='button', class='uk-button uk-button-success uk-margin-small-right') JPG
         button#png-download(type='button', class='uk-button uk-button-primary') PNG
-      .section
+      .sidebar-section
         h3.section-title Instructions
         ul
           li Drag and drop image from your local system to the canvas in the left
@@ -53,7 +53,7 @@ block content
           li Move the crop tool by holding the mouse button over it and dragging
           li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
           li Cropped image will open in a new tab of your browser. Right click and do "Save As" to save the cropped image.
-      .section
+      .sidebar-section
         h3.section-title Credits
         ul
           li

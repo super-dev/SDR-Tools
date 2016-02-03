@@ -8,7 +8,7 @@ $global-header-color:                           #2e3436;
 $global-background-color:                       #41494c;
 $global-primary-color:                          #ffbb00;
 
-$global-color: 								                  lighten($global-background-color, 10);
+$global-color: 								                  lighten($global-background-color, 5);
 
 $global-link-color:                             #3081B7;
 $global-link-hover-color:                       $global-primary-color;

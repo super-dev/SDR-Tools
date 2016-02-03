@@ -1,0 +1,42 @@
+.main-content {
+  min-height: 600px;
+}
+
+.tools-list {
+  .uk-panel-box {
+    padding: 0;
+  }
+
+  h2 {
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  i {
+    font-size: 60px;
+    display: block;
+    padding: 15px;
+    background: #aaa;
+    border-radius: 100%;
+    width: 60px;
+    margin: 15px auto;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+i.icon-green {
+  background: #d2ebb7;
+  color: #8CC152;
+}
+
+
+i.icon-gray {
+  background: #E6E9ED;
+  color: #AAB2BD;
+}

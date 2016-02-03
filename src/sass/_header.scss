@@ -1,0 +1,38 @@
+.tools-head {
+  height: 60px;
+  background: $global-header-color;
+}
+
+.tools-head h1 {
+  line-height: 60px;
+  font-size: 18px;
+  margin: 0 auto;
+  text-align: center;
+  color: $global-text-on-background-color;
+  text-transform: uppercase;
+
+  @media (max-width: $breakpoint-medium-max) {
+    text-align: left;
+    padding-left: 25px;
+    font-size: 15px;
+  }
+}
+
+a.head-home {
+  color: $global-text-on-background-color;
+  font-size: 14px;
+  line-height: 48px;
+  margin: 6px 25px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a.head-home i {
+  margin-right: 6px;
+}
+
+.tools-head img {
+  margin: 6px 25px;
+  line-height: 48px;
+  height: 48px;
+}
