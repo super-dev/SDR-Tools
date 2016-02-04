@@ -1,11 +1,12 @@
 doctype html
+block vars
 html(lang='en-US')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    block title
-    block description
-    block canonical
+    title #{title} - Super Dev Resources
+    meta(name='description', content='#{description}')
+    link(rel='canonical', href='https://superdevresources.com/tools/#{slug}')
     link(href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/uikit.almost-flat.min.css', rel='stylesheet')
     +style('main')
     block styles

@@ -1,14 +1,10 @@
 extends ./../_layout.jade
 include ./../_mixins.jade
 
-block canonical
-  +canonical('image-cropper')
-
-block title
-  +title('Image Cropper Online')
-  
-block description
-  meta(name='description', content='Free Online Image Cropping Tool using HTML Canvas by Super Dev Resources Team')
+block vars
+  - var title = 'Image Cropper Online'
+  - var description = 'Free Online Image Cropping Tool using HTML Canvas by Super Dev Resources Team'
+  - var slug = 'image-cropper'
   
 block styles
   +vendor-css('cropperjs/cropper.min.css')

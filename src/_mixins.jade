@@ -1,10 +1,4 @@
 include ./_private.jade
-
-mixin canonical(slug)
-  link(rel='canonical', href='https://superdevresources.com/tools/#{slug}/')
-
-mixin title(title)
-  title #{title} - Super Dev Resources
   
 mixin style(cssfile)
   link(href='/tools/css/#{cssfile}.css', rel='stylesheet')

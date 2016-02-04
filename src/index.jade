@@ -1,14 +1,10 @@
 extends ./_layout.jade
 include ./_mixins.jade
 
-block canonical
-  +canonical('')
-
-block title
-  +title('Tools')
-  
-block description
-  meta(name='description', content='Free Tools for App and Web Developers by Super Dev Resources Team')
+block vars
+  - var title = 'Tools'
+  - var description = 'Free Tools for App and Web Developers by Super Dev Resources Team'
+  - var slug = ''
 
 block pagetitle
   h1 Super Dev Tools
@@ -19,7 +15,6 @@ block content
         +tool('image-cropper', 'crop', 'green', 'Image Cropper')
         +tool('#', 'wrench', 'gray', 'Coming Soon..')        
         +tool('#', 'wrench', 'gray', 'Coming Soon..')
-
 
 block scripts
   +jquery-script
