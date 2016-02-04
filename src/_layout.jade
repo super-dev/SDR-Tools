@@ -1,12 +1,17 @@
 doctype html
 block vars
+- var url_base = 'https://superdevresources.com/tools/'
 html(lang='en-US')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title #{title} - Super Dev Resources
     meta(name='description', content='#{description}')
-    link(rel='canonical', href='https://superdevresources.com/tools/#{slug}')
+    meta(property='og:title', content='#{title}')
+    meta(property='og:type', content='website')
+    meta(property='og:url', content='#{url_base}#{slug}')
+    meta(property='og:image', content='#{url_base}img/featured/#{ogimage}')
+    link(rel='canonical', href='#{url_base}#{slug}')
     link(href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/uikit.almost-flat.min.css', rel='stylesheet')
     +style('main')
     block styles
@@ -26,10 +31,10 @@ html(lang='en-US')
     div(class='uk-block main-content')
       block content
     div(class='site-share-buttons')
-      a(href='http://www.facebook.com/sharer.php?u=https://superdevresources.com/tools/#{slug}', target='_blank', rel='external nofollow')
+      a(href='http://www.facebook.com/sharer.php?u=#{url_base}#{slug}', target='_blank', rel='external nofollow')
         i.uk-icon-facebook
         | Share on Facebook
-      a(href='http://twitter.com/share?text=#{description}&url=https://superdevresources.com/tools/#{slug}&via=superdevres42&related=superdevres42,kanishkkunal,monikaratan', target='_blank', rel='external nofollow')
+      a(href='http://twitter.com/share?text=#{description}&url=#{url_base}#{slug}&via=superdevres42&related=superdevres42,kanishkkunal,monikaratan', target='_blank', rel='external nofollow')
         i.uk-icon-twitter
         | Share on Twitter
     .site-footer-menu

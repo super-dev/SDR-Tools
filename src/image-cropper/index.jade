@@ -5,6 +5,7 @@ block vars
   - var title = 'Image Cropper Online'
   - var description = 'Free Online Image Cropping Tool using HTML Canvas by Super Dev Resources Team'
   - var slug = 'image-cropper'
+  - var ogimage = 'image-crop-tool.png'
   
 block styles
   +vendor-css('cropperjs/cropper.min.css')
@@ -31,6 +32,7 @@ block content
             li Move the crop tool by holding the mouse button over it and dragging
             li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
             li Cropped image will open in a new tab of your browser. Right click and do "Save As" to save the cropped image.
+            li We do not store your images as everything is done client side.
     #sidebar    
         .section
           h3.section-title Image Dimesions
