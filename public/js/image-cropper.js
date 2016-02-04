@@ -37,7 +37,7 @@ for(var i = 0; i < rad.length; i++) {
 function loadImage(src){
 	//	Prevent any non-image file type from being read.
 	if(!src.type.match(/image.*/)){
-		console.log("The dropped file is not an image: ", src.type);
+		alert("The dropped file is not an image: ", src.type);
 		return;
 	}
 
@@ -52,8 +52,8 @@ function render(src){
 	var image =   document.getElementById("myimage");
 	image.onload = function(){
 		var scale = 1;
-		if(image.width > 800) {
-			scale = 800.0/image.width;
+		if(image.naturalWidth > 800) {
+			scale = 800.0/image.naturalWidth;
 			image.width = 800;
 		}
 
@@ -62,18 +62,12 @@ function render(src){
 			built: function() {
 				this.cropper.scaleX(scale);
 				this.cropper.scaleY(scale);
-				console.log(this.cropper.zoom);
 				this.cropper.zoomTo(1);
 				free_mode_data(this.cropper);
 			},
       crop: function(data) {
-        console.log(data.x);
-        console.log(data.y);
 				document.getElementById('img-height').innerHTML = data.height;
 				document.getElementById('img-width').innerHTML = data.width;
-        console.log(data.rotate);
-        console.log(data.scaleX);
-        console.log(data.scaleY);
       }
     });
 	};

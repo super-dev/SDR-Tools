@@ -1,18 +1,22 @@
 @import 'variables.scss';
 
 .canvas-container {
-  background-image: url("/tools/img/canvas-drop.png");
   margin-bottom: 25px;
   text-align: center;
   font-size:0;
+  padding: 0;
 }
 
 #drop-target {
+  display: inline-block;
+  background-image: url("/tools/img/canvas-drop.png");
   min-width: 300px;
   max-width: 800px;
   min-height: 300px;
   text-align: center;
   font-size:0;
+  padding: 0;
+  margin: 0;
 }
 
 
