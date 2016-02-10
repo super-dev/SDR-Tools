@@ -46,12 +46,14 @@ ins {
 
 h3.section-title {
   display: block;
-  padding: 5px 15px;
-  background: $global-header-color;
+	padding: 12px 15px;
+  background: $global-light-color;
   color: $global-heading-color;
-  border-bottom: 2px solid $global-primary-color;
+	font-weight: $base-heading-font-weight;
+  border-bottom: 1px solid $global-border;
   margin: 0 -15px;
   margin-bottom: 10px;
   font-size: 1em;
-  text-transform: uppercase;
+	line-height: 1;
+  text-transform: none;
 }
