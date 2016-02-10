@@ -1,5 +1,6 @@
 /* UIKit ovrrides */
 /* TODO: Build UIKit with this project and use LESS variables to override these */
 .uk-panel-box {
-  border: 1px solid $global-border
+  border: 1px solid $global-border;
+  background: #fff;
 }

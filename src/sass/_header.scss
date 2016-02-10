@@ -13,8 +13,7 @@
   font-size: 18px;
   margin: 0 auto;
   text-align: center;
-  color: $global-heading-color;
-  text-transform: uppercase;
+  color: $global-color;
 
   i {
     padding-right: 8px;
@@ -27,7 +26,7 @@
 }
 
 a.head-home {
-  color: $global-heading-color;
+  color: $global-color;
   font-size: 14px;
   line-height: 48px;
   margin: 0 0 0 25px;
@@ -36,7 +35,7 @@ a.head-home {
 }
 
 a.head-home:hover {
-  color: lighten($global-heading-color, 10);
+  color: lighten($global-color, 10);
 }
 
 a.head-home i {
