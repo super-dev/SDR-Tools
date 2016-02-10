@@ -4,25 +4,32 @@
 //
 // Color
 //
-$global-header-color:                           #2e3436;
-$global-background-color:                       #41494c;
-$global-primary-color:                          #ffbb00;
+$blue-color:                                    #3081B7;
+$green-color:                                   #2ac279;
+$red-color:                                     #ff6a37;
+$yellow-color:                                  #ffcb37;
 
-$global-color: 								                  lighten($global-background-color, 5);
+$global-dark-color:                             #222828;
+$global-header-color:                           #fff;
+$global-primary-color:                          $blue-color;
+$global-body-color:                             #f2f2f2;
 
-$global-link-color:                             #3081B7;
-$global-link-hover-color:                       $global-primary-color;
+$global-heading-color:                          #282828;
+$global-color: 								                  lighten($global-heading-color, 20);
 
-$global-border:                                 #eeeeee;
-$global-border-radius:							            3px;
+$global-link-color:                             $blue-color;
+$global-link-hover-color:                       $yellow-color;
+
+$global-border:                                 #e4e4e4;
+$global-border-radius:							            2px;
 
 $global-primary-background:                     $global-link-color;
-$global-success-background:                     #79935E;
+$global-success-background:                     $green-color;
 
-$global-grid-gutter:                            30px;
-$global-grid-gutter-large:                      40px;
+$global-grid-gutter:                            20px;
+$global-grid-gutter-large:                      20px;
 
-$global-text-on-background-color:               #f6f6f6;
+$global-logo-background-color:                  #222828;
 
 //
 // Breakpoints

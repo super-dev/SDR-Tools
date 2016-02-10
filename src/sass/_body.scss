@@ -23,7 +23,6 @@
 
 .main-content {
   min-height: 480px;
-  background: $global-background-color;
 }
 
 .tools-list {
@@ -66,7 +65,7 @@ i.icon-gray {
 }
 
 .site-share-buttons {
-  background: $global-background-color;
+  background: $global-body-color;
   text-align: center;
   padding: 50px 10px;
 

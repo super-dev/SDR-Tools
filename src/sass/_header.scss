@@ -1,14 +1,15 @@
 .tools-head {
-  height: 60px;
   background: $global-header-color;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+	z-index: 99;
 }
 
 .tools-head h1 {
-  line-height: 60px;
+  line-height: 48px;
   font-size: 18px;
   margin: 0 auto;
   text-align: center;
-  color: $global-text-on-background-color;
+  color: $global-heading-color;
   text-transform: uppercase;
 
   i {
@@ -23,10 +24,10 @@
 }
 
 a.head-home {
-  color: $global-text-on-background-color;
+  color: $global-heading-color;
   font-size: 14px;
   line-height: 48px;
-  margin: 6px 25px;
+  margin: 0 25px;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -36,7 +37,7 @@ a.head-home i {
 }
 
 .tools-head img {
-  margin: 6px 25px;
+  margin: 0 25px;
   line-height: 48px;
   height: 48px;
 }

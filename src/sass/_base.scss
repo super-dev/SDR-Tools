@@ -1,5 +1,5 @@
 body, html {
-  background: darken($global-header-color, 5);
+  background: $global-body-color;
 }
 
 a:hover {
@@ -18,8 +18,10 @@ ins {
 
 .section {
   padding: 0 15px 15px 15px;
-  margin-bottom: 25px;
+  margin-bottom: $global-grid-gutter;
   background: #fff;
+  border: 1px solid $global-border;
+  border-radius: $global-border-radius;
   color: $global-color;
   font-size: 1em;
 
@@ -46,7 +48,7 @@ h3.section-title {
   display: block;
   padding: 5px 15px;
   background: $global-header-color;
-  color: $global-text-on-background-color;
+  color: $global-heading-color;
   border-bottom: 2px solid $global-primary-color;
   margin: 0 -15px;
   margin-bottom: 10px;
