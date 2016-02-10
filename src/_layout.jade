@@ -33,10 +33,10 @@ html(lang='en-US')
     div(class='uk-block main-content')
       block content
     div(class='site-share-buttons')
-      a(href='http://www.facebook.com/sharer.php?u=#{url_base}#{slug}', target='_blank', rel='external nofollow')
+      a(class='tm-share-facebook', href='http://www.facebook.com/sharer.php?u=#{url_base}#{slug}', target='_blank', rel='external nofollow')
         i.uk-icon-facebook
         | Share on Facebook
-      a(href='http://twitter.com/share?text=#{description}&url=#{url_base}#{slug}&via=superdevres42&related=superdevres42,kanishkkunal,monikaratan', target='_blank', rel='external nofollow')
+      a(class='tm-share-twitter', href='http://twitter.com/share?text=#{description}&url=#{url_base}#{slug}&via=superdevres42&related=superdevres42,kanishkkunal,monikaratan', target='_blank', rel='external nofollow')
         i.uk-icon-twitter
         | Share on Twitter
     .site-footer-menu
