@@ -13,7 +13,7 @@ html(lang='en-US')
     meta(property='og:image', content='#{url_base}img/featured/#{ogimage}')
     link(rel='canonical', href='#{url_base}#{slug}')
     link(href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700', rel='stylesheet', type='text/css')
-    link(href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/uikit.almost-flat.min.css', rel='stylesheet')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.23.0/css/uikit.almost-flat.min.css', rel='stylesheet')
     +style('main')
     block styles
     link(rel='icon', href='https://superdevresources.com/wp-content/uploads/2016/01/cropped-superdev-logo-32x32.png', sizes='32x32')
@@ -21,11 +21,11 @@ html(lang='en-US')
     link(rel='apple-touch-icon-precomposed', href='https://superdevresources.com/wp-content/uploads/2016/01/cropped-superdev-logo-180x180.png')
     meta(name='msapplication-TileImage', content='https://superdevresources.com/wp-content/uploads/2016/01/cropped-superdev-logo-270x270.png')
     +analytics
-  body
+  body#top
     header(class='tools-head')
       div.uk-container.uk-container-center
         a(href='/', class='head-logo uk-align-left uk-hidden-small', rel='home')
-          img.tm-logo(src='http://local.superdevresources.dev/wp-content/uploads/2016/02/dark.png', alt='Super Dev Resources Tools', scale='0')
+          img.tm-logo(src='/tools/img/sdr-logo-dark.png', alt='Super Dev Resources Tools', scale='0')
         a(href='/tools/', class='head-home uk-align-right')
           i(class='uk-icon-th-large') 
           span Tools
@@ -39,29 +39,50 @@ html(lang='en-US')
       a(class='tm-share-twitter', href='http://twitter.com/share?text=#{description}&url=#{url_base}#{slug}&via=superdevres42&related=superdevres42,kanishkkunal,monikaratan', target='_blank', rel='external nofollow')
         i.uk-icon-twitter
         | Share on Twitter
-    .site-footer-menu
-      ul
-        li
-          a(href='/') Articles
-        li
-          a(href='/directory/') Directory          
-        li
-          a(href='/tools/') Tools
-        li
-          a(href='/subscribe/') Subscribe          
-        li
-          a(href='/about/') About
-        li
-          a(href='/privacy-policy/') Privacy Policy
-        li
-          a(href='/contact/') Contact
     .site-footer
-      | Copyright © 
-      a(href='http://kunruchcreations.com/', title='KunRuch Creations', target='_blank') KunRuch Creations
-      | , All rights reserved.
-      br
-      | Static page built with Gulp - Theme by 
-      a(href='https://kkthemes.com', target='_blank') KKThemes
-      |  - Hosting by 
-      a(href='/go/digitalocean', rel='external nofollow', target='_blank') DigitalOcean
+      .tm-mega-footer.uk-block
+        .uk-container.uk-container-center
+          p
+            img(src='/tools/img/sdr-logo-light.png', height='48', width='54', alt='Super Dev Logo')
+            br
+            a(href='/', rel='home', title='Super Dev Resources') Super Dev Resources
+            |  is a popular destination for finding
+            br
+            | awesome free app and web development resources. 
+            a(href='/about/') Learn More
+        .tm-follow-us
+          a.uk-icon-button.uk-icon-facebook(href='https://www.facebook.com/superdevresources', title='Facebook', target='_blank', rel='nofollow')
+          a.uk-icon-button.uk-icon-twitter(href='https://twitter.com/superdevres42', title='Twitter', target='_blank', rel='nofollow')
+          a.uk-icon-button.uk-icon-google-plus(href='https://www.google.com/+Superdevresources42', title='Google Plus', target='_blank', rel='nofollow')
+          a.uk-icon-button.uk-icon-pinterest(href='https://www.pinterest.com/superdevres42/', title='Pinterest', target='_blank', rel='nofollow')
+          a.uk-icon-button.uk-icon-rss(href='http://feeds.feedburner.com/SuperDevResources', title='Rss', target='_blank', rel='nofollow')
+      .site-footer-menu
+        ul
+          li
+            a(href='/') Articles
+          li
+            a(href='/directory/') Directory          
+          li
+            a(href='/tools/') Tools
+          li
+            a(href='/subscribe/') Subscribe          
+          li
+            a(href='/about/') About
+          li
+            a(href='/privacy-policy/') Privacy Policy
+          li
+            a(href='/contact/') Contact
+      .site-sub-footer
+        | Copyright © 
+        a(href='http://kunruchcreations.com/', title='KunRuch Creations', target='_blank') KunRuch Creations
+        | , All rights reserved.
+        br
+        | Static page built with Gulp - Theme by 
+        a(href='https://kkthemes.com', target='_blank') KKThemes
+        |  - Hosting by 
+        a(href='/go/digitalocean', rel='external nofollow', target='_blank') DigitalOcean 
+        | - 
+        a.back-to-top(href='#top')
+          i.uk-icon-arrow-up
+          |  back to top
     block scripts
