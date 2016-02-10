@@ -1,36 +1,37 @@
 .site-footer-menu {
-  padding-top: 15px;
-  background: $global-header-color;
+  padding-top: 25px;
+  background: lighten($global-dark-color, 5);
 
   ul {
     text-align: center;
+    margin-bottom: 0;
 
     li {
       display: inline-block;
-      margin-bottom: 15px;
+      margin-bottom: 25px;
 
       a {
         padding: 0 10px;
+        color: darken($global-light-color, 10);
       }
 
       a:hover {
-        color: $global-primary-color;
+        color: #fff;
       }
     }
   }
 }
 
 .site-footer {
-    background: darken($global-header-color, 5);
-    padding: 10px 15px;
-    padding-top: 0;
+    background: $global-dark-color;
+    padding: 20px 15px;
     text-align: center;
     font-size: 12.5px;
     line-height: 18px;
-    color: #999;
+    color: lighten($global-dark-color, 50);
 
     a {
-      color: #ddd;
+      color: darken($global-light-color, 10);
     }
 
     a:hover {

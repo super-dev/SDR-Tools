@@ -43,4 +43,8 @@ a.head-home i {
   margin: 0 25px 0 0;
   line-height: 48px;
   height: 48px;
+
+  &:hover {
+		opacity: 0.9;
+	}
 }
