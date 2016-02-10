@@ -11,10 +11,6 @@ h1, h2, h3, h4, h5, h6 {
 a:hover {
   color: $global-link-hover-color;
   text-decoration: none;
-  -webkit-transition: color .2s linear;
-  -moz-transition: color .2s linear;
-  -ms-transition: color .2s linear;
-  -o-transition: color .2s linear;
   transition: color .2s linear;
 }
 

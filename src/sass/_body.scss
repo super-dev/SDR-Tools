@@ -8,7 +8,7 @@
 }
 
 #content {
-  margin-right: 330px;
+  margin-right: 320px;
   clear: both;
   overflow: auto;
 }
@@ -23,6 +23,7 @@
 
 .main-content {
   min-height: 480px;
+  padding-top: 25px;
 }
 
 .tools-list {
@@ -32,18 +33,18 @@
 
   h2 {
     width: 100%;
-    padding: 15px 0;
+    padding: 25px 0;
     margin-bottom: 0;
     text-align: center;
   }
 
   i {
-    font-size: 60px;
+    font-size: 72px;
     display: block;
-    padding: 15px;
+    padding: 20px;
     background: #aaa;
     border-radius: 100%;
-    width: 60px;
+    width: 72px;
     margin: 15px auto;
   }
 
