@@ -18,10 +18,20 @@ mixin jquery-script()
 mixin uikit-script()
   script(src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/js/uikit.min.js')
   
-mixin tool(url, icon, color, title)
+mixin tool(icon, color, title)
   li(class='uk-width-large-1-3 uk-width-medium-1-2')
     div(class='uk-panel uk-panel-box')
-      a(href='/tools/#{url}/')
-        h2
-          i(class='uk-icon-#{icon} icon-#{color}')
-          span #{title}
+      div(class='tm-tool-header-image tm-panel-#{color}')
+        i(class='tm-tool-header-icon uk-icon-#{icon}')
+      h2 #{title}
+      if block
+        block
+      else
+        h3 Coming Soon ...
+        
+mixin tool-item(url, icon, title)
+  li
+    a(href='/tools/#{url}/') 
+      h3 
+        i(class='uk-icon-#{icon} uk-margin-small-right')
+        | #{title}

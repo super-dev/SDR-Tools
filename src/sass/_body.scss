@@ -27,39 +27,72 @@
 }
 
 .tools-list {
+
   .uk-panel-box {
-    padding: 0;
+    padding: 20px;
   }
 
-  h2 {
-    width: 100%;
-    padding: 25px 0;
-    margin-bottom: 0;
+  .tm-tool-header-image {
+    margin: -20px -20px 0 -20px;
+    padding: 50px 25px;
     text-align: center;
   }
 
-  i {
-    font-size: 72px;
+  h2 {
+    font-size: 20px;
+    line-height: 27px;
+    margin-top: 12px;
+    margin-bottom: 25px;
+    color: lighten($global-heading-color, 40);
+    font-weight: 400;
+    text-align: center;
+  }
+
+  i.tm-tool-header-icon {
+    font-size: 90px;
     display: block;
-    padding: 20px;
-    background: #aaa;
     border-radius: 100%;
-    width: 72px;
-    margin: 15px auto;
+    margin: 0 auto;
   }
 
   a {
     text-decoration: none;
   }
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    transition: color 0.2s linear;
+    margin-bottom: 0;
+  }
+
+  a:hover h3 {
+    color: $global-link-hover-color;
+  }
 }
 
-i.icon-green {
-  background: #d2ebb7;
-  color: #8CC152;
+.tm-panel-green {
+  background: #37BC9B;
+  color: #fff;
 }
 
+.tm-panel-red {
+  background: #ED5565;
+  color: #fff;
+}
 
-i.icon-gray {
+.tm-panel-lavender {
+  background: #967ADC;
+  color: #fff;
+}
+
+.tm-panel-gray {
   background: #E6E9ED;
   color: #AAB2BD;
 }

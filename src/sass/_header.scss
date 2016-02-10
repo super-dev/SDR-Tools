@@ -35,6 +35,10 @@ a.head-home {
   text-decoration: none;
 }
 
+a.head-home:hover {
+  color: lighten($global-heading-color, 10);
+}
+
 a.head-home i {
   margin-right: 6px;
 }

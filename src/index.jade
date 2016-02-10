@@ -13,10 +13,12 @@ block pagetitle
 
 block content
     div(class='uk-container uk-container-center')
-      ul(class='uk-grid uk-grid-medium tools-list', data-uk-grid-margin)
-        +tool('image-cropper', 'crop', 'green', 'Image Cropper')
-        +tool('#', 'wrench', 'gray', 'Coming Soon..')        
-        +tool('#', 'wrench', 'gray', 'Coming Soon..')
+      ul(class='uk-grid uk-grid-medium tools-list', data-uk-grid-match="{target:'.uk-panel'}", data-uk-grid-margin)
+        +tool('image', 'red', 'Design Tools')
+          ul
+            +tool-item('image-cropper', 'crop', 'Image Cropper')
+        +tool('code', 'lavender', 'Development Tools')
+        +tool('bullhorn', 'green', 'Marketing Tools')
 
 block scripts
   +jquery-script
