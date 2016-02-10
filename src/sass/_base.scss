@@ -1,9 +1,15 @@
 body, html {
   background: $global-body-color;
+  font-family: $base-body-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $base-heading-font-family;
+  font-weight: $base-heading-font-weight;
 }
 
 a:hover {
-  color: $global-primary-color;
+  color: $global-link-hover-color;
   text-decoration: none;
   -webkit-transition: color .2s linear;
   -moz-transition: color .2s linear;
@@ -49,7 +55,6 @@ h3.section-title {
 	padding: 12px 15px;
   background: $global-light-color;
   color: $global-heading-color;
-	font-weight: $base-heading-font-weight;
   border-bottom: 1px solid $global-border;
   margin: 0 -15px;
   margin-bottom: 10px;

@@ -12,6 +12,7 @@ html(lang='en-US')
     meta(property='og:url', content='#{url_base}#{slug}')
     meta(property='og:image', content='#{url_base}img/featured/#{ogimage}')
     link(rel='canonical', href='#{url_base}#{slug}')
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700', rel='stylesheet', type='text/css')
     link(href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/uikit.almost-flat.min.css', rel='stylesheet')
     +style('main')
     block styles
@@ -22,12 +23,13 @@ html(lang='en-US')
     +analytics
   body
     header(class='tools-head')
-      a(href='/', class='head-logo uk-align-left uk-hidden-small', rel='home')
-        img.tm-logo(src='http://local.superdevresources.dev/wp-content/uploads/2016/02/dark.png', alt='Super Dev Resources Tools', scale='0')
-      a(href='/tools/', class='head-home uk-align-right')
-        i(class='uk-icon-th-large') 
-        span Tools
-      block pagetitle
+      div.uk-container.uk-container-center
+        a(href='/', class='head-logo uk-align-left uk-hidden-small', rel='home')
+          img.tm-logo(src='http://local.superdevresources.dev/wp-content/uploads/2016/02/dark.png', alt='Super Dev Resources Tools', scale='0')
+        a(href='/tools/', class='head-home uk-align-right')
+          i(class='uk-icon-th-large') 
+          span Tools
+        block pagetitle
     div(class='uk-block main-content')
       block content
     div(class='site-share-buttons')
