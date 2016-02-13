@@ -17,7 +17,24 @@ block pagetitle
     | HTML to Jade
 
 block content
-  textarea#html(name='html')
+  div(class='uk-container uk-container-center')
+    div(class='uk-grid uk-grid-small')
+      div(class='uk-width-medium-1-2')
+        h2.uk-h3 HTML
+        textarea#html(name='html', style='display: none;')
+          | <!doctype html>
+          | <html>
+          |   <head>
+          |     <link type="text/css" rel="stylesheet" href="/site.css" />
+          |     <title>Hello</title>
+          |   </head>
+          | <body>
+          |   <h1>Hello world!</h1>
+          | </body>
+          | </html>
+      div(class='uk-width-medium-1-2')
+        h2.uk-h3 Jade
+        textarea#jade(name='jade', style='display: none;')
   
 block scripts
   +vendor-script('require.js')
