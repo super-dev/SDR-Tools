@@ -1,0 +1,19 @@
+extends ./../_layout.jade
+include ./../_mixins.jade
+
+block vars
+  - var title = 'HTML to Jade Converter Online'
+  - var description = 'Free Online HTML to Jade conversion Tool by Super Dev Resources Team'
+  - var slug = 'html2jade/'
+  - var ogimage = 'image-crop-tool.png'
+  
+block styles
+  +vendor-css('cropperjs/cropper.min.css')
+  +style('html-jade')
+
+block pagetitle
+  h1 
+    i.uk-icon-file-code-o
+    | HTML to Jade
+
+block content
