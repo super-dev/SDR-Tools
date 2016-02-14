@@ -37,5 +37,6 @@ block content
         textarea#jade(name='jade', style='display: none;')
   
 block scripts
+  +vendor-script('html2jade-bundle.js')
   +vendor-script('require.js')
   +script('html-jade')

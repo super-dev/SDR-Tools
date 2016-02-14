@@ -22,4 +22,11 @@ require([
     lineNumbers: true,
     mode: "jade"
   });
+
+  html.on("change", function() {
+    console.log("Changed");
+    html2jade.convertHtml(html.getValue(), {}, function (err, result) {
+      jade.setValue(result);
+    });
+  });
 });
