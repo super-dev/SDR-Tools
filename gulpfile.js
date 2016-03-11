@@ -10,7 +10,7 @@ var SRC_JADE    = SRC + '**/!(_)*.jade';
 var SRC_SCSS    = SRC + 'sass/**/*.scss';
 var SRC_PUBLIC  = './public/**/*';
 
-var DEST        = './../htdocs/tools/';
+var DEST        = './../public/tools/';
 var DEST_JADE   = DEST;
 var DEST_SCSS   = DEST + 'css';
 var DEST_PUBLIC = DEST;
@@ -61,7 +61,7 @@ gulp.task('sass', function () {
  */
 gulp.task('default', ['copy', 'sass', 'templates'], function () {
 
-    browserSync.init({proxy: "http://local.superdevresources.dev/tools/", browser: "chrome"});
+    browserSync.init({proxy: "http://superdevresources.dev/tools/", browser: "chrome"});
 
     gulp.watch(SRC_PUBLIC,    ['copy']);
     gulp.watch(SRC_SCSS,      ['sass']);
