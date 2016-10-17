@@ -1,37 +1,37 @@
 include ./_private.pug
-  
+
 mixin style(cssfile)
-  link(href='/tools/css/#{cssfile}.css', rel='stylesheet')
-  
+  link(href='/styles/' + cssfile + '.css', rel='stylesheet')
+
 mixin script(scriptfile)
-  script(src='/tools/js/#{scriptfile}.js')
-  
+  script(src='/js/' + scriptfile + '.js')
+
 mixin vendor-css(file)
-  link(href='/tools/vendor/#{file}', rel='stylesheet')
-    
+  link(href='/vendor/' + file, rel='stylesheet')
+
 mixin vendor-script(file)
-  script(src='/tools/vendor/#{file}')
-  
+  script(src='/vendor/' + file)
+
 mixin jquery-script()
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js')
 
 mixin uikit-script()
   script(src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.23.0/js/uikit.min.js')
-  
+
 mixin tool(icon, color, title)
   li(class='uk-width-large-1-3 uk-width-medium-1-2')
     div(class='uk-panel uk-panel-box')
-      div(class='tm-tool-header-image tm-panel-#{color}')
-        i(class='tm-tool-header-icon uk-icon-#{icon}')
-      h2 #{title}
+      div(class='tm-tool-header-image tm-panel-' + color)
+        i(class='tm-tool-header-icon uk-icon-' + icon)
+      h2= title
       if block
         block
       else
         h3.uk-text-muted Coming Soon ...
-        
+
 mixin tool-item(url, icon, title)
   li
-    a(href='/tools/#{url}/') 
-      h3 
+    a(href='/' + url)
+      h3
         i(class='uk-icon-#{icon}')
         | #{title}

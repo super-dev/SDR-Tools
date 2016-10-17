@@ -1,18 +1,18 @@
-extends ./../_layout.pug
-include ./../_mixins.pug
+extends ./_layouts/_layout.pug
+include ./_includes/_mixins.pug
 
 block vars
   - var title = 'Image Cropper Online'
   - var description = 'Free Online Image Cropping Tool using HTML Canvas by Super Dev Resources Team'
   - var slug = 'image-cropper/'
   - var ogimage = 'image-crop-tool.png'
-  
+
 block styles
   +vendor-css('cropperjs/cropper.min.css')
   +style('image-cropper')
 
 block pagetitle
-  h1 
+  h1
     i.uk-icon-crop
     | Image Cropper
 
@@ -22,7 +22,7 @@ block content
       #content
         .canvas-container
           #drop-target
-            img#myimage        
+            img#myimage
         .section
           h3.section-title Instructions
           ul
@@ -33,15 +33,15 @@ block content
             li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
             li Cropped image will open in a new tab of your browser. Right click and do "Save As" to save the cropped image.
             li We do not store your images as everything is done client side.
-    #sidebar    
+    #sidebar
         .section
           h3.section-title Image Dimesions
           p
-            | Height: 
+            | Height:
             span#img-height 0
             | px
             br
-            |         Width: 
+            |         Width:
             span#img-width 0
             | px
           button#select-all(type='button', class='uk-button') Select All
