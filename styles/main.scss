@@ -1,7 +1,3 @@
-@import 'variables';
-@import 'base';
-@import 'uikit-override';
-@import 'header';
-@import 'body';
-@import 'sidebar';
-@import 'footer';
+@import "vars";
+@import "mmcss/src/mm";
+@import "sdr";

@@ -1,0 +1,24 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.icon-twitter {
+  width: 0.9285703301429749em;
+}
+
+.icon-github {
+  width: 0.8571436107158661em;
+}
+
+.icon-hacker-news {
+  width: 0.8571415841579437em;
+}
+
+.icon-reddit-alien {
+  width: 1.0000009834766388em;
+}

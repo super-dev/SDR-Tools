@@ -1,0 +1,53 @@
+body {
+  background-color: #fafafa;
+}
+
+.site-branding img {
+  padding: 0;
+}
+
+.header {
+  .menu {
+    font-size: 82%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .button-ghost {
+    padding: 0 0.5em;
+    margin-left: 0.5em;
+    line-height: 2.1;
+  }
+}
+
+.main {
+  min-height: 480px;
+}
+
+.container-readable {
+  max-width: 940px;
+}
+
+.footer {
+  border-top: 0;
+}
+
+.footer-logo {
+  height: 48px;
+  width: auto;
+}
+
+@media (max-width: $size-small-screen) {
+  .header-left {
+    position: relative;
+    left: 0;
+
+    .site-branding img {
+      float: none;
+    }
+  }
+
+  .entry-title {
+    font-size: 19px;
+  }
+}
