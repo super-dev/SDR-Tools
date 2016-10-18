@@ -10,8 +10,14 @@ block content
       div.container-readable
         div.tools-menu.section
           a.button.button-primary All
-          a.button.button-ghost Design
-          a.button.button-ghost Development
-          a.button.button-ghost Marketing
+          a.button.button-ghost
+            include ./_includes/_image.svg              
+            | Design
+          a.button.button-ghost
+            include ./_includes/_code.svg              
+            | Development
+          a.button.button-ghost
+            include ./_includes/_bullhorn.svg              
+            | Marketing
         ul.tools-list
           +tool-item('image-cropper', 'crop', 'Image Cropper')
