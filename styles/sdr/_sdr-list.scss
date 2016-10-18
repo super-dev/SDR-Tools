@@ -1,0 +1,22 @@
+.sdr-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+
+  li {
+    margin-bottom: 30px;
+  }
+
+  .entry-title {
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 3px;
+  }
+}
+
+
+@media (max-width: $size-small-screen) {
+  .sdr-list .entry-title {
+    font-size: 19px;
+  }
+}
