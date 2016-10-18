@@ -1,0 +1,32 @@
+.main {
+    min-height: 480px;
+}
+
+.tools-menu {
+  .button {
+    margin-right: 0.5em;
+    font-size: 80%;
+    padding: 0 1em;
+    line-height: 2.2;
+  }
+
+  .button-ghost {
+    background-color: #fff;
+  }
+}
+
+.tools-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid $color-default-border;
+
+  li {
+    padding: 16px 24px;
+  }
+
+  .entry-title {
+    margin: 0;
+  }
+}

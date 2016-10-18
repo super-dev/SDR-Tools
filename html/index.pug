@@ -2,14 +2,16 @@ extends ./_layouts/_layout-main.pug
 include ./_includes/_mixins.pug
 
 block vars
-  - var title = 'Tools for Web Developers'
-  - var description = 'Free Tools for Web Developers by Super Dev Resources Team'
+  - var title = 'Tools for Developers'
+  - var description = 'Free Tools for Web and App Developers by Super Dev Resources Team'
 
 block content
-    div(class='uk-container uk-container-center')
-      ul(class='uk-grid uk-grid-medium tools-list', data-uk-grid-match="{target:'.uk-panel'}", data-uk-grid-margin)
-        +tool('image', 'red', 'Design Tools')
-          ul
-            +tool-item('image-cropper', 'crop', 'Image Cropper')
-        +tool('code', 'lavender', 'Development Tools')
-        +tool('bullhorn', 'green', 'Marketing Tools')
+    div.main
+      div.container-readable
+        div.tools-menu.section
+          a.button.button-primary All
+          a.button.button-ghost Design
+          a.button.button-ghost Development
+          a.button.button-ghost Marketing
+        ul.tools-list
+          +tool-item('image-cropper', 'crop', 'Image Cropper')

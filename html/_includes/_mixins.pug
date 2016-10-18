@@ -1,17 +1,9 @@
-mixin tool(icon, color, title)
-  li(class='uk-width-large-1-3 uk-width-medium-1-2')
-    div(class='uk-panel uk-panel-box')
-      div(class='tm-tool-header-image tm-panel-' + color)
-        i(class='tm-tool-header-icon uk-icon-' + icon)
-      h2= title
-      if block
-        block
-      else
-        h3.uk-text-muted Coming Soon ...
-
 mixin tool-item(url, icon, title)
   li
-    a(href='/' + url)
-      h3
+    .media.media-left
+      a.thumbnail.thumbnail-small.thumbnail-rounded(href='/' + url, style='background-color:#9ccc65')        
         i(class='uk-icon-#{icon}')
-        | #{title}
+      .media-body
+        h2.h3.entry-title        
+          a(href='/' + url) #{title}
+        .entry-meta Online Image clipper
