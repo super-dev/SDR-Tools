@@ -23,9 +23,8 @@ block content
             each tool in data.tools
               li
                 .media.media-left
-                  a.thumbnail.thumbnail-small.thumbnail-rounded(href='/' + tool.url, style='background-color:' + tool.color)        
-                    #{tool.icon}
+                  a.thumbnail.thumbnail-small.thumbnail-rounded(href=tool.url, style='background-color:' + tool.color)!= tool.icon
                   .media-body
                     h2.entry-title        
-                      a(href='/' + tool.url) #{tool.name}
+                      a(href=tool.url) #{tool.name}
                     div #{tool.description}
