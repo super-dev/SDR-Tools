@@ -1,0 +1,4 @@
+- name: "Image Cropper"
+  url: "image-cropper"
+  color: "#9ccc65"
+  description: "Online Image clipper"

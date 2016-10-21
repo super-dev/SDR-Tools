@@ -1,5 +1,4 @@
 extends ./_layouts/_layout-main.pug
-include ./_includes/_mixins.pug
 
 block vars
   - var title = 'Tools for Developers'
@@ -21,4 +20,12 @@ block content
             | Marketing
         div.content-container
           ul.sdr-list
-            +tool-item('image-cropper', 'crop', 'Image Cropper')
+            each tool in data.tools
+              li
+                .media.media-left
+                  a.thumbnail.thumbnail-small.thumbnail-rounded(href='/' + tool.url, style='background-color:' + tool.color)        
+                    #{tool.icon}
+                  .media-body
+                    h2.h3.entry-title        
+                      a(href='/' + tool.url) #{tool.name}
+                    .entry-meta #{tool.description}

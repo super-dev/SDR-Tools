@@ -22,7 +22,7 @@
   },
   "homepage": "https://tools.superdevresources.com/",
   "devDependencies": {
-    "mmpilot": "^0.3.2",
+    "mmpilot": "^0.4.1",
     "npm-run-all": "^3.1.1"
   },
   "dependencies": {
