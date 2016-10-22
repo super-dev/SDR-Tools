@@ -12,7 +12,7 @@ block pagetitle
   span Image Cropper
 
 block content
-  div#wrapper(class='container')
+  #wrapper.container.section
     #content-wrapper
       #content
         .canvas-container
@@ -39,7 +39,7 @@ block content
             |         Width:
             span#img-width 0
             | px
-          button#select-all(type='button', class='uk-button') Select All
+          button#select-all(type='button') Select All
         .section
           h3.section-title Aspect Ratio
           form.uk-form(name='aspectform')
