@@ -1,0 +1,13 @@
+clean: ['../../public/image-cropper']
+
+html:
+  dest: '../../public'
+
+assets:  
+  dest: '../../public/image-cropper'
+
+styles:  
+  dest: '../../public/image-cropper/styles'
+
+scripts:  
+  dest: '../../public/image-cropper/scripts'

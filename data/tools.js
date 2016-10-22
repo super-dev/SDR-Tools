@@ -8,7 +8,7 @@ exports.data = function() {
     data = yaml.safeLoad(fs.readFileSync('data/_tools-raw.yml', 'utf8'))
     for(var i = 0; i < data.length; i++) {
       var toolItem = data[i]
-      toolItem.icon = path.join(toolItem.path, 'assets', toolItem.icon)
+      toolItem.icon = path.join('tools', toolItem.path, 'assets', toolItem.icon)
       if(path.parse(toolItem.icon).ext === '.svg') {
         toolItem.icon = fs.readFileSync(toolItem.icon, 'utf8')
       }

@@ -1,3 +1,17 @@
+clean: ['public']
+
+html:
+  src:  'root/html'
+
+assets:
+  src:  'root/assets'
+
+styles:  
+  src:  'root/styles'
+
+scripts:  
+  src:  'root/scripts'
+
 ## additional data for site available as site.{key} in pug templates
 site:
   url: "https://tools.superdevresources.com/"
