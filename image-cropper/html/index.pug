@@ -1,21 +1,17 @@
-extends ./_layouts/_layout.pug
+extends ./../../html/_layouts/_layout-main.pug
 
 block vars
   - var title = 'Image Cropper Online'
   - var description = 'Free Online Image Cropping Tool using HTML Canvas by Super Dev Resources Team'
-  - var slug = 'image-cropper/'
-  - var ogimage = 'image-crop-tool.png'
 
 block styles
-  +vendor-css('cropperjs/cropper.min.css')
-  +style('image-cropper')
+  link(href='vendor/cropperjs/cropper.min.css', rel='stylesheet')  
+  link(href='styles/image-cropper.css', rel='stylesheet')
 
-block pagetitle
+block content
   h1
     i.uk-icon-crop
     | Image Cropper
-
-block content
   div#wrapper(class='uk-container uk-container-center')
     #content-wrapper
       #content
@@ -57,7 +53,7 @@ block content
           h3.section-title Download
           button#jpg-download(type='button', class='uk-button uk-button-success uk-margin-small-right') JPG
           button#png-download(type='button', class='uk-button uk-button-primary') PNG
-        +adlinks1('tm-sidebar-link-ad')
+        //+adlinks1('tm-sidebar-link-ad')
         .section
           h3.section-title Credits
           ul
@@ -68,5 +64,5 @@ block content
               a(href='https://github.com/uikit/uikit', target='_blank') UIkit
               |  - A lightweight and modular front-end framework for developing fast and powerful web interfaces
 block scripts
-  +vendor-script('cropperjs/cropper.min.js')
-  +script('image-cropper')
+  script(src='vendor/cropperjs/cropper.min.js')
+  script(src='scripts/image-cropper.js')

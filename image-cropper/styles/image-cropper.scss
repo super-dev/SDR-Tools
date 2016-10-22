@@ -1,5 +1,3 @@
-@import 'variables.scss';
-
 .canvas-container {
   margin-bottom: 25px;
   text-align: center;
@@ -9,8 +7,8 @@
 
 #drop-target {
   display: inline-block;
-  background-image: url("/tools/img/canvas-drop.png");
-  border: 1px solid $global-border;
+  background-image: url("../img/canvas-drop.png");
+  border: 1px solid #eee;
   min-width: 300px;
   max-width: 800px;
   min-height: 300px;
