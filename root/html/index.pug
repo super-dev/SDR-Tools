@@ -18,13 +18,14 @@ block content
           a.button.button-ghost
             include ./_includes/icons/_bullhorn.svg              
             | Marketing
-        div.content-container
-          ul.sdr-list
-            each tool in data.tools
-              li
-                .media.media-left
-                  a.thumbnail.thumbnail-small.thumbnail-rounded(href=tool.url, style='background-color:' + tool.color)!= tool.icon
-                  .media-body
-                    h2.entry-title        
-                      a(href=tool.url) #{tool.name}
-                    div #{tool.description}
+        .card
+          .card-body
+            ul.sdr-list
+              each tool in data.tools
+                li
+                  .media.media-left
+                    a.thumbnail.thumbnail-small.thumbnail-rounded(href=tool.url, style='background-color:' + tool.color)!= tool.icon
+                    .media-body
+                      h2.entry-title        
+                        a(href=tool.url) #{tool.name}
+                      div #{tool.description}

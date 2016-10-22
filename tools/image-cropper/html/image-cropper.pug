@@ -18,51 +18,49 @@ block content
         .canvas-container
           #drop-target
             img#myimage
-        .section
-          h3.section-title Instructions
-          ul
-            li Drag and drop image from your local system to the canvas above
-            li Use the Aspect Ratio options to choose aspect ratio of Crop Tool
-            li You can increase the Crop Tool size by dragging the corners and edges
-            li Move the crop tool by holding the mouse button over it and dragging
-            li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
-            li Cropped image will open in a new tab of your browser. Right click and do "Save As" to save the cropped image.
-            li We do not store your images as everything is done client side.
+        .card
+          h2.h4.card-title Instructions
+          .card-body
+            ul.divider
+              li Drag and drop image from your local system to the canvas above
+              li Use the Aspect Ratio options to choose aspect ratio of Crop Tool
+              li You can increase the Crop Tool size by dragging the corners and edges
+              li Move the crop tool by holding the mouse button over it and dragging
+              li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
+              li Cropped image will open in a new tab of your browser. Right click and do "Save As" to save the cropped image.
+              li We do not store your images as everything is done client side.
     #sidebar
-        .section
-          h3.section-title Image Dimesions
-          p
-            | Height:
-            span#img-height 0
-            | px
-            br
-            |         Width:
-            span#img-width 0
-            | px
-          button#select-all(type='button') Select All
-        .section
-          h3.section-title Aspect Ratio
-          form.uk-form(name='aspectform')
-            input(type='radio', name='aspectratio', value='Free', checked='')
-            |  Free
-            input(type='radio', name='aspectratio', value='16:9')
-            |  16:9
-            input(type='radio', name='aspectratio', value='4:3')
-            |  4:3
-        .section
-          h3.section-title Download
-          button#jpg-download(type='button', class='uk-button uk-button-success uk-margin-small-right') JPG
-          button#png-download(type='button', class='uk-button uk-button-primary') PNG
+        .card
+          h3.h5.card-title Image Dimesions
+          .card-body
+            div Height: <span id="img-height">0</span>px<br>Width: <span id="img-width">0</span>px
+            button#select-all.button-ghost(type='button') Select All
+        .card
+          h3.h5.card-title Aspect Ratio
+          .card-body
+            form(name='aspectform')
+              input(type='radio', name='aspectratio', value='Free', checked='')
+              |  Free
+              input(type='radio', name='aspectratio', value='16:9')
+              |  16:9
+              input(type='radio', name='aspectratio', value='4:3')
+              |  4:3
+        .card
+          h3.h5.card-title Download
+          .card-body
+            button#jpg-download(type='button', class='button-primary') JPG
+            button#png-download(type='button', class='button-primary') PNG
         //+adlinks1('tm-sidebar-link-ad')
-        .section
-          h3.section-title Credits
-          ul
-            li
-              a(href='https://github.com/fengyuanchen/cropperjs', target='_blank') CropperJS
-              |  - JavaScript image cropper
-            li
-              a(href='https://github.com/uikit/uikit', target='_blank') UIkit
-              |  - A lightweight and modular front-end framework for developing fast and powerful web interfaces
+        .card
+          h3.h5.card-title Credits
+          .card-body
+            ul.divider
+              li
+                a(href='https://github.com/fengyuanchen/cropperjs', target='_blank') CropperJS
+                |  - JavaScript image cropper
+              li
+                a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
+                |  - A minimal modern CSS framework for building beautiful websites
 block scripts
   script(src='vendor/cropperjs/cropper.min.js')
   script(src='scripts/image-cropper.js')
