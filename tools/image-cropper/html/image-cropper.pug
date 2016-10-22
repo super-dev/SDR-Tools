@@ -1,4 +1,4 @@
-extends ./../../../root/html/_layouts/_layout-main.pug
+extends ./../../../common/_layouts/_layout-tools.pug
 
 block vars
   - var title = 'Image Cropper Online'
@@ -8,11 +8,11 @@ block styles
   link(href='vendor/cropperjs/cropper.min.css', rel='stylesheet')  
   link(href='styles/image-cropper.css', rel='stylesheet')
 
+block pagetitle
+  span Image Cropper
+
 block content
-  h1
-    i.uk-icon-crop
-    | Image Cropper
-  div#wrapper(class='uk-container uk-container-center')
+  div#wrapper(class='container')
     #content-wrapper
       #content
         .canvas-container

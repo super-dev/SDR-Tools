@@ -1,92 +1,16 @@
-doctype html
-block vars
-html(lang='en-US')
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='x-ua-compatible', content='ie=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    title #{title} - SDR Tools
-    meta(name='description', content=description)
-    meta(property='og:title', content=title)
-    meta(property='og:type', content='website')
-    meta(property='og:url', content=page.url)
-    meta(property='og:image', content=site.url + 'img/featured.png')
-    link(rel='canonical', href=page.url)
-    link(href='/styles/main.css', rel='stylesheet')
-    style
-      include ./../_includes/icons/_icons.css
-    block styles
-    link(rel='icon', href=site.url + 'img/sdr-logo-32x32.png', sizes='32x32')
-    link(rel='icon', href=site.url + 'img/sdr-logo-192x192.png', sizes='192x192')
-    link(rel='apple-touch-icon-precomposed', href=site.url + 'img/sdr-logo-180x180.png')
-    meta(name='msapplication-TileImage', content=site.url + 'img/sdr-logo-270x270.png')
-  body#top
-    include ./../_includes/icons/_icons.svg
-    header.header
-        .container
-            .header-left
-              a(href='https://superdevresources.com/').site-branding
-                img(src="/img/sdr-logo.png")
-                h1.title.screen-reader-text SDR News
-            nav(rol="navigation").hidden-mobile
-              ul.menu
-                li.menu-item
-                  a(href="https://superdevresources.com/") Articles
-                li.menu-item
-                  a(href="https://superdevresources.com/directory/") Directory
-                li.menu-item.current-menu-item
-                  a(href="/") Tools
-                li.menu-item
-                  a(href="https://news.superdevresources.com/") News
-            div.header-right.hidden-mobile
-              nav
-                ul.menu
-                  li.menu-item
-                    a(href="https://superdevresources.com/about/") About
-                  li.menu-item
-                    a(href=site.twitter target="_blank")
-                      | <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
-                  li.menu-item
-                    a(href=site.github, target="_blank")
-                      | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
+extends ./../../../common/_layouts/_layout.pug
 
-    block content
-    footer.footer
-      .container-readable.section.text-center
-        a(href='https://superdevresources.com/')
-          img.footer-logo(src="/img/sdr-logo.png")
-        div Super Dev Resources is a popular destination for finding
-          br
-          | awesome free app and web development resources. <a class="text-small" href="https://superdevresources.com/about/">Learn More</a>
-        nav.section
-          ul.menu
-            li.menu-item
-              a(href=site.twitter target="_blank")
-                | <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
-            li.menu-item
-              a(href=site.twitter target="_blank")
-                | <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
-            li.menu-item
-              a(href=site.github, target="_blank")
-                | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
-        nav.section
-          ul.menu
-            li.menu-item
-              a(href="https://superdevresources.com/") Articles
-            li.menu-item
-              a(href="https://superdevresources.com/directory/") Directory
-            li.menu-item
-              a(href="https://superdevresources.com/tools/") Tools
-            li.menu-item.current-menu-item
-              a(href="/") News
-            li.menu-item
-              a(href="https://superdevresources.com/about/") About
-            li.menu-item
-              a(href="https://superdevresources.com/privacy-policy/") Privacy Policy
-            li.menu-item
-              a(href="https://superdevresources.com/contact/") Contact
-          p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
-            br
-            | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a>.
-  include ./../_includes/_analytics.pug
-  block scripts
+block header_center
+  +menu(data.menu.main, 'hidden-mobile')
+
+block header_right
+  nav
+    ul.menu
+      li.menu-item
+        a(href="https://superdevresources.com/about/") About
+      li.menu-item
+        a(href='https://twitter.com/superdevres42', target="_blank", title="Twitter")
+          | <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+      li.menu-item
+        a(href='https://github.com/super-dev/', target="_blank", title="Github")
+          | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>

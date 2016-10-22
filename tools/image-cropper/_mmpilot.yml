@@ -11,3 +11,5 @@ styles:
 
 scripts:  
   dest: '../../public/image-cropper/scripts'
+
+data: '../../common/data'

@@ -13,9 +13,11 @@ config.verbose = true;
 var rootPath = path.join(__dirname, 'root')
 
 var command = process.argv[2]
+var async = (command === 'watch')
 if(process.argv.length >= 4) command += (' ' + process.argv[3]) //options such as -d
 
-exec('mmpilot ' + command)
+
+exec('mmpilot ' + command, {async: async})
 
 if(command.startsWith('build') || command.startsWith('watch')) {
     // clean, serve and deploy commands on root is enough
@@ -40,7 +42,7 @@ if(command.startsWith('build') || command.startsWith('watch')) {
       
           // run command in folder
           cd(toolPath);
-          exec('mmpilot ' + command)
+          exec('mmpilot ' + command, {async: async})
         }
       })
 }

@@ -1,0 +1,21 @@
+mixin menu(list)
+  nav
+    ul.menu
+      each item in list
+        +menuitem(item)
+
+mixin submenu(item)
+  if item.children
+    ul.submenu
+      each subitem in item.children
+        +menuitem(subitem)
+
+mixin menuitem(item)
+  li(class=['menu-item'], class={'current-menu-item': page.path == item.url})
+    a(href=item.url)&attributes(item.attributes) #{item.title}
+    +submenu(item)
+
+mixin social(list)
+  each item in list
+    a.button.button-text(href=item.url, target="_blank", title=item.title)
+      | <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
