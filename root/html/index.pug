@@ -4,28 +4,5 @@ block vars
   - var title = 'Tools for Developers'
   - var description = 'Free Tools for Web and App Developers by Super Dev Resources Team'
 
-block content
-    div.main
-      div.container-readable
-        div.sdr-submenu.section
-          a.button.button-primary All
-          a.button.button-ghost
-            include ./_includes/icons/_brush.svg              
-            | Design
-          a.button.button-ghost
-            include ./_includes/icons/_code.svg              
-            | Development
-          a.button.button-ghost
-            include ./_includes/icons/_bullhorn.svg              
-            | Marketing
-        .card
-          .card-body
-            ul.sdr-list
-              each tool in data.tools
-                li
-                  .media.media-left
-                    a.thumbnail.thumbnail-small.thumbnail-rounded(href=tool.url, style='background-color:' + tool.color)!= tool.icon
-                    .media-body
-                      h2.entry-title        
-                        a(href=tool.url) #{tool.name}
-                      div #{tool.description}
+block toollist
+  +listtools(data.tools.all)

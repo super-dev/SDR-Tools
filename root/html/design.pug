@@ -1,0 +1,8 @@
+extends ./_layouts/_layout-main.pug
+
+block vars
+  - var title = 'Design Tools'
+  - var description = 'Free Design Tools for Web and App Developers by Super Dev Resources Team'
+
+block toollist
+   +listtools(data.tools.design, 'design')

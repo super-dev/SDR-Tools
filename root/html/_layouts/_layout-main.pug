@@ -1,5 +1,18 @@
 extends ./../../../common/_layouts/_layout.pug
 
+mixin listtools(tools, category)
+  if tools.length
+    each tool in tools
+      li
+        .media.media-left
+          a.thumbnail.thumbnail-small.thumbnail-rounded(href=tool.url, style='background-color:' + tool.color)!= tool.icon
+          .media-body
+            h2.entry-title        
+              a(href=tool.url) #{tool.name}
+            div #{tool.description}
+  else
+    p Our code monkeys are busy working on adding <strong>#{category}</strong> tools. Pleae check back later..
+
 block header_center
   +menu(data.menu.main, 'hidden-mobile')
 
@@ -14,3 +27,23 @@ block header_right
       li.menu-item
         a(href='https://github.com/super-dev/', target="_blank", title="Github")
           | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
+
+
+block content
+  div.main
+    div.container-readable
+      div.sdr-submenu.section
+        a.button(href="/" class=(page.path === '/') ? 'button-primary' : 'button-ghost') All
+        a.button(href="/design" class=(page.path === '/design') ? 'button-primary' : 'button-ghost')
+          include ./../_includes/icons/_brush.svg              
+          | Design
+        a.button(href="/development" class=(page.path === '/development') ? 'button-primary' : 'button-ghost')
+          include ./../_includes/icons/_code.svg              
+          | Development
+        a.button(href="/marketing" class=(page.path === '/marketing') ? 'button-primary' : 'button-ghost')
+          include ./../_includes/icons/_bullhorn.svg              
+          | Marketing
+      .card.animated.fadeIn
+        .card-body
+          ul.sdr-list
+            block toollist

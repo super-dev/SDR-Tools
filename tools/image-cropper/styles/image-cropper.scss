@@ -26,3 +26,7 @@ input[type="radio"] {
 .card form {
   margin-top: 0;
 }
+
+button + button {
+  margin-left: 6px;
+}
