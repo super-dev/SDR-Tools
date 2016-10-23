@@ -4,5 +4,12 @@ branches:
 language: node_js
 node_js:
 - '6'
+before_script:
+- git remote set-url origin "https://${GH_TOKEN}@github.com/super-dev/SDR-Tools.git"
+- git config --global user.email "kanishk.kunal@hotmail.com"
+- git config --global user.name "Travis-CI"
 script:
-- npm run build
+- npm run deploy
+env:
+  global:
+    secure: N/RMWDXxrfz/MvfjVEfsFxLtW3mzBEAquaQApXbxN4n1qiRR2vg5P1TAoaC2RWaB284in8qqqYcxqK3VCQfKggnukSM1DaLiHfQxNORlHPs66YDEDqJDenYBt7pmsD9HL/lBGEWaHqqEy6S6ceIBQAh1tx9V1VmtajCXb75JJxDFkm9GSJ+hSdnHHz8iDLgqjN+njjj8p7bCeeFmCqvq4Jt2A+FgY/kmfFeNWSuMWax+SRnS9hVVqaQL46xO+4pZyETB9RilWwbn7drjS3Exx8QVi+qEYgVKgbaj5TgpRK8RDXHv6/FPtIr4+DrmMzZejGJTgj+GMItP7vfI79P0r3khAQX1Me4fNH/fCJ+o0PfR5AlSCnURQZVrRAIOUFh8XDIdNvXK4dATcrIe6AFuVa2IsXpqwPQfDjX4fnBzqOxOYzIYMz0beAUzM00piSYvmiNsOmsaPDa64yMjvW07rtlE+Ma21thf+CENHY859JDFNDzQa1vt7gmV/DMaNm7F3QCznrYXgAqIvkEPPzMzjOR2LL9kvKqNzayvY6OiIo7YoWaCr1wcl53ytONS4oktJwbiGeNu9a+DAKtbF44IrzzE8svESdru9oFjdGY1Q7DXW+RcJFTH903VsgLmxFL1OxdKJmsTPEQQzrDThVYjzExejU3NcrR5ngmR1TRc9BU=
