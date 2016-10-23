@@ -14,7 +14,8 @@ mixin listtools(tools, category)
     p Our code monkeys are busy working on adding <strong>#{category}</strong> tools. Pleae check back later..
 
 block header_center
-  +menu(data.menu.main, 'hidden-mobile')
+  .hidden-mobile
+    +menu(data.menu.main)
 
 block header_right
   nav
