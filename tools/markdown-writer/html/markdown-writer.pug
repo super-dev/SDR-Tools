@@ -1,0 +1,20 @@
+extends ./../../../common/_layouts/_layout-tools.pug
+
+block vars
+  - var title = 'Markdown Writer Online'
+  - var description = 'Online Markdown Editor for writing markdown with real-time preview. Saves to your browser cache.'
+
+block styles
+  link(href='styles/markdown-writer.css', rel='stylesheet')
+
+block pagetitle
+  span Markdown Writer
+  div#editor
+    textarea(:value="input", @input="update")
+    div(v-html="compiledMarkdown")
+
+block scripts
+  script(src='https://unpkg.com/marked@0.3.6')
+  script(src='https://unpkg.com/lodash@4.16.0')
+  script(src='https://unpkg.com/vue@latest/dist/vue.js')
+  script(src='scripts/markdown-writer.js')

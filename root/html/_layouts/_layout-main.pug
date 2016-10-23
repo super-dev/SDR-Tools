@@ -9,7 +9,7 @@ mixin listtools(tools, category)
           .media-body
             h2.entry-title        
               a(href=tool.url) #{tool.name}
-            div #{tool.description}
+            div.entry-content #{tool.description}
   else
     p Our code monkeys are busy working on adding <strong>#{category}</strong> tools. Pleae check back later..
 

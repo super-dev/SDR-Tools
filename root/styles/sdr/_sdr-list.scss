@@ -5,13 +5,17 @@ ul.sdr-list {
   min-height: 400px;
 
   li {
-    margin: 0.5em 0;
+    margin: 0.5em 0 30px;
   }
 
   .entry-title {
     font-size: 21px;
     margin-top: 0;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
+  }
+
+  .entry-content {
+    color: lighten($color-text, 20);
   }
 }
 

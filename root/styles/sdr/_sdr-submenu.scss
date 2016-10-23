@@ -12,6 +12,6 @@
 
   .button-ghost {
     background-color: #fff;
-    color: #555;
+    color: lighten($color-text, 10);
   }
 }
