@@ -2,6 +2,7 @@ clean: ['../../public/image-cropper']
 
 html:
   dest: '../../public'
+  sitemap: ''
 
 assets:  
   dest: '../../public/image-cropper'

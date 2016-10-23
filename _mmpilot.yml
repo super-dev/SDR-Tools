@@ -2,6 +2,7 @@ clean: ['public']
 
 html:
   src:  'root/html'
+  sitemap: '' #sitemap doesn't work correctly yet with nested mmpilot project's
 
 assets:
   src:  'root/assets'

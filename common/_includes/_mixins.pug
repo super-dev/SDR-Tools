@@ -23,8 +23,11 @@ mixin social(list)
 
 mixin adlinks1(adclass)
   div(class=adclass)
-    script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
-    // SDR-Tools-Link-Sidebar1
-    ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-2882870425816773', data-ad-slot='2894108933', data-ad-format='link')
-    script.
-      (adsbygoogle = window.adsbygoogle || []).push({});
+    if env == 'development'
+      .label.label-ghost Google Ad
+    else
+      script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+      // SDR-Tools-Link-Sidebar1
+      ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-2882870425816773', data-ad-slot='2894108933', data-ad-format='link')
+      script.
+        (adsbygoogle = window.adsbygoogle || []).push({});
