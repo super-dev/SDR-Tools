@@ -17,3 +17,5 @@ Free Tools for Web and App Developers by Super Dev Resources Team
 ## License
 
 Licensed under the MIT License
+
+Please do not replicate entire site without permission as it contains our ad and analytics code among other things that you may not want in your site. You are free to use code from individual tools and integrate it in your own site.
