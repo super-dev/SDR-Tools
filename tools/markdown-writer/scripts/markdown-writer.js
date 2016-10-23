@@ -1,7 +1,7 @@
 new Vue({
   el: '#editor',
   data: {
-    input: '# hello'
+    input: '# Markdown Writer\n\nWelcome to SDR Markdown Writer.\n\nYou can refer to [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for writing markdown.'
   },
   computed: {
     compiledMarkdown: function () {

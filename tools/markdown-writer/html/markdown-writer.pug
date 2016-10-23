@@ -11,9 +11,10 @@ block pagetitle
   span.hidden-mobile Markdown Writer
 
 block content
-  div#editor
-    textarea(:value="input", @input="update")
-    div(v-html="compiledMarkdown")
+  .editor-container
+    #editor
+      textarea(:value="input", @input="update")
+      div.editor-out(v-html="compiledMarkdown")
 
 block scripts
   script(src='https://unpkg.com/marked@0.3.6')

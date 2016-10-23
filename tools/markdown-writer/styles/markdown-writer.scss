@@ -1,30 +1,61 @@
-html, body, #editor {
+html, body {
   margin: 0;
   height: 100%;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
 }
 
-textarea, #editor div {
-  display: inline-block;
-  width: 49%;
+.editor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 52px;
+  margin: 0;
   height: 100%;
+  width: 100%;
+}
+
+#editor {
+  margin: 0;
+  height: 100%;
+}
+
+#editor h1:first-child {
+  margin-top: 20px;
+}
+
+textarea,
+.editor-out {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  margin: 0;
   vertical-align: top;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0 20px;
+  border-radius: 0;
+  overflow-y: auto;
 }
 
 textarea {
-  border: none;
-  border-right: 1px solid #ccc;
   resize: none;
   outline: none;
-  background-color: #f6f6f6;
+  float: left;
+  background-color: #fafafa;
   font-size: 14px;
   font-family: 'Monaco', courier, monospace;
-  padding: 20px;
+  padding: 20px 20px 60px;
+}
+
+textarea, textarea:focus {
+  border: none;
+  border-right: 1px solid #eee;
+}
+
+.editor-out {
+  float: right;
+  font-size: 14px;
+  background: #fff;
+  padding: 0 20px 60px;
 }
 
 code {
