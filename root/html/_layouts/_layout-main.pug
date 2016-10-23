@@ -1,17 +1,7 @@
 extends ./../../../common/_layouts/_layout.pug
 
-mixin listtools(tools, category)
-  if tools.length
-    each tool in tools
-      li
-        .media.media-left
-          a.thumbnail.thumbnail-small.thumbnail-rounded(href=tool.url, style='background-color:' + tool.color)!= tool.icon
-          .media-body
-            h2.entry-title        
-              a(href=tool.url) #{tool.name}
-            div.entry-content #{tool.description}
-  else
-    p Our code monkeys are busy working on adding <strong>#{category}</strong> tools. Pleae check back later..
+block title
+  h1.title.screen-reader-text #{title}
 
 block header_center
   .hidden-mobile
@@ -29,6 +19,19 @@ block header_right
         a(href='https://github.com/super-dev/', target="_blank", title="Github")
           | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
 
+
+mixin listtools(tools, category)
+  if tools.length
+    each tool in tools
+      li
+        .media.media-left
+          a.thumbnail.thumbnail-small.thumbnail-rounded(href=tool.url, style='background-color:' + tool.color)!= tool.icon
+          .media-body
+            h2.entry-title        
+              a(href=tool.url) #{tool.name}
+            div.entry-content #{tool.description}
+  else
+    p Our code monkeys are busy working on adding <strong>#{category}</strong> tools. Pleae check back later..
 
 block content
   div.main
@@ -50,3 +53,16 @@ block content
             block toollist
       .card
         +adlinks1('card-body text-center')
+  footer.footer
+    .container-readable.section.text-center
+      a(href='https://superdevresources.com/')
+        img.footer-logo(src="/img/sdr-logo.png")
+      div Super Dev Resources is a popular destination for finding
+        br
+        | awesome free app and web development resources. <a class="text-small" href="https://superdevresources.com/about/">Learn More</a>
+      +social(data.menu.social)
+      .section
+        +menu(data.menu.footer)
+        p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
+          br
+          | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a>.

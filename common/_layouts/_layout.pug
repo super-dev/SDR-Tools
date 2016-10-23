@@ -25,26 +25,13 @@ html(lang='en-US')
     include ./../_includes/icons/_icons.svg
     header.header
         .container
-            .header-left
-              a(href='https://superdevresources.com/').site-branding
-                img(src="/img/sdr-logo.png")
-                h1.title.screen-reader-text SDR News
-            block header_center
-            div.header-right.hidden-mobile
-              block header_right
+          .header-left
+            a(href='https://superdevresources.com/').site-branding
+              img(src="/img/sdr-logo.png")
+            block title
+          block header_center
+          div.header-right.hidden-mobile
+            block header_right
     block content
-    footer.footer
-      .container-readable.section.text-center
-        a(href='https://superdevresources.com/')
-          img.footer-logo(src="/img/sdr-logo.png")
-        div Super Dev Resources is a popular destination for finding
-          br
-          | awesome free app and web development resources. <a class="text-small" href="https://superdevresources.com/about/">Learn More</a>
-        +social(data.menu.social)
-        .section
-          +menu(data.menu.footer)
-          p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
-            br
-            | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a>.
   include ./../_includes/_analytics.pug
   block scripts

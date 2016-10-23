@@ -9,8 +9,8 @@
 
 - name: "Markdown Writer"
   path: "markdown-writer"
-  description: "Online Markdown editor with real-time preview. Saves to your browser cache."
-  category: "development"
+  description: "Online Markdown editor with real-time preview."
+  category: "marketing"
   author: "SDR"
   authorurl: "https://superdevresources.com/"
   color: "#8BC34A"

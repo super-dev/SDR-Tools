@@ -2,13 +2,15 @@ extends ./../../../common/_layouts/_layout-tools.pug
 
 block vars
   - var title = 'Markdown Writer Online'
-  - var description = 'Online Markdown Editor for writing markdown with real-time preview. Saves to your browser cache.'
+  - var description = 'Online Markdown Editor for writing markdown with real-time preview.'
 
 block styles
   link(href='styles/markdown-writer.css', rel='stylesheet')
 
 block pagetitle
-  span Markdown Writer
+  span.hidden-mobile Markdown Writer
+
+block content
   div#editor
     textarea(:value="input", @input="update")
     div(v-html="compiledMarkdown")
