@@ -43,6 +43,10 @@ body {
   width: auto;
 }
 
+ins {
+  background: transparent;
+}
+
 @media (max-width: $size-small-screen) {
   .header-left {
     position: relative;

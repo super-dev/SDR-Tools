@@ -19,3 +19,12 @@ mixin social(list)
   each item in list
     a.button.button-text(href=item.url, target="_blank", title=item.title)
       | <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
+
+
+mixin adlinks1(adclass)
+  div(class=adclass)
+    script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+    // SDR-Tools-Link-Sidebar1
+    ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-2882870425816773', data-ad-slot='2894108933', data-ad-format='link')
+    script.
+      (adsbygoogle = window.adsbygoogle || []).push({});
