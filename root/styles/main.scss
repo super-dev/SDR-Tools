@@ -1,1 +1,17 @@
 @import "sdr/sdr";
+
+.header-right {
+  width: 600px;
+  
+  .ad-container {
+    width: 478px;
+  }
+}
+
+.header-right-elem {
+  display: inline-block;
+}
+
+.header-right-elem + .header-right-elem {
+  margin-left: 24px;
+}
