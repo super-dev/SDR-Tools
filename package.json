@@ -9,7 +9,7 @@
     "dev-build": "node mmpilot-wrapper.js build -d",
     "dev-watch": "node mmpilot-wrapper.js watch -d",
     "dev": "npm-run-all clean dev-build --parallel dev-watch serve",
-    "deploy": "npm run clean && npm run build && node firebase deploy"
+    "deploy": "npm run clean && npm run build && node mmpilot-wrapper.js deploy"
   },
   "repository": {
     "type": "git",
