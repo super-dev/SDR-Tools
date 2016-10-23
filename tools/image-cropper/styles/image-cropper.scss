@@ -1,5 +1,5 @@
 .canvas-container {
-  margin-bottom: $size-element-spacing;
+  margin-bottom: 60px;
   text-align: center;
   font-size:0;
   padding: 0;
@@ -10,7 +10,7 @@
   background-image: url("../img/canvas-drop.png");
   border: 1px solid #eee;
   min-width: 300px;
-  max-width: 800px;
+  max-width: 1600px;
   min-height: 300px;
   text-align: center;
   font-size:0;
@@ -21,4 +21,8 @@
 
 input[type="radio"] {
   margin-left: 6px;
+}
+
+.card form {
+  margin-top: 0;
 }
