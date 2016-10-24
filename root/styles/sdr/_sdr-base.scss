@@ -1,19 +1,17 @@
-body {
-  background-color: #fafafa;
-}
-
 .site-branding img {
   padding: 0;
 }
 
 .header {
+  border: none;
+
   .menu {
     font-size: 82%;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
 
-  .button-ghost {
+  .button {
     padding: 0 0.5em;
     margin-left: 0.5em;
     line-height: 2.1;

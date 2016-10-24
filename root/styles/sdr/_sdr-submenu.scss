@@ -1,6 +1,6 @@
 .sdr-submenu {
   .button {
-    margin-right: 0.5em;
+    margin-right: 0.7em;
     font-size: 80%;
     padding: 0 1em;
     line-height: 2.2;
@@ -13,5 +13,6 @@
   .button-ghost {
     background-color: #fff;
     color: lighten($color-text, 10);
+    border-color: #fff;
   }
 }

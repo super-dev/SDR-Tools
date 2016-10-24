@@ -20,7 +20,7 @@ block content
             img#myimage
         .container-readable
           .card
-            h2.h4.card-title Instructions
+            h2.h3.card-title Instructions
             .card-body
               ul.divider
                 li Drag and drop image from your local system to the canvas above
@@ -32,12 +32,12 @@ block content
                 li We do not store your images as everything is done client side.
     #sidebar
         .card
-          h3.h5.card-title Image Dimesions
+          h3.h4.card-title Image Dimesions
           .card-body
             div Height: <span id="img-height">0</span>px<br>Width: <span id="img-width">0</span>px
             button#select-all.button-ghost(type='button') Select All
         .card
-          h3.h5.card-title Aspect Ratio
+          h3.h4.card-title Aspect Ratio
           .card-body
             form(name='aspectform')
               input(type='radio', name='aspectratio', value='Free', checked='')
@@ -47,12 +47,12 @@ block content
               input(type='radio', name='aspectratio', value='4:3')
               |  4:3
         .card
-          h3.h5.card-title Download
+          h3.h4.card-title Download
           .card-body
             button#jpg-download(type='button', class='button-primary') JPG
             button#png-download(type='button', class='button-primary') PNG
         .card
-          h3.h5.card-title Credits
+          h3.h4.card-title Credits
           .card-body
             ul.divider
               li
