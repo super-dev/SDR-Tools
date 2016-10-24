@@ -119,16 +119,22 @@ function select_all() {
 function download_jpg() {
 	if(cropper != null) {
 		var canv = cropper.getCroppedCanvas();
-    download(canv.toDataURL("image/jpeg", 0.9), getFileName(cropper) + ".jpg", "image/jpeg");
-		// window.open(canv.toDataURL("image/jpeg", 0.9));
+    if (Modernizr.adownload) {
+      download(canv.toDataURL("image/jpeg", 0.9), getFileName(cropper) + ".jpg", "image/jpeg");
+    } else {
+      window.open(canv.toDataURL("image/jpeg", 0.9));
+    }
 	}
 }
 
 function download_png() {
 	if(cropper != null) {
 		var canv = cropper.getCroppedCanvas();
-    download(canv.toDataURL(), getFileName(cropper) + ".png", "image/png");
-		// window.open(canv.toDataURL());
+    if (Modernizr.adownload) {
+      download(canv.toDataURL(), getFileName(cropper) + ".png", "image/png");
+    } else {
+		  window.open(canv.toDataURL());
+    }
 	}
 }
 

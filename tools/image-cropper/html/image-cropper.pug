@@ -30,8 +30,9 @@ block content
                     li Drag and drop image from your local system to the canvas above
                     li Use the Aspect Ratio options to choose aspect ratio of Crop Tool
                     li You can increase the Crop Tool size by dragging the corners and edges
-                    li Move the crop tool by holding the mouse button over it and dragging
+                    li Move the crop tool by holding the mouse button over it and dragging                    
                     li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
+                    li If the cropped image opens in a new tab, instead of downloading, right click and do "Save As" to save the cropped image.
                     li We do not store your images as everything is done client side.
       #sidebar
         .card
@@ -70,4 +71,5 @@ block content
 block scripts
   script(src='https://unpkg.com/cropperjs@0.8.1/dist/cropper.min.js')
   script(src='https://unpkg.com/downloadjs@1.4.6/download.min.js')
+  script(src='scripts/modernizer-adownload.js')
   script(src='scripts/image-cropper.js')
