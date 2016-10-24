@@ -2,8 +2,6 @@
   path: "image-cropper"
   description: "Online tool for cropping images. Download cropped image in JPG or PNG format."
   category: "design"
-  author: "SDR"
-  authorurl: "https://superdevresources.com/"
   color: "#607D8B"
   icon: "icon.svg"
 
@@ -11,7 +9,12 @@
   path: "markdown-writer"
   description: "Online Markdown editor with real-time preview."
   category: "marketing"
-  author: "SDR"
-  authorurl: "https://superdevresources.com/"
   color: "#8BC34A"
+  icon: "icon.svg"
+
+- name: "Image to Base64"
+  path: "base64-image"
+  description: "Convert Image to base64 string online for use in HTML &lt;img&gt; tag and in CSS files as data URI."
+  category: "development"
+  color: "#f06292"
   icon: "icon.svg"

@@ -30,8 +30,10 @@ mixin listtools(tools, category)
             h2.entry-title        
               a(href=tool.url) #{tool.name}
             div.entry-content #{tool.description}
-  else
-    p Our code monkeys are busy working on adding <strong>#{category}</strong> tools. Pleae check back later..
+  if tools.length == 0
+    p.text-center Our code monkeys are working on adding <strong>#{category}</strong> tools. Please check back later..
+  else if tools.length < 3
+    p.section-large.text-center.text-muted.text-small Our code monkeys are working on adding more <strong>#{category}</strong> tools.<br>If you have a suggestion, please don't hesitate to <a href="https://superdevresources.com/contact/">contact</a>.
 
 block content
   div.main

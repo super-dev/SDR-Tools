@@ -1,0 +1,27 @@
+clean: ['../../public/base64-image']
+
+html:
+  dest: '../../public'
+  sitemap: ''
+
+assets:  
+  dest: '../../public/base64-image'
+
+styles:  
+  dest: '../../public/base64-image/styles'
+
+scripts:  
+  dest: '../../public/base64-image/scripts'
+
+data: '../../common/data'
+
+## additional data for site available as site.{key} in pug templates
+site:
+  url: "https://tools.superdevresources.com/"
+  analytics: "UA-37350394-3"
+
+## overrides when built with -d or --development option
+development:
+  site:
+    url: "http://localhost:3000/"
+    analytics: "" #don't count hits from localhost in analytics
