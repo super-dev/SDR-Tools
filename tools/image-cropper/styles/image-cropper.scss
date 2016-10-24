@@ -11,6 +11,7 @@
 }
 
 #click-target {
+  position: relative;
   display: inline-block;
   border: 3px dashed #999;
   width: 100%;
@@ -21,9 +22,30 @@
   font-weight: bold;
 
   #load-prompt {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
     padding-top: 212px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
   }
+
+  &:hover {
+    background: #fafafa;
+  }
+}
+
+#fileUpload {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    z-index: 999;
+    cursor: pointer;
 }
 
 

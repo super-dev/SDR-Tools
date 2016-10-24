@@ -1,17 +1,21 @@
 /** Image Cropper Logic **/
 var cropper = null;
 
-document.getElementById("select-all").addEventListener('click', select_all);
+function el(id){return document.getElementById(id);} // Get elem by ID
 
-document.getElementById("jpg-download").addEventListener('click', download_jpg);
-document.getElementById("png-download").addEventListener('click', download_png);
+el("select-all").addEventListener('click', select_all);
 
-var target = document.getElementById("drop-target");
+el("jpg-download").addEventListener('click', download_jpg);
+el("png-download").addEventListener('click', download_png);
+
+var target = el("drop-target");
 target.addEventListener("dragover", function(e){e.preventDefault();}, true);
 target.addEventListener("drop", function(e){
 	e.preventDefault();
 	loadImage(e.dataTransfer.files[0]);
 }, true);
+
+el("fileUpload").addEventListener("change", readImage, false);
 
 var rad = document.aspectform.aspectratio;
 for(var i = 0; i < rad.length; i++) {
@@ -34,13 +38,20 @@ for(var i = 0; i < rad.length; i++) {
     };
 }
 
+// Read image from input field
+function readImage() {
+    if ( this.files && this.files[0] ) {
+        loadImage(this.files[0]);
+    }
+}
+
 function loadImage(src){
 	//	Prevent any non-image file type from being read.
 	if(!src.type.match(/image.*/)){
 		alert("The dropped file is not an image: ", src.type);
 		return;
 	}
-  document.getElementById("load-prompt").innerHTML = "Loading...";
+  el("load-prompt").innerHTML = "Loading...";
 
 	//	Create our FileReader and run the results through the render function.
 	var reader = new FileReader();
@@ -50,10 +61,10 @@ function loadImage(src){
 	reader.readAsDataURL(src);
 }
 function render(src){
-	var image =   document.getElementById("myimage");
+	var image =   el("myimage");
 	image.onload = function(){
     // hide click target
-    document.getElementById("click-target").style.display = 'none';
+    el("click-target").style.display = 'none';
 
 		var scale = 1;
 		if(image.naturalWidth > 800) {
@@ -61,7 +72,7 @@ function render(src){
 			image.width = 800;
 		}
 
-    cropper = new Cropper(document.getElementById('myimage'), {
+    cropper = new Cropper(el('myimage'), {
 			zoomOnWheel: false,
 			built: function() {
 				this.cropper.scaleX(scale);
@@ -70,8 +81,8 @@ function render(src){
 				free_mode_data(this.cropper);
 			},
       crop: function(data) {
-				document.getElementById('img-height').innerHTML = data.height;
-				document.getElementById('img-width').innerHTML = data.width;
+				el('img-height').innerHTML = data.height;
+				el('img-width').innerHTML = data.width;
       }
     });
 	};
