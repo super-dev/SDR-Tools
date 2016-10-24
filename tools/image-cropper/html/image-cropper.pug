@@ -12,25 +12,28 @@ block pagetitle
   span.hidden-mobile Image Cropper
 
 block content
-  #wrapper.container.section
-    #content-wrapper
-      #content
-        .canvas-container
-          #drop-target
-            img#myimage
-        .container-readable
-          .card
-            h2.h3.card-title Instructions
-            .card-body
-              ul.divider
-                li Drag and drop image from your local system to the canvas above
-                li Use the Aspect Ratio options to choose aspect ratio of Crop Tool
-                li You can increase the Crop Tool size by dragging the corners and edges
-                li Move the crop tool by holding the mouse button over it and dragging
-                li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
-                li Cropped image will open in a new tab of your browser. Right click and do "Save As" to save the cropped image.
-                li We do not store your images as everything is done client side.
-    #sidebar
+  #drop-target
+    #wrapper.container.section
+      #content-wrapper
+        #content
+          .container-readable
+            #click-target
+              #load-prompt Drag and Drop image anywhere or Click here
+            .canvas-container
+              img#myimage
+            .section
+              .card
+                h2.h3.card-title Instructions
+                .card-body
+                  ul.divider
+                    li Drag and drop image from your local system to the canvas above
+                    li Use the Aspect Ratio options to choose aspect ratio of Crop Tool
+                    li You can increase the Crop Tool size by dragging the corners and edges
+                    li Move the crop tool by holding the mouse button over it and dragging
+                    li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
+                    li Cropped image will open in a new tab of your browser. Right click and do "Save As" to save the cropped image.
+                    li We do not store your images as everything is done client side.
+      #sidebar
         .card
           h3.h4.card-title Image Dimesions
           .card-body

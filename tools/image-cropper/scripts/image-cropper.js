@@ -40,6 +40,7 @@ function loadImage(src){
 		alert("The dropped file is not an image: ", src.type);
 		return;
 	}
+  document.getElementById("load-prompt").innerHTML = "Loading...";
 
 	//	Create our FileReader and run the results through the render function.
 	var reader = new FileReader();
@@ -51,6 +52,9 @@ function loadImage(src){
 function render(src){
 	var image =   document.getElementById("myimage");
 	image.onload = function(){
+    // hide click target
+    document.getElementById("click-target").style.display = 'none';
+
 		var scale = 1;
 		if(image.naturalWidth > 800) {
 			scale = 800.0/image.naturalWidth;
