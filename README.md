@@ -16,6 +16,6 @@ Free Tools for Web and App Developers by Super Dev Resources Team
 
 ## License
 
-Licensed under the MIT License
+License under [Creative Commons Attribution 3.0 Unported (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/)
 
-Please do not replicate entire site without permission as it contains our ad and analytics code among other things that you may not want in your site. You are free to use code from individual tools and integrate it in your own site.
+Please do not replicate this site without permission.
