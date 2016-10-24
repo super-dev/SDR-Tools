@@ -1,5 +1,6 @@
 /** Image Cropper Logic **/
 var cropper = null;
+var filename = "download";
 
 function el(id){return document.getElementById(id);} // Get elem by ID
 
@@ -53,6 +54,8 @@ function loadImage(src){
 	}
   el("load-prompt").innerHTML = "Loading...";
 
+  filename = src.name;
+
 	//	Create our FileReader and run the results through the render function.
 	var reader = new FileReader();
 	reader.onload = function(e){
@@ -66,23 +69,31 @@ function render(src){
     // hide click target
     el("click-target").style.display = 'none';
 
-		var scale = 1;
-		if(image.naturalWidth > 800) {
-			scale = 800.0/image.naturalWidth;
-			image.width = 800;
-		}
-
     cropper = new Cropper(el('myimage'), {
 			zoomOnWheel: false,
-			built: function() {
-				this.cropper.scaleX(scale);
-				this.cropper.scaleY(scale);
-				this.cropper.zoomTo(1);
+      viewMode: 1,
+      movable: false,
+      rotatable: false,
+			ready: function() {
+
+        var canvasData = this.cropper.getCanvasData();
+        var scale = 1;
+        if(image.naturalWidth > canvasData.width) {
+          scale = canvasData.width/image.naturalWidth;
+          image.width = canvasData.width;
+          this.cropper.scaleX(scale);
+          this.cropper.scaleY(scale);
+          this.cropper.zoomTo(1);
+        } else {
+          canvasData.width = image.width;
+          this.cropper.setCanvasData(canvasData);
+        }
+
 				free_mode_data(this.cropper);
 			},
       crop: function(data) {
-				el('img-height').innerHTML = data.height;
-				el('img-width').innerHTML = data.width;
+				el('img-height').innerHTML = data.detail.height;
+				el('img-width').innerHTML = data.detail.width;
       }
     });
 	};
@@ -108,13 +119,20 @@ function select_all() {
 function download_jpg() {
 	if(cropper != null) {
 		var canv = cropper.getCroppedCanvas();
-		window.open(canv.toDataURL("image/jpeg", 0.9));
+    download(canv.toDataURL("image/jpeg", 0.9), getFileName(cropper) + ".jpg", "image/jpeg");
+		// window.open(canv.toDataURL("image/jpeg", 0.9));
 	}
 }
 
 function download_png() {
 	if(cropper != null) {
 		var canv = cropper.getCroppedCanvas();
-		window.open(canv.toDataURL());
+    download(canv.toDataURL(), getFileName(cropper) + ".png", "image/png");
+		// window.open(canv.toDataURL());
 	}
+}
+
+function getFileName(cropper) {
+  var cropData = cropper.getCropBoxData();
+  return filename.split(".").slice(0, -1).join(".") + "-" + Math.round(cropData.width) + "x" + Math.round(cropData.height);
 }

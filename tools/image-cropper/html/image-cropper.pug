@@ -5,7 +5,7 @@ block vars
   - var description = 'Free Online Image Cropping Tool using HTML Canvas. Download cropped image in JPG or PNG format.'
 
 block styles
-  link(href='https://unpkg.com/cropperjs@0.5.6/dist/cropper.min.css', rel='stylesheet')  
+  link(href='https://unpkg.com/cropperjs@0.8.1/dist/cropper.min.css', rel='stylesheet')  
   link(href='styles/image-cropper.css', rel='stylesheet')
 
 block pagetitle
@@ -32,13 +32,12 @@ block content
                     li You can increase the Crop Tool size by dragging the corners and edges
                     li Move the crop tool by holding the mouse button over it and dragging
                     li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
-                    li Cropped image will open in a new tab of your browser. Right click and do "Save As" to save the cropped image.
                     li We do not store your images as everything is done client side.
       #sidebar
         .card
           h3.h4.card-title Image Dimesions
           .card-body
-            div Height: <span id="img-height">0</span>px<br>Width: <span id="img-width">0</span>px
+            div Width: <span id="img-width">0</span>px<br>Height: <span id="img-height">0</span>px
             button#select-all.button-ghost(type='button') Select All
         .card
           h3.h4.card-title Aspect Ratio
@@ -63,8 +62,12 @@ block content
                 a(href='https://github.com/fengyuanchen/cropperjs', target='_blank') CropperJS
                 |  - JavaScript image cropper
               li
+                a(href='https://github.com/rndme/download', target='_blank') download.js
+                |  - Client-side file downloading using JS and HTML5 by dandavis
+              li
                 a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
                 |  - A minimal modern CSS framework for building beautiful websites
 block scripts
-  script(src='https://unpkg.com/cropperjs@0.5.6/dist/cropper.min.js')
+  script(src='https://unpkg.com/cropperjs@0.8.1/dist/cropper.min.js')
+  script(src='https://unpkg.com/downloadjs@1.4.6/download.min.js')
   script(src='scripts/image-cropper.js')
