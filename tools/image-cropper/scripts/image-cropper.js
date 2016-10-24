@@ -92,8 +92,8 @@ function render(src){
 				free_mode_data(this.cropper);
 			},
       crop: function(data) {
-				el('img-height').innerHTML = data.detail.height;
-				el('img-width').innerHTML = data.detail.width;
+				el('img-height').innerHTML = Math.round(data.detail.height);
+				el('img-width').innerHTML = Math.round(data.detail.width);
       }
     });
 	};
