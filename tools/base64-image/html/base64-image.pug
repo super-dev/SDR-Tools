@@ -2,7 +2,7 @@ extends ./../../../common/_layouts/_layout-tools.pug
 
 block vars
   - var title = 'Image to Base64 Encoder'
-  - var description = 'Convert Image to base64 string online for use in HTML img tag and in CSS files as data URI.'
+  - var description = 'Convert image (jpg, png, svg) to base64 string online for use in HTML img tag and in CSS files as data URI.'
 
 block styles
   link(href='styles/base64-image.css', rel='stylesheet')
@@ -23,18 +23,19 @@ block content
         #load-prompt Drag and Drop image anywhere or Click here
       #canvas-container
         canvas#canvas
-      .section
+      .section-medium
         .card
-          h2.h3.card-title Instructions
+          h2.h3.card-title How to Convert Image to Base64?
           .card-body
             ul.divider
-              li Drag and drop image from your local system to the canvas above
-              li Use the Aspect Ratio options to choose aspect ratio of Crop Tool
-              li You can increase the Crop Tool size by dragging the corners and edges
-              li Move the crop tool by holding the mouse button over it and dragging                    
-              li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality)
-              li If the cropped image opens in a new tab, instead of downloading, right click and do "Save As" to save the cropped image.
-              li We do not store your images as everything is done client side.
+              li Drag and drop image from your local system to the canvas above for converting to Base64
+              li Resulting <a href="https://en.wikipedia.org/wiki/Base64">Base64</a> string will appear above once the image is loaded
+              li Base64 encoding is done as data:image/png for png images
+              li For all other image types such as .jpg, .ico, .svg, .gif, .bpm etc. encoding is done as data:image/jpeg
+              li It is recommended to convert only small size images to Base64 string
+              li Note that Internet Explorer 8 has a limit of 32 KB for <a href="http://en.wikipedia.org/wiki/Data_URI_scheme">data URI</a>. Earlier versions have no support for it.
+              li If you need to crop the image before converting then use the <a href="https://tools.superdevresources.com/image-cropper/">Image Cropper</a>
+              li We do not store any of your images as everything is done client side.
 
 block scripts
   script(src='scripts/base64-image.js')
