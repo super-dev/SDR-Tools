@@ -14,7 +14,7 @@
 
 - name: "Image to Base64"
   path: "base64-image"
-  description: "Convert Image to base64 string online for use in HTML &lt;img&gt; tag and in CSS files as data URI."
+  description: "Convert Image to base64 string online for use in HTML img tag and in CSS files as data URI."
   category: "development"
   color: "#f06292"
   icon: "icon.svg"
