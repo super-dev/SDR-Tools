@@ -1,0 +1,43 @@
+#color-container {
+  position: relative;
+  width: 100%;
+
+  #user-input {
+    margin-right: 120px;
+    clear: both;
+    overflow: auto;
+  }
+
+  #color-preview {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -20px;
+    right: 0;
+    overflow: hidden;
+    background-color: #fafafa;
+    border-radius: 5px;
+  }
+}
+
+input#color {
+  width: 100%;
+  margin: 0;
+  font-size: 125%;
+  line-height: 1.5;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  border-radius: 5px;
+}
+
+#color-shades li {
+  display: inline-block;
+  width: 10%;
+  height: 100px;
+
+  .color-shade {
+    width: 100%;
+    height: 100%;
+  }
+}

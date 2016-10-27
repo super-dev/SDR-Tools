@@ -1,0 +1,48 @@
+extends ./../../../common/_layouts/_layout-tools.pug
+
+block vars
+  - var title = 'Color Shades Generator'
+  - var description = 'Generate shades of a color online. Enter color in rgb, hex or hsl and get different shades of the color.'
+
+block styles
+  link(href='styles/color-shades.css', rel='stylesheet')
+
+block pagetitle
+  span.hidden-mobile Color Shades
+
+block content
+  .container-content
+    #app
+      .section-medium
+        .card
+          h2.h3.card-title Enter Color
+          .card-body.clearfix
+            #color-container
+              #user-input
+                input#color(type=text, v-model="color")
+                p.text-muted Example: #ffbb00 or rgb(244, 244, 244) or rgba(55, 55, 55, 0.2)
+              #color-preview(:style="previewStyle")
+      .card(v-if="color.length > 0").animated.fadeIn
+        h2.h3.card-title Color Shades
+        .card-body
+          ul#color-shades
+            li(v-for="shade in shadesMonochrome")
+              div.color-shade(:style="shade")
+    .section-medium
+      .card
+        h2.h3.card-title How to generate shades of a color?
+        .card-body
+          ul.divider
+            li Drag and drop image from your local system to the canvas above for converting to Base64.
+            li Resulting <a href="https://en.wikipedia.org/wiki/Base64">Base64</a> string will appear above once the image is loaded.
+            li Base64 encoding is done as data:image/png for png images.
+            li For all other image types such as .jpg, .ico, .svg, .gif, .bpm etc. encoding is done as data:image/jpeg.
+            li It is recommended to convert only small size images to Base64 string.
+            li Note that Internet Explorer 8 has a limit of 32 KB for <a href="http://en.wikipedia.org/wiki/Data_URI_scheme">data URI</a>. Earlier versions have no support for it.
+            li If you need to crop the image before converting then use the <a href="https://tools.superdevresources.com/image-cropper/">Image Cropper</a>.
+            li We do not store any of your images as everything is done client side.
+    
+block scripts
+  script(src='https://unpkg.com/vue@2.0.3/dist/vue.js')
+  script(src='https://unpkg.com/tinycolor2@1.4.1')
+  script(src='scripts/color-shades.js')
