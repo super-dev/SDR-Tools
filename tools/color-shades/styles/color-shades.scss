@@ -1,3 +1,16 @@
+.color-preview {
+  width: 250px;
+  height: 250px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+input[type="text"] {
+  width: 100%;
+  margin: 0;
+}
+
 #color-container {
   position: relative;
   width: 100%;
@@ -8,21 +21,19 @@
     overflow: auto;
   }
 
-  #color-preview {
+  .color-preview {
+    position: absolute;
     position: absolute;
     width: 100px;
     height: 100px;
     top: -20px;
     right: 0;
+    margin: 0;
     overflow: hidden;
-    background-color: #fafafa;
-    border-radius: 5px;
   }
 }
 
 input#color {
-  width: 100%;
-  margin: 0;
   font-size: 125%;
   line-height: 1.5;
   padding: 6px 8px;
@@ -39,5 +50,11 @@ input#color {
   .color-shade {
     width: 100%;
     height: 100%;
+    cursor: pointer;
+    transition: all 0.05s ease-in;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }

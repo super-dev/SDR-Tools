@@ -1,16 +1,28 @@
 new Vue({
   el: '#app',
   data: {
-    color: '#fafafa'
+    color: '#fafafa',
+    selectedIndex: -1
   },
   computed: {
-    previewStyle: function () {
+    previewStyleIn: function () {
       var color = this.color
       if(this.color.length == 0) {
         color = "#fafafa"
       }
       
       return "background-color: " + tinycolor(color).toRgbString() + ";"
+    },
+    previewStyleOut: function () {
+      return this.shadesMonochrome[this.selectedIndex]
+    },
+    colorOut: function() {
+      var color = tinycolor(this.shadesMonochrome[this.selectedIndex])
+      return {
+        hex: color.toHexString(),
+        rgb:  color.toRgbString(),
+        hsl: color.toHslString()
+      }
     },
     shadesMonochrome: function() {
       var shades = []
