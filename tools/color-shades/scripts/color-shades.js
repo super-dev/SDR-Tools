@@ -37,5 +37,16 @@ new Vue({
       }
       return shades
     }
+  },
+  methods: {
+    copy: function(text) {
+      swal({
+        title: "Copied!",
+        text: "Copied to clipboard: <strong>" + text + "</strong>",
+        timer: 4000,
+        showConfirmButton: true,
+        html: true
+      });
+    }
   }
 })

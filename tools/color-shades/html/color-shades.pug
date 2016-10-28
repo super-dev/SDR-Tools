@@ -6,6 +6,7 @@ block vars
 
 block styles
   link(href='styles/color-shades.css', rel='stylesheet')
+  link(href='https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.css', rel='stylesheet')
 
 block pagetitle
   span.hidden-mobile Color Shades
@@ -31,17 +32,17 @@ block content
           p.text-small Select color and then click to copy value of desired type 
           div.section.grid
             .one-half
-              .color-preview(:style="previewStyleOut")
-            .one-half
               div
                 strong hex 
-                input(type="text", v-model="colorOut.hex", readonly="readonly")              
+                input(type="text", v-model="colorOut.hex", readonly="readonly", @click="copy(colorOut.hex)")              
               div
                 strong rgb
-                input(type="text", v-model="colorOut.rgb", readonly="readonly")              
+                input(type="text", v-model="colorOut.rgb", readonly="readonly", @click="copy(colorOut.rgb)")              
               div
                 strong hsl
-                input(type="text", v-model="colorOut.hsl", readonly="readonly")
+                input(type="text", v-model="colorOut.hsl", readonly="readonly", @click="copy(colorOut.hsl)")
+            .one-half
+              .color-preview(:style="previewStyleOut")
     .section-medium
       .card
         h2.h3.card-title How to generate shades of a color?
@@ -58,10 +59,20 @@ block content
           h3.h4 Credits
           p
             ul.divider
-              li Drag and drop image from your local system to the canvas above for converting to Base64.
-              li Resulting <a href="https://en.wikipedia.org/wiki/Base64">Base64</a> string will appear above once the image is loaded.
-              li Base64 encoding is done as data:image/png for png images.
+              li
+                a(href='http://vuejs.org/', target='_blank') vue.js
+                |  - The Progressive JavaScript Framework
+              li
+                a(href='https://github.com/bgrins/TinyColor', target='_blank') TinyColor
+                |  - Fast, small color manipulation and conversion for JavaScript
+              li
+                a(href='http://t4t5.github.io/sweetalert/', target='_blank') SweetAlert
+                |  - A beuatiful replacement for JavaScript's alert
+              li
+                a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
+                |  - A minimal modern CSS framework for building beautiful websites
 block scripts
   script(src='https://unpkg.com/vue@2.0.3/dist/vue.js')
-  script(src='https://unpkg.com/tinycolor2@1.4.1')
+  script(src='https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js')
+  script(src=' https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.min.js') 
   script(src='scripts/color-shades.js')
