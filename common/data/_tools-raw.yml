@@ -21,7 +21,7 @@
 
 - name: "Color Shades"
   path: "color-shades"
-  description: "Generate shades of a color. Enter color in rgb, hex or hsl and get different shades of the color."
+  description: "Generate shades of a color. Enter color in rgb, hex, hsl or hsv and get different shades of the color."
   category: "design"
   color: "#FFA726"
   icon: "icon.svg"
