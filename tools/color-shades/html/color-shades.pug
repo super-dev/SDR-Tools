@@ -16,33 +16,34 @@ block content
     #app
       .section-medium
         .card
-          h2.h3.card-title Enter Color
+          h2.h4.card-title Enter Color
           .card-body.clearfix
             #color-container
               #user-input
                 input#color(type="text", v-model="color")
-                p.text-small.text-muted Example: #ffbb00 or rgb(244, 244, 244) or rgba(55, 55, 55, 0.2) or gray
+                p.text-small.text-muted Example: #ffbb00 or rgb(244, 244, 244) or gray or <button class="button-ghost" @click='random'>Random</button>
               .color-preview(:style="previewStyleIn")
       .card(v-if="color.length > 0").animated.fadeIn
-        h2.h3.card-title Color Shades
+        h2.h4.card-title Color Shades
         .card-body
           ul#color-shades
             li(v-for="(shade, index) in shadesMonochrome")
               div.color-shade(:style="shade", @click="selectedIndex = index")
-          p.text-small Select color and then click to copy value of desired type 
+          p.text-small.text-muted Select color shade above and then click to copy value in desired type below
           div.section.grid
-            .one-half
+            #color-out.one-half
               div
-                strong hex 
-                input(type="text", v-model="colorOut.hex", readonly="readonly", @click="copy(colorOut.hex)")              
+                label HEX 
+                input(type="text", v-model="colorOut.hex", @click="copy(colorOut.hex, $event)")              
               div
-                strong rgb
-                input(type="text", v-model="colorOut.rgb", readonly="readonly", @click="copy(colorOut.rgb)")              
+                label RGB
+                input(type="text", v-model="colorOut.rgb", readonly="readonly", @click="copy(colorOut.rgb, $event)")              
               div
-                strong hsl
-                input(type="text", v-model="colorOut.hsl", readonly="readonly", @click="copy(colorOut.hsl)")
-            .one-half
+                label HSL
+                input(type="text", v-model="colorOut.hsl", readonly="readonly", @click="copy(colorOut.hsl, $event)")
+            #color-out-preview.one-half
               .color-preview(:style="previewStyleOut")
+              div.text-small.text-muted Selected Color
     .section-medium
       .card
         h2.h3.card-title How to generate shades of a color?
