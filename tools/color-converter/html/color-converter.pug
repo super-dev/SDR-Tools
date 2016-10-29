@@ -1,0 +1,77 @@
+extends ./../../../common/_layouts/_layout-tools.pug
+
+block vars
+  - var title = 'Color Converter'
+  - var description = 'Convert colors from RGB to HEX, HEX to RGB, RGB to HSL, HSL to RGB, RGB to HSV, HSV to RGB etc.'
+
+block styles
+  link(href='styles/color-converter.css', rel='stylesheet')
+  link(href='https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.css', rel='stylesheet')
+
+block pagetitle
+  span.hidden-mobile Color Converter
+
+block content
+  .container-content
+    #app
+      .section-medium
+        .card
+          h2.h4.card-title Enter Color
+          .card-body.clearfix
+            #color-container
+              #user-input
+                input#color(type="text", v-model="color")
+                p.text-small.text-muted Example: #ffbb00 or rgb(244, 244, 244) or gray or <button class="button-ghost" @click='random'>Random</button>
+      .card(v-if="color.length > 0").animated.fadeIn
+        h2.h4.card-title Color Values
+        .card-body
+          div.text-small.text-muted Click to copy converted color value in desired type below
+          div.section.grid
+            #color-out.one-half
+              div
+                label HEX 
+                input(type="text", v-model="colorOut.hex", @click="copy(colorOut.hex, $event)")              
+              div
+                label RGB
+                input(type="text", v-model="colorOut.rgb", readonly="readonly", @click="copy(colorOut.rgb, $event)")              
+              div
+                label HSL
+                input(type="text", v-model="colorOut.hsl", readonly="readonly", @click="copy(colorOut.hsl, $event)")              
+              div
+                label HSV
+                input(type="text", v-model="colorOut.hsv", readonly="readonly", @click="copy(colorOut.hsv, $event)")
+            #color-out-preview.one-half
+              .color-preview(:style="previewStyleIn")
+              div.text-small.text-muted Selected Color
+    .section-medium
+      .card
+        h2.h3.card-title How to Convert Color Format?
+        .card-body
+          ul.divider
+            li Enter value of your color in textbox above in any format (RGB, HEX, RGBA, HSL, HSV etc.)
+            li Different shades of the color will be generated which you can select to show more details
+            li Click to copy value of selected color shade in HEX, RGB or HSL
+            li Value will be copied directly to your clipboard
+            li In case your browser doesnot support copying values directly to clipboard via script then you can do a manual copy.
+            li You can use the "Random" button to generate a random starting color for generating shades
+            li We do not store any data enetered by you and everything is done inside your browser.
+          h3.h4 Credits
+          p
+            ul.divider
+              li
+                a(href='http://vuejs.org/', target='_blank') vue.js
+                |  - The Progressive JavaScript Framework
+              li
+                a(href='https://github.com/bgrins/TinyColor', target='_blank') TinyColor
+                |  - Fast, small color manipulation and conversion for JavaScript
+              li
+                a(href='http://t4t5.github.io/sweetalert/', target='_blank') SweetAlert
+                |  - A beuatiful replacement for JavaScript's alert
+              li
+                a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
+                |  - A minimal modern CSS framework for building beautiful websites
+block scripts
+  script(src='https://unpkg.com/vue@2.0.3/dist/vue.js')
+  script(src='https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js')
+  script(src=' https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.min.js') 
+  script(src='scripts/color-converter.js')

@@ -23,5 +23,12 @@
   path: "color-shades"
   description: "Generate shades of a color. Enter color in rgb, hex, hsl or hsv and get different shades of the color."
   category: "design"
-  color: "#FFA726"
+  color: "#a156c3"
+  icon: "icon.svg"
+
+- name: "Color Converter"
+  path: "color-converter"
+  description: "Convert colors from RGB to HEX, HEX to RGB, RGB to HSL, HSL to RGB, RGB to HSV etc."
+  category: "development"
+  color: "#6780b2"
   icon: "icon.svg"

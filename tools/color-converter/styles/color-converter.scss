@@ -1,0 +1,55 @@
+.color-preview {
+  width: 250px;
+  height: 250px;
+  background-color: #fafafa;
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  background-color: #fafafa;
+}
+
+#color-container {
+  position: relative;
+  width: 100%;
+
+  #user-input {
+    clear: both;
+    overflow: auto;
+
+    button {
+      margin: 0 0 0 6px;
+      line-height: 2;
+    }
+  }
+}
+
+input#color {
+  font-size: 125%;
+  line-height: 1.5;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.one-half {
+  width: 45%;
+  margin-right: 5%; 
+}
+
+ #color-out {
+   div:first-child label {
+     margin-top: 0;
+   }
+ }
+
+ #color-out-preview {
+   padding-top: 32px;
+   text-align: center;
+  
+   .color-preview {
+     margin: 4px auto;
+   }
+ }
