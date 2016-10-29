@@ -21,7 +21,8 @@ new Vue({
       return {
         hex: color.toHexString(),
         rgb: color.toRgbString(),
-        hsl: color.toHslString()
+        hsl: color.toHslString(),
+        hsv: color.toHsvString()
       }
     },
     shadesMonochrome: function () {

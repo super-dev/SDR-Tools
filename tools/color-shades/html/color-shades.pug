@@ -40,7 +40,10 @@ block content
                 input(type="text", v-model="colorOut.rgb", readonly="readonly", @click="copy(colorOut.rgb, $event)")              
               div
                 label HSL
-                input(type="text", v-model="colorOut.hsl", readonly="readonly", @click="copy(colorOut.hsl, $event)")
+                input(type="text", v-model="colorOut.hsl", readonly="readonly", @click="copy(colorOut.hsl, $event)")           
+              div
+                label hsv
+                input(type="text", v-model="colorOut.hsv", readonly="readonly", @click="copy(colorOut.hsv, $event)")
             #color-out-preview.one-half
               .color-preview(:style="previewStyleOut")
               div.text-small.text-muted Selected Color
