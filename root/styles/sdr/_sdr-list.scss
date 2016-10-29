@@ -19,6 +19,15 @@ ul.sdr-list {
   }
 }
 
+.sdr-list-search {
+  margin-bottom: 1.5em;
+
+  input[type="search"] {
+    margin: 0;
+    background-color: #fefefe;
+  }
+}
+
 
 @media (max-width: $size-small-screen) {
   .sdr-list .entry-title {

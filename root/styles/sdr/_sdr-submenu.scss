@@ -15,4 +15,8 @@
     color: lighten($color-text, 10);
     border-color: #fff;
   }
+
+  .button-ghost:hover {
+    border-color: #eee;
+  }
 }

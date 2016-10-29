@@ -21,19 +21,24 @@ block header_right
 
 
 mixin listtools(tools, category)
-  if tools.length
-    each tool in tools
-      li
-        .media.media-left
-          a.thumbnail.thumbnail-small.thumbnail-rounded(href=tool.url, style='background-color:' + tool.color)!= tool.icon
-          .media-body
-            h2.entry-title        
-              a(href=tool.url) #{tool.name}
-            div.entry-content #{tool.description}
-  if tools.length == 0
-    p.text-center Our code monkeys are working on adding <strong>#{category}</strong> tools. Please check back later..
-  else if tools.length < 3
-    p.section-large.text-center.text-muted.text-small Our code monkeys are working on adding more <strong>#{category}</strong> tools.<br>If you have a suggestion, please don't hesitate to <a href="https://superdevresources.com/contact/">contact</a>.
+  #tools
+    if tools.length >= 3
+      .sdr-list-search
+        input.search(type="search", placeholder="Search")
+    ul.list.sdr-list
+      if tools.length
+        each tool in tools
+          li
+            .media.media-left
+              a.thumbnail.thumbnail-small.thumbnail-rounded(href=tool.url, style='background-color:' + tool.color)!= tool.icon
+              .media-body
+                h2.entry-title        
+                  a(href=tool.url) #{tool.name}
+                div.entry-content #{tool.description}
+      if tools.length == 0
+        p.text-center Our code monkeys are working on adding <strong>#{category}</strong> tools. Please check back later..
+      else if tools.length < 3
+        p.section-large.text-center.text-muted.text-small Our code monkeys are working on adding more <strong>#{category}</strong> tools.<br>If you have a suggestion, please don't hesitate to <a href="https://superdevresources.com/contact/">contact</a>.
 
 block content
   div.main
@@ -51,8 +56,7 @@ block content
           | Marketing
       .card.animated.fadeIn
         .card-body
-          ul.sdr-list
-            block toollist
+           block toollist
       .card
         +adlinks1('card-body text-center')
   footer.footer
@@ -68,3 +72,12 @@ block content
         p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
           br
           | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a>.
+
+block scripts
+  script(src='https://unpkg.com/list.js@1.2.0/dist/list.min.js')
+  script.
+    var options = {
+      valueNames: [ 'entry-title', 'entry-content' ]
+    };
+
+    var toolsList = new List('tools', options);
