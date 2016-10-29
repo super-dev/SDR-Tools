@@ -9,11 +9,8 @@ new Vue({
       if (this.color.length == 0) {
         color = "#fafafa"
       }
-
+      
       return "background-color: " + tinycolor(color).toRgbString() + ";"
-    },
-    previewStyleOut: function () {
-      return this.shadesMonochrome[this.selectedIndex]
     },
     colorOut: function () {
       var color = tinycolor(this.color)
@@ -52,6 +49,19 @@ new Vue({
     }
   },
   created: function () {
-    this.random()
+    var hash = window.location.hash
+    console.log(hash)
+    if(hash.length === 0) {
+      this.random()
+    }
+    else {
+      this.color = hash
+    }
+  },
+  watch: {
+    color: function() {
+      var hash = tinycolor(this.color).toHexString().substring(1)
+      window.location.hash = '#' + encodeURIComponent(hash)
+    }
   }
 })

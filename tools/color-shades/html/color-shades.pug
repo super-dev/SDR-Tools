@@ -21,7 +21,7 @@ block content
             #color-container
               #user-input
                 input#color(type="text", v-model="color")
-                p.text-small.text-muted Example: #ffbb00 or rgb(244, 244, 244) or gray or <button class="button-ghost" @click='random'>Random</button>
+                p.text-small.text-muted Example: #808080 or rgb(128, 128, 128) or gray or <button class="button-ghost" @click='random'>Random</button>
               .color-preview(:style="previewStyleIn")
       .card(v-if="color.length > 0").animated.fadeIn
         h2.h4.card-title Color Shades
@@ -58,6 +58,7 @@ block content
             li Value will be copied directly to your clipboard.
             li In case your browser does not support copying values directly to clipboard via script then you can do a manual copy.
             li You can use the "Random" button to generate a random starting color for generating shades.
+            li You can share the color shades using the URL in address bar as it updates to reflect current color.
             li We do not store any data entered by you and everything is done inside your browser.
           h3.h4 Credits
           p

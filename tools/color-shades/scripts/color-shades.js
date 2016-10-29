@@ -62,6 +62,19 @@ new Vue({
     }
   },
   created: function () {
-    this.random()
+    var hash = window.location.hash
+    console.log(hash)
+    if(hash.length === 0) {
+      this.random()
+    }
+    else {
+      this.color = hash
+    }
+  },
+  watch: {
+    color: function() {
+      var hash = tinycolor(this.color).toHexString().substring(1)
+      window.location.hash = '#' + encodeURIComponent(hash)
+    }
   }
 })
