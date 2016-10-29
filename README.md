@@ -7,6 +7,10 @@ Free Tools for Web and App Developers by Super Dev Resources Team
 ## Tools
 
  - [Image Clipper](https://tools.superdevresources.com/image-cropper/) - Online tool for cropping images
+ - [Markdown Writer](https://tools.superdevresources.com/markdown-writer) - Online Markdown editor with real-time preview.
+ - [Image to Base64](https://tools.superdevresources.com/base64-image) - Convert Image to base64 string online for use in HTML img tag and in CSS files as data URI.
+ - [Color Shades](https://tools.superdevresources.com/color-shades) - Generate shades of a color. Enter color in rgb, hex, hsl or hsv and get different shades of the color.
+ - [Color Converter](https://tools.superdevresources.com/color-converter) - Convert colors from RGB to HEX, HEX to RGB, RGB to HSL, HSL to RGB, RGB to HSV etc.
 
 ## Credits
 
