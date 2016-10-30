@@ -46,7 +46,9 @@ function loadImage (src) {
         var div = document.createElement("div");
         div.className = 'color-shade'
         div.style.backgroundColor = bgcolor;
-        div.innerHTML = bgcolor.toUpperCase();
+        div.innerHTML = bgcolor.toUpperCase();        
+        div.addEventListener('click', copy);
+
         li.appendChild(div);
         var a = document.createElement("a");
         a.href = "/color-converter/" + bgcolor;
@@ -55,8 +57,6 @@ function loadImage (src) {
         li.appendChild(a);
         ul.appendChild(li);
 
-        
-        li.addEventListener('click', copy);
       }
       el("result-area").style.display = "block";
     };
