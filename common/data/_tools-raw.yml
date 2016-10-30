@@ -32,3 +32,10 @@
   category: "development"
   color: "#6780b2"
   icon: "icon.svg"
+
+- name: "Color Extractor"
+  path: "color-extractor"
+  description: "Extract colors from an Image. Builds a color palette from dominant colors in an image."
+  category: "design"
+  color: "#dda73b"
+  icon: "icon.svg"

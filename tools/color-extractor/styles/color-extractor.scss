@@ -1,0 +1,98 @@
+#result-area {
+  display: none;
+  background-color: #fff;
+  padding: 1em;
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+ul#palette-list {
+  margin: 32px 0 0 0;
+  padding: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    width: 10%;
+    margin-right: 1%;
+    height: 60px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .color-shade {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      transition: all 0.05s ease-in;
+      font-size: 0;
+
+      &:hover {
+        transform: scale(1.25);
+      }
+    }
+
+    a {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #777;
+      line-height: 2;
+    }
+  }
+}
+
+#canvas-container {
+  text-align: center;
+  font-size:0;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+#canvas {
+  display: none;
+  margin: 0 auto;
+}
+
+#click-target {
+  position: relative;
+  display: inline-block;
+  border: 3px dashed #999;
+  width: 100%;
+  height: 450px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  #load-prompt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding-top: 212px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+  }
+
+  &:hover {
+    background: #fafafa;
+  }
+}
+
+#fileUpload {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    z-index: 999;
+    cursor: pointer;
+}
