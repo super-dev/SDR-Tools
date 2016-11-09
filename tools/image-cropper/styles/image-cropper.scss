@@ -2,6 +2,10 @@
   padding-top: 30px;
 }
 
+.container-readable {
+  max-width: 900px;
+}
+
 .canvas-container {
   text-align: center;
   font-size:0;
@@ -53,10 +57,27 @@ input[type="radio"] {
   margin-left: 6px;
 }
 
-.card form {
-  margin-top: 0;
+#content {
+  margin-right: 260px;
 }
 
-button + button {
-  margin-left: 6px;
+#sidebar {
+  width: 220px;
+  margin-left: -220px;
+
+  h3:first-child {
+    margin-top: 0;
+  }
+
+  hr {
+    background-color: #f2f2f2;
+  }
+
+  form {
+    margin-top: 0;
+  }
+
+  button + button {
+    margin-left: 6px;
+  }
 }
