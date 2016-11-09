@@ -1,11 +1,10 @@
 ul.sdr-list {
   list-style: none;
-  padding: 0 1em;
-  margin: 0;
+  padding: 0;
   min-height: 400px;
 
   li {
-    margin: 0.5em 0 30px;
+    margin-bottom: 2rem;
   }
 
   .entry-title {
@@ -28,9 +27,8 @@ ul.sdr-list {
   }
 }
 
-
-@media (max-width: $size-small-screen) {
-  .sdr-list .entry-title {
-    font-size: 19px;
+@include mobile {
+  ul.sdr-list .entry-title {
+    font-size: 18px;
   }
 }

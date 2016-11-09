@@ -3,8 +3,6 @@
 }
 
 .header {
-  border: none;
-
   .menu {
     font-size: 82%;
     text-transform: uppercase;
@@ -29,14 +27,6 @@
   min-height: 480px;
 }
 
-.container-readable {
-  max-width: 940px;
-}
-
-.footer {
-  border-top: 0;
-}
-
 .footer-logo {
   height: 48px;
   width: auto;
@@ -44,19 +34,4 @@
 
 ins {
   background: transparent;
-}
-
-@media (max-width: $size-small-screen) {
-  .header-left {
-    position: relative;
-    left: 0;
-
-    .site-branding img {
-      float: none;
-    }
-  }
-
-  .entry-title {
-    font-size: 19px;
-  }
 }

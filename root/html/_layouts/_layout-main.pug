@@ -44,21 +44,20 @@ block content
   div.main
     div.container-readable
       div.sdr-submenu.section
-        a.button(href="/" class=(page.path === '/') ? 'button-primary' : 'button-ghost') All
-        a.button(href="/design" class=(page.path === '/design') ? 'button-primary' : 'button-ghost')
+        a.button.button-text(href="/" class=(page.path === '/') ? 'router-link-active': '') All
+        a.button.button-text(href="/design" class=(page.path === '/design') ? 'router-link-active' : '')
           include ./../_includes/icons/_brush.svg              
           | Design
-        a.button(href="/development" class=(page.path === '/development') ? 'button-primary' : 'button-ghost')
+        a.button.button-text(href="/development" class=(page.path === '/development') ? 'router-link-active' : '')
           include ./../_includes/icons/_code.svg              
           | Development
-        a.button(href="/marketing" class=(page.path === '/marketing') ? 'button-primary' : 'button-ghost')
+        a.button.button-text(href="/marketing" class=(page.path === '/marketing') ? 'router-link-active' : '')
           include ./../_includes/icons/_bullhorn.svg              
           | Marketing
-      .card.animated.fadeIn
-        .card-body
-           block toollist
-      .card
-        +adlinks1('card-body text-center')
+      .animated.fadeIn
+        block toollist
+      .section
+        +adlinks1('text-center')
   footer.footer
     .container-readable.section.text-center
       a(href='https://superdevresources.com/')

@@ -8,7 +8,7 @@
   }
   
   nav {
-    text-align: right
+    text-align: right;
   }
 }
 
@@ -18,4 +18,22 @@
 
 .header-right-elem + .header-right-elem {
   margin-left: 24px;
+}
+
+ul.divider {
+  padding-left: 0;
+  line-height: 1.3;
+  list-style: none;
+  
+  li {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #bbb;
+
+    &:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
 }

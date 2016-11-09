@@ -1,4 +1,6 @@
 .sdr-submenu {
+  margin-top: $size-element-spacing;
+  
   .button {
     margin-right: 0.7em;
     font-size: 80%;
@@ -6,17 +8,28 @@
     line-height: 2.2;
 
     .icon {
-      margin-right: 6px;
+      margin-right: 3px;
+    }
+
+    &:hover, &:focus {
+      color: inherit;
+      border: 1px solid #eee;
+    }
+    
+    &:active, &.router-link-active {
+      background-color: #fafafa;
+      border: 1px solid #eee;
     }
   }
+}
 
-  .button-ghost {
-    background-color: #fff;
-    color: lighten($color-text, 10);
-    border-color: #fff;
-  }
+@include mobile {
+  .sdr-submenu {
+    margin: 0;
 
-  .button-ghost:hover {
-    border-color: #eee;
+    .button {
+      margin-right: 0;
+      padding: 0 0.5em;
+    }
   }
 }
