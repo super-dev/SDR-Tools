@@ -19,11 +19,19 @@ ul.sdr-list {
 }
 
 .sdr-list-search {
-  padding: 1em;
-
   input[type="search"] {
+    font-weight: 300;
     margin: 0;
-    background-color: #fafafa;
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #f2f2f2;
+    transition: border-color 0.30s ease-in-out;
+  }
+
+  input[type="search"]:active, input[type="search"]:focus {    
+    border-bottom: 1px solid $color-primary;
   }
 }
 

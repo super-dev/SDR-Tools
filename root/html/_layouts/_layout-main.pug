@@ -24,7 +24,7 @@ mixin listtools(tools, category)
   #tools
     if tools.length >= 5
       .sdr-list-search
-        input.search(type="search", placeholder="Search")
+        input.search(type="search", placeholder="Search...")
     ul.list.sdr-list
       if tools.length
         each tool in tools
@@ -41,9 +41,9 @@ mixin listtools(tools, category)
         p.section-large.text-center.text-muted.text-small Our code monkeys are working on adding more <strong>#{category}</strong> tools.<br>If you have a suggestion, please don't hesitate to <a href="https://superdevresources.com/contact/">contact</a>.
 
 block content
-  div.main
-    div.container-readable
-      div.sdr-submenu.section
+  .main
+    .container-readable
+      .sdr-submenu
         a.button.button-text(href="/" class=(page.path === '/') ? 'router-link-active': '') All
         a.button.button-text(href="/design" class=(page.path === '/design') ? 'router-link-active' : '')
           include ./../_includes/icons/_brush.svg              
@@ -54,7 +54,8 @@ block content
         a.button.button-text(href="/marketing" class=(page.path === '/marketing') ? 'router-link-active' : '')
           include ./../_includes/icons/_bullhorn.svg              
           | Marketing
-      .animated.fadeIn
+    .container-readable.animated.fadeIn
+      .section
         block toollist
       .section
         +adlinks1('text-center')

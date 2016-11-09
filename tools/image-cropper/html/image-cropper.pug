@@ -16,12 +16,12 @@ block content
     #wrapper.container-content.section
       #content-wrapper
         #content
-          .container-readable
-            #click-target
-              input(type='file' id="fileUpload")
-              #load-prompt Drag and Drop image anywhere or Click here
-            .canvas-container
-              img#myimage
+          #click-target
+            input(type='file' id="fileUpload")
+            #load-prompt Drag and Drop image anywhere or Click here
+          .canvas-container
+            img#myimage
+          .section
             h2.h3 How to Crop Image?
             ul.divider
               li Drag and drop image from your local system to the canvas above.
@@ -31,18 +31,18 @@ block content
               li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality).
               li If the cropped image opens in a new tab, instead of downloading, right click and do "Save As" to save the cropped image.
               li We do not store any of your images as everything is done client side.
-            .section-medium    
-              h2.h3 Credits
-              ul.divider
-                li
-                  a(href='https://github.com/fengyuanchen/cropperjs', target='_blank') CropperJS
-                  |  - JavaScript image cropper
-                li
-                  a(href='https://github.com/rndme/download', target='_blank') download.js
-                  |  - Client-side file downloading using JS and HTML5 by dandavis
-                li
-                  a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
-                  |  - A minimal modern CSS framework for building beautiful websites
+          .section    
+            h2.h3 Credits
+            ul.divider
+              li
+                a(href='https://github.com/fengyuanchen/cropperjs', target='_blank') CropperJS
+                |  - JavaScript image cropper
+              li
+                a(href='https://github.com/rndme/download', target='_blank') download.js
+                |  - Client-side file downloading using JS and HTML5 by dandavis
+              li
+                a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
+                |  - A minimal modern CSS framework for building beautiful websites
       #sidebar
         h3.h4 Image Dimesions
         p Width: <span id="img-width">0</span>px<br>Height: <span id="img-height">0</span>px

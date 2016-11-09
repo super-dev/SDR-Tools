@@ -21,7 +21,7 @@
 
 - name: "Color Shades"
   path: "color-shades"
-  description: "Generate shades of a color. Enter color in rgb, hex, hsl or hsv and get different shades of the color."
+  description: "Enter color in RGB, HEX, HSL or HSV and get different shades of the color."
   category: "design"
   color: "#a156c3"
   icon: "icon.svg"
