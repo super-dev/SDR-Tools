@@ -1,6 +1,6 @@
-mixin menu(list)
-  nav
-    ul.menu
+mixin menu(list, classes)
+  nav(role="navigation")
+    ul(class=classes)
       each item in list
         +menuitem(item)
 
@@ -11,14 +11,25 @@ mixin submenu(item)
         +menuitem(subitem)
 
 mixin menuitem(item)
-  li(class=['menu-item'], class={'current-menu-item': page.path == item.url})
-    a(href=item.url)&attributes(item.attributes) #{item.title}
-    +submenu(item)
+  if item.url
+    li(class=['menu-item'], class={'current-menu-item': page.path == item.url})
+      a(href=item.url)&attributes(item.attributes)
+        if(item.icon)
+          <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
+        | #{item.title}
+      +submenu(item)
+  else
+    li(class='menu-header') #{item.title}
 
-mixin social(list)
+
+mixin horizontal-menu(list)
   each item in list
-    a.button.button-text(href=item.url, target="_blank", title=item.title)
-      | <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
+    if item.icon
+      a.button.button-text(href=item.url, target="_blank", title=item.title)
+        | <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
+    else
+      a.button.button-text(href=item.url, target="_blank")
+        | #{item.title}
 
 
 mixin adlinks1(adclass)

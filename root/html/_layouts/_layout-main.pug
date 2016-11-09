@@ -5,19 +5,10 @@ block title
 
 block header_center
   .hidden-mobile
-    +menu(data.menu.main)
+    +menu(data.menu.main, 'menu')
 
 block header_right
-  nav
-    ul.menu
-      li.menu-item
-        a(href="https://superdevresources.com/about/") About
-      li.menu-item
-        a(href='https://twitter.com/superdevres42', target="_blank", title="Twitter")
-          | <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
-      li.menu-item
-        a(href='https://github.com/super-dev/', target="_blank", title="Github")
-          | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
+  +menu(data.menu.secondary, 'menu')
 
 
 mixin listtools(tools, category)
@@ -50,10 +41,10 @@ block content
           | Design
         a.button.button-text(href="/development" class=(page.path === '/development') ? 'router-link-active' : '')
           include ./../_includes/icons/_code.svg              
-          | Development
+          |  Development
         a.button.button-text(href="/marketing" class=(page.path === '/marketing') ? 'router-link-active' : '')
           include ./../_includes/icons/_bullhorn.svg              
-          | Marketing
+          |  Marketing
     .container-readable.animated.fadeIn
       .section
         block toollist
@@ -68,9 +59,9 @@ block footer
       div Super Dev Resources is a popular destination for finding
         br
         | awesome free resources for independent developers and startups. <a class="text-small" href="https://superdevresources.com/about/">Learn More</a>
-      +social(data.menu.social)
+      +horizontal-menu(data.menu.social)
       .section
-        +menu(data.menu.footer)
+        +horizontal-menu(data.menu.footer)
         p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
           br
           | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a>.
