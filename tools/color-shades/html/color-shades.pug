@@ -12,39 +12,39 @@ block pagetitle
   span.hidden-mobile Color Shades
 
 block content
-  .container-content
-    #app
-      .section-medium
-        h2.h3 Enter Color
-        .clearfix
-          #color-container
-            #user-input
-              input#color(type="text", v-model="color")
-              p.text-small.text-muted Example: #808080 or rgb(128, 128, 128) or gray or <button class="button-ghost" @click='random'>Random</button>
-            .color-preview(:style="previewStyleIn")
-      div(v-if="color.length > 0").animated.fadeIn
-        h2.h3 Color Shades
-        ul#color-shades
-          li(v-for="(shade, index) in shadesMonochrome")
-            div.color-shade(:style="shade", @click="selectedIndex = index")
-        p.text-small.text-muted Select color shade above and then click to copy value in desired type below
-        div.section.grid
-          #color-out.one-half
-            div
-              label HEX 
-              input(type="text", v-model="colorOut.hex", @click="copy(colorOut.hex, $event)")              
-            div
-              label RGB
-              input(type="text", v-model="colorOut.rgb", readonly="readonly", @click="copy(colorOut.rgb, $event)")              
-            div
-              label HSL
-              input(type="text", v-model="colorOut.hsl", readonly="readonly", @click="copy(colorOut.hsl, $event)")           
-            div
-              label hsv
-              input(type="text", v-model="colorOut.hsv", readonly="readonly", @click="copy(colorOut.hsv, $event)")
-          #color-out-preview.one-half
-            .color-preview(:style="previewStyleOut")
-            div.text-small.text-muted Selected Color
+  #app.section
+    .container-readable
+      h2.h3 Enter Color
+      .clearfix
+        #color-container
+          #user-input
+            input#color(type="text", v-model="color")
+            p.text-small.text-muted Example: #808080 or rgb(128, 128, 128) or gray or <button class="button-ghost" @click='random'>Random</button>
+          .color-preview(:style="previewStyleIn")
+    div(v-if="color.length > 0").section.container-content.animated.fadeIn
+      h2.h4.text-center Color Shades
+      ul#color-shades
+        li(v-for="(shade, index) in shadesMonochrome")
+          div.color-shade(:style="shade", @click="selectedIndex = index")
+      p.text-small.text-muted.text-center Select color shade above and then click to copy value in desired type below
+      div.container-readable.grid
+        #color-out.one-half
+          div
+            label HEX 
+            input(type="text", v-model="colorOut.hex", @click="copy(colorOut.hex, $event)")              
+          div
+            label RGB
+            input(type="text", v-model="colorOut.rgb", readonly="readonly", @click="copy(colorOut.rgb, $event)")              
+          div
+            label HSL
+            input(type="text", v-model="colorOut.hsl", readonly="readonly", @click="copy(colorOut.hsl, $event)")           
+          div
+            label hsv
+            input(type="text", v-model="colorOut.hsv", readonly="readonly", @click="copy(colorOut.hsv, $event)")
+        #color-out-preview.one-half
+          .color-preview(:style="previewStyleOut")
+          div.text-small.text-muted Selected Color
+  .container-readable
     h2.h3 How to Generate Shades of a Color?
     ul.divider
       li Enter value of your color in textbox above in any format (RGB, HEX, RGBA, HSL, HSV etc.)
