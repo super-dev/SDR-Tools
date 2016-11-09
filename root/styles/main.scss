@@ -1,10 +1,9 @@
 @import "sdr/sdr";
 
-.header-right {
-  width: 600px;
-  
+.header-right {  
   .ad-container {
     width: 478px;
+    max-width: 478px;
   }
   
   nav {
@@ -12,12 +11,14 @@
   }
 }
 
-.header-right-elem {
-  display: inline-block;
-}
+@include desktop {
+  .header-right-elem {
+    display: inline-block;
+  }
 
-.header-right-elem + .header-right-elem {
-  margin-left: 24px;
+  .header-right-elem + .header-right-elem {
+    margin-left: 24px;
+  }
 }
 
 ul.divider {

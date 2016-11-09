@@ -3,13 +3,17 @@ extends ./../../../common/_layouts/_layout.pug
 block title
   h1.title.screen-reader-text #{title}
 
-block header_center
-  .hidden-mobile
-    +menu(data.menu.main, 'menu')
-
-block header_right
-  +menu(data.menu.secondary, 'menu')
-
+block header
+  .menu-toggle
+    input(type="checkbox")#menu-toggle
+    label(for="menu-toggle").header-right
+      span.css-icon-hamburger
+        span Toggle
+      span Menu
+    .menu-toggle-content      
+      +menu(data.menu.main, 'menu')
+      .header-right        
+        +menu(data.menu.secondary, 'menu')
 
 mixin listtools(tools, category)
   #tools
