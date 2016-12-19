@@ -2,7 +2,7 @@
 
 # [SDR Tools](https://tools.superdevresources.com/)
 
-Free Tools for Web and App Developers by Super Dev Resources Team
+Free Tools for Web Designers and Developers by Super Dev Resources Team
 
 ## Tools
 

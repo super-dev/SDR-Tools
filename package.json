@@ -1,7 +1,7 @@
 {
   "name": "sdr-tools",
   "version": "1.0.0",
-  "description": "Tools for WebDevelopers by SDR",
+  "description": "Tools for Developers and Designers by SDR",
   "scripts": {
     "clean": "node mmpilot-wrapper.js clean",
     "build": "node mmpilot-wrapper.js build",
@@ -21,11 +21,11 @@
   },
   "homepage": "https://tools.superdevresources.com/",
   "devDependencies": {
-    "mmpilot": "^0.4.4",
-    "npm-run-all": "^3.1.1",
+    "mmpilot": "^0.6.3",
+    "npm-run-all": "^3.1.2",
     "shelljs": "^0.7.5"
   },
   "dependencies": {
-    "mmcss": "^0.3.2"
+    "mmcss": "^0.3.3"
   }
 }

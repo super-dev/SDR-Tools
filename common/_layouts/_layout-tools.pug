@@ -4,13 +4,13 @@ block title
   h1.h3.hidden-mobile
     block pagetitle
 
-block header
+block header-right
   .header-right
     +adlinks1('ad-container header-right-elem hidden-mobile')
     a.button.button-ghost.header-right-elem(href="/") &laquo; All Tools
 
 block footer
-  if !hideFooter
+  if !page.hideFooter
     footer.footer
       .container-readable.section.text-center
         +horizontal-menu(data.menu.footer)

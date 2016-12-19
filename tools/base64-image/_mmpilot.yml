@@ -1,5 +1,8 @@
 clean: ['../../public/base64-image']
 
+includes: "../../common/_includes"
+layouts: "../../common/_layouts"
+out: '.'
 html:
   dest: '../../public'
   sitemap: ''
@@ -18,6 +21,8 @@ data: '../../common/data'
 ## additional data for site available as site.{key} in pug templates
 site:
   url: "https://tools.superdevresources.com/"
+  title: SDR Tools
+  icon: sdr-logo
   analytics: "UA-37350394-3"
 
 ## overrides when built with -d or --development option

@@ -3,7 +3,7 @@ extends ./../../../common/_layouts/_layout.pug
 block title
   h1.title.screen-reader-text #{title}
 
-block header
+block header-right
   .menu-toggle
     input(type="checkbox")#menu-toggle
     label(for="menu-toggle").header-right
@@ -51,7 +51,7 @@ block content
           |  Marketing
     .container-readable.animated.fadeIn
       .section
-        block toollist
+        +listtools(data.tools[page.category], page.category)
       .section
         +adlinks1('text-center')
 
