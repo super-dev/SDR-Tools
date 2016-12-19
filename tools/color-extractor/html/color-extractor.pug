@@ -2,53 +2,48 @@
 title: 'Color Palette from Image'
 description: 'Online tool to build a color palette by extracting dominant colors from an image.'
 layout: 'tools'
+styles:
+ - 'styles/color-extractor.css'
+ - 'https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.css'
+scripts:
+ - 'scripts/color-thief.js'
+ - 'https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js'
+ - 'https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.min.js'
+ - 'scripts/color-extractor.js'
 ---
 
-block styles
-  link(href='styles/color-extractor.css', rel='stylesheet')
-  link(href='https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.css', rel='stylesheet')
-
-block pagetitle
-  span.hidden-mobile Color Extractor
-
-block content
-  #drop-target
-    .container-readable
-      .section-medium
-        #result-area.animated.fadeIn
-          h2.h4 Color Palette from Image
-          ul#palette-list
-        #click-target
-          input(type='file' id="fileUpload")
-          #load-prompt Drag and Drop image anywhere or Click here
-        #canvas-container
-          canvas#canvas
-      h2.h3 How to Extract Colors from Image?
+#drop-target
+  .container-readable
+    .section-medium
+      #result-area.animated.fadeIn
+        h2.h4 Color Palette from Image
+        ul#palette-list
+      #click-target
+        input(type='file' id="fileUpload")
+        #load-prompt Drag and Drop image anywhere or Click here
+      #canvas-container
+        canvas#canvas
+    h2.h3 How to Extract Colors from Image?
+    ul.divider
+      li Drag and drop image from your local system to the canvas above for extracting colors.
+      li Dominant colors will be extracted from the image and displayed above.
+      li Up to 9 colors from image are displayed along with their HEX value.
+      li Click the color block to copy value of color in HEX.
+      li In case your browser does not support copying values directly to clipboard via script then you can do a manual copy.
+      li Click on the HEX value displayed below the color to get color in other formats such as RGB, HSL or HSV.
+      li We do not store any images as everything is done inside your browser.
+    .section-medium
+      h2.h3 Credits
       ul.divider
-        li Drag and drop image from your local system to the canvas above for extracting colors.
-        li Dominant colors will be extracted from the image and displayed above.
-        li Up to 9 colors from image are displayed along with their HEX value.
-        li Click the color block to copy value of color in HEX.
-        li In case your browser does not support copying values directly to clipboard via script then you can do a manual copy.
-        li Click on the HEX value displayed below the color to get color in other formats such as RGB, HSL or HSV.
-        li We do not store any images as everything is done inside your browser.
-      .section-medium
-        h2.h3 Credits
-        ul.divider
-          li
-            a(href='https://github.com/lokesh/color-thief/', target='_blank') Color Thief
-            |  - Grab the color palette from an image using JavaScript 
-          li
-            a(href='https://github.com/bgrins/TinyColor', target='_blank') TinyColor
-            |  - Fast, small color manipulation and conversion for JavaScript
-          li
-            a(href='http://t4t5.github.io/sweetalert/', target='_blank') SweetAlert
-            |  - A beautiful replacement for JavaScript's alert
-          li
-            a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
-            |  - A minimal modern CSS framework for building beautiful websites
-block scripts
-  script(src='scripts/color-thief.js')
-  script(src='https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js')
-  script(src=' https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.min.js') 
-  script(src='scripts/color-extractor.js')
+        li
+          a(href='https://github.com/lokesh/color-thief/', target='_blank') Color Thief
+          |  - Grab the color palette from an image using JavaScript 
+        li
+          a(href='https://github.com/bgrins/TinyColor', target='_blank') TinyColor
+          |  - Fast, small color manipulation and conversion for JavaScript
+        li
+          a(href='http://t4t5.github.io/sweetalert/', target='_blank') SweetAlert
+          |  - A beautiful replacement for JavaScript's alert
+        li
+          a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
+          |  - A minimal modern CSS framework for building beautiful websites

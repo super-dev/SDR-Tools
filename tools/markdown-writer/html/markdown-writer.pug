@@ -3,22 +3,16 @@ title: 'Markdown Writer Online'
 description: 'Online Markdown Editor for writing in markdown with real-time preview.'
 layout: 'tools'
 hideFooter: true
+styles:
+  - 'styles/markdown-writer.css'
+scripts:
+  - 'https://unpkg.com/marked@0.3.6'
+  - 'https://unpkg.com/lodash@4.16.0'
+  - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
+  - 'scripts/markdown-writer.js'
 ---
 
-block styles
-  link(href='styles/markdown-writer.css', rel='stylesheet')
-
-block pagetitle
-  span.hidden-mobile Markdown Writer
-
-block content
-  .editor-container
-    #editor
-      textarea(:value="input", @input="update")
-      div.editor-out(v-html="compiledMarkdown")
-
-block scripts
-  script(src='https://unpkg.com/marked@0.3.6')
-  script(src='https://unpkg.com/lodash@4.16.0')
-  script(src='https://unpkg.com/vue@2.0.3/dist/vue.js')
-  script(src='scripts/markdown-writer.js')
+.editor-container
+  #editor
+    textarea(:value="input", @input="update")
+    div.editor-out(v-html="compiledMarkdown")

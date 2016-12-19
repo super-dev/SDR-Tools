@@ -1,8 +1,13 @@
 extends ./_layout.pug
 
+block styles
+  if page.styles
+    each style in page.styles
+      link(href=style, rel='stylesheet')
+
 block title
   h1.h3.hidden-mobile
-    block pagetitle
+    span.hidden-mobile!= page.title
 
 block header-right
   .header-right
@@ -17,3 +22,8 @@ block footer
         p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
           br
           | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a>.
+
+block scripts
+  if page.scripts
+    each script in page.scripts
+      script(src=script)

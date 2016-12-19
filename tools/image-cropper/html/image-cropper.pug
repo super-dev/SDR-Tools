@@ -2,66 +2,61 @@
 title: 'Image Cropper Online'
 description: 'Free Online Image Cropping Tool using HTML Canvas. Download cropped image in JPG or PNG format.'
 layout: 'tools'
+styles:
+  - 'https://unpkg.com/cropperjs@0.8.1/dist/cropper.min.css'
+  - 'styles/image-cropper.css'
+scripts:
+  - 'https://unpkg.com/cropperjs@0.8.1/dist/cropper.min.js'
+  - 'https://unpkg.com/downloadjs@1.4.6/download.min.js'
+  - 'scripts/modernizer-adownload.js'
+  - 'scripts/image-cropper.js'
 ---
 
-block styles
-  link(href='https://unpkg.com/cropperjs@0.8.1/dist/cropper.min.css', rel='stylesheet')  
-  link(href='styles/image-cropper.css', rel='stylesheet')
-
-block pagetitle
-  span.hidden-mobile Image Cropper
-
-block content
-  #drop-target
-    #wrapper.container-content.section
-      #content-wrapper
-        #content
-          #click-target
-            input(type='file' id="fileUpload")
-            #load-prompt Drag and Drop image anywhere or Click here
-          .canvas-container
-            img#myimage
-          .section
-            h2.h3 How to Crop Image?
-            ul.divider
-              li Drag and drop image from your local system to the canvas above.
-              li Use the Aspect Ratio options to choose aspect ratio of Crop Tool.
-              li You can increase the Crop Tool size by dragging the corners and edges.
-              li Move the crop tool by holding the mouse button over it and dragging.
-              li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality).
-              li If the cropped image opens in a new tab, instead of downloading, right click and do "Save As" to save the cropped image.
-              li We do not store any of your images as everything is done client side.
-          .section    
-            h2.h3 Credits
-            ul.divider
-              li
-                a(href='https://github.com/fengyuanchen/cropperjs', target='_blank') CropperJS
-                |  - JavaScript image cropper
-              li
-                a(href='https://github.com/rndme/download', target='_blank') download.js
-                |  - Client-side file downloading using JS and HTML5 by dandavis
-              li
-                a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
-                |  - A minimal modern CSS framework for building beautiful websites
-      #sidebar
-        h3.h4 Image Dimesions
-        p Width: <span id="img-width">0</span>px<br>Height: <span id="img-height">0</span>px
-        button#select-all.button-ghost(type='button') Select All
-        hr
-        h3.h4 Aspect Ratio
-        form(name='aspectform')
-          input(type='radio', name='aspectratio', value='Free', checked='')
-          |  Free
-          input(type='radio', name='aspectratio', value='16:9')
-          |  16:9
-          input(type='radio', name='aspectratio', value='4:3')
-          |  4:3
-        hr
-        h3.h4 Download
-        button#jpg-download(type='button', class='button-primary') JPG
-        button#png-download(type='button', class='button-primary') PNG
-block scripts
-  script(src='https://unpkg.com/cropperjs@0.8.1/dist/cropper.min.js')
-  script(src='https://unpkg.com/downloadjs@1.4.6/download.min.js')
-  script(src='scripts/modernizer-adownload.js')
-  script(src='scripts/image-cropper.js')
+#drop-target
+  #wrapper.container-content.section
+    #content-wrapper
+      #content
+        #click-target
+          input(type='file' id="fileUpload")
+          #load-prompt Drag and Drop image anywhere or Click here
+        .canvas-container
+          img#myimage
+        .section
+          h2.h3 How to Crop Image?
+          ul.divider
+            li Drag and drop image from your local system to the canvas above.
+            li Use the Aspect Ratio options to choose aspect ratio of Crop Tool.
+            li You can increase the Crop Tool size by dragging the corners and edges.
+            li Move the crop tool by holding the mouse button over it and dragging.
+            li Once you have selected the desired area, choose to export either JPG (optimized for small size) or PNG (high-quality).
+            li If the cropped image opens in a new tab, instead of downloading, right click and do "Save As" to save the cropped image.
+            li We do not store any of your images as everything is done client side.
+        .section    
+          h2.h3 Credits
+          ul.divider
+            li
+              a(href='https://github.com/fengyuanchen/cropperjs', target='_blank') CropperJS
+              |  - JavaScript image cropper
+            li
+              a(href='https://github.com/rndme/download', target='_blank') download.js
+              |  - Client-side file downloading using JS and HTML5 by dandavis
+            li
+              a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
+              |  - A minimal modern CSS framework for building beautiful websites
+    #sidebar
+      h3.h4 Image Dimesions
+      p Width: <span id="img-width">0</span>px<br>Height: <span id="img-height">0</span>px
+      button#select-all.button-ghost(type='button') Select All
+      hr
+      h3.h4 Aspect Ratio
+      form(name='aspectform')
+        input(type='radio', name='aspectratio', value='Free', checked='')
+        |  Free
+        input(type='radio', name='aspectratio', value='16:9')
+        |  16:9
+        input(type='radio', name='aspectratio', value='4:3')
+        |  4:3
+      hr
+      h3.h4 Download
+      button#jpg-download(type='button', class='button-primary') JPG
+      button#png-download(type='button', class='button-primary') PNG

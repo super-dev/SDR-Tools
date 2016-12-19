@@ -2,74 +2,69 @@
 title: 'Color Converter'
 description: 'Convert colors from RGB to HEX, HEX to RGB, RGB to HSL, HSL to RGB, RGB to HSV, HSV to RGB etc.'
 layout: 'tools'
+styles:
+  - 'styles/color-converter.css'
+  - 'https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.css'
+scripts:
+  - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
+  - 'https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js'
+  - 'https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.min.js'
+  - 'scripts/color-converter.js'
 ---
 
-block styles
-  link(href='styles/color-converter.css', rel='stylesheet')
-  link(href='https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.css', rel='stylesheet')
-
-block pagetitle
-  span.hidden-mobile Color Converter
-
-block content
-  .container-readable
-    #app
-      .section
-        h2.h3 Enter Color
-        .clearfix
-          #color-container
-            #user-input
-              input#color(type="text", v-model="color")
-              p.text-small.text-muted Example: #808080 or rgb(128, 128, 128) or gray or <button class="button-ghost" @click='random'>Random</button>
-      div(v-if="color.length > 0").animated.fadeIn
-        h2.h3 Color Values
-        p.text-small.text-muted Click to copy converted color value in desired type below
-        div.section.grid
-          #color-out.one-half
-            div
-              label HEX 
-              input(type="text", v-model="colorOut.hex", @click="copy(colorOut.hex, $event)")              
-            div
-              label RGB
-              input(type="text", v-model="colorOut.rgb", readonly="readonly", @click="copy(colorOut.rgb, $event)")              
-            div
-              label HSL
-              input(type="text", v-model="colorOut.hsl", readonly="readonly", @click="copy(colorOut.hsl, $event)")              
-            div
-              label HSV
-              input(type="text", v-model="colorOut.hsv", readonly="readonly", @click="copy(colorOut.hsv, $event)")
-          #color-out-preview.one-half
-            .color-preview(:style="previewStyleIn")
-            div.text-small.text-muted Selected Color
+.container-readable
+  #app
     .section
-      h2.h3 How to Convert Color Format?
+      h2.h3 Enter Color
+      .clearfix
+        #color-container
+          #user-input
+            input#color(type="text", v-model="color")
+            p.text-small.text-muted Example: #808080 or rgb(128, 128, 128) or gray or <button class="button-ghost" @click='random'>Random</button>
+    div(v-if="color.length > 0").animated.fadeIn
+      h2.h3 Color Values
+      p.text-small.text-muted Click to copy converted color value in desired type below
+      div.section.grid
+        #color-out.one-half
+          div
+            label HEX 
+            input(type="text", v-model="colorOut.hex", @click="copy(colorOut.hex, $event)")              
+          div
+            label RGB
+            input(type="text", v-model="colorOut.rgb", readonly="readonly", @click="copy(colorOut.rgb, $event)")              
+          div
+            label HSL
+            input(type="text", v-model="colorOut.hsl", readonly="readonly", @click="copy(colorOut.hsl, $event)")              
+          div
+            label HSV
+            input(type="text", v-model="colorOut.hsv", readonly="readonly", @click="copy(colorOut.hsv, $event)")
+        #color-out-preview.one-half
+          .color-preview(:style="previewStyleIn")
+          div.text-small.text-muted Selected Color
+  .section
+    h2.h3 How to Convert Color Format?
+    ul.divider
+      li Enter value of your color in textbox above in any format (RGB, HEX, RGBA, HSL, HSV etc.)
+      li Converted color values will appear as soon as you enter the color.
+      li Click to copy value of selected color in HEX, RGB, HSL or HSV.
+      li Value will be copied directly to your clipboard.
+      li In case your browser does not support copying values directly to clipboard via script then you can do a manual copy.
+      li You can use the "Random" button to generate a random color.
+      li You can share the color using the URL in address bar as it updates to reflect current color.
+      li We do not store any data entered by you and everything is done inside your browser.
+  .section
+    h2.h4 Credits
+    p
       ul.divider
-        li Enter value of your color in textbox above in any format (RGB, HEX, RGBA, HSL, HSV etc.)
-        li Converted color values will appear as soon as you enter the color.
-        li Click to copy value of selected color in HEX, RGB, HSL or HSV.
-        li Value will be copied directly to your clipboard.
-        li In case your browser does not support copying values directly to clipboard via script then you can do a manual copy.
-        li You can use the "Random" button to generate a random color.
-        li You can share the color using the URL in address bar as it updates to reflect current color.
-        li We do not store any data entered by you and everything is done inside your browser.
-    .section
-      h2.h4 Credits
-      p
-        ul.divider
-          li
-            a(href='http://vuejs.org/', target='_blank') vue.js
-            |  - The Progressive JavaScript Framework
-          li
-            a(href='https://github.com/bgrins/TinyColor', target='_blank') TinyColor
-            |  - Fast, small color manipulation and conversion for JavaScript
-          li
-            a(href='http://t4t5.github.io/sweetalert/', target='_blank') SweetAlert
-            |  - A beautiful replacement for JavaScript's alert
-          li
-            a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
-            |  - A minimal modern CSS framework for building beautiful websites
-block scripts
-  script(src='https://unpkg.com/vue@2.0.3/dist/vue.js')
-  script(src='https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js')
-  script(src=' https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.min.js') 
-  script(src='scripts/color-converter.js')
+        li
+          a(href='http://vuejs.org/', target='_blank') vue.js
+          |  - The Progressive JavaScript Framework
+        li
+          a(href='https://github.com/bgrins/TinyColor', target='_blank') TinyColor
+          |  - Fast, small color manipulation and conversion for JavaScript
+        li
+          a(href='http://t4t5.github.io/sweetalert/', target='_blank') SweetAlert
+          |  - A beautiful replacement for JavaScript's alert
+        li
+          a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
+          |  - A minimal modern CSS framework for building beautiful websites
