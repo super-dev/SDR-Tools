@@ -7,6 +7,14 @@
   }
 }
 
+@include mobile {
+  .header-right {  
+    .ad-container {
+      display: none;
+    }
+  }
+}
+
 @include desktop {
   .header-right-elem {
     display: inline-block;
