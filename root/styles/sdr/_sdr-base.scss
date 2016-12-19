@@ -23,6 +23,16 @@
   }
 }
 
+@include mobile {
+  .header-right .menu {
+    margin-bottom: 1rem;
+  }
+  .header-right .menu li {
+    display: inline-block;
+    padding: 0 10px;
+  }
+}
+
 .main {
   min-height: 480px;
 }
@@ -30,6 +40,14 @@
 .footer-logo {
   height: 48px;
   width: auto;
+}
+
+.footer a {
+    color: #5d5d5d!important;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
 
 ins {

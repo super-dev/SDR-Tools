@@ -14,6 +14,8 @@ block header-right
       +menu(data.menu.main, 'menu')
       .header-right        
         +menu(data.menu.secondary, 'menu')
+        .expandable-search
+          include ./../_includes/search-form.html
 
 mixin listtools(tools, category)
   #tools
