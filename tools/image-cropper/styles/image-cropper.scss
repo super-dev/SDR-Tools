@@ -77,3 +77,14 @@ input[type="radio"] {
     margin-left: 6px;
   }
 }
+
+@media (max-width: 979px) {
+  #content {
+    margin-right: 0;
+  }
+  #sidebar {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+}
