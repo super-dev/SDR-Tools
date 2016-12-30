@@ -1,5 +1,6 @@
 .site-branding img {
   padding: 0;
+  opacity: 1;
 }
 
 .header {
@@ -15,8 +16,8 @@
     line-height: 2.1;
   }
 
-  .button-ghost {
-    background: #fff;
+  .button-primary {
+    color: #fff;
     opacity: 1;
   }
 
