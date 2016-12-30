@@ -1,5 +1,9 @@
 @import "sdr/sdr";
 
+nav .current-menu-item > a {
+  color: #fff;
+}
+
 .header-right {  
   .ad-container {
     width: 478px;
