@@ -15,12 +15,22 @@
     line-height: 2.1;
   }
 
+  .button-ghost {
+    background: #fff;
+    opacity: 1;
+  }
+
   h1 {
     margin-top: 0;
     line-height: $size-site-header-height;
     font-weight: normal;
     display: inline-block;
+    color: #fff;
   }
+}
+
+nav .current-menu-item > a {
+  color: #fff;
 }
 
 @include mobile {
@@ -52,4 +62,11 @@
 
 ins {
   background: transparent;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, h2, h3, h4, h5, h6,
+.header .title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
