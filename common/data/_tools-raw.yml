@@ -39,3 +39,10 @@
   category: "color"
   color: "#dda73b"
   icon: "icon.svg"
+
+- name: "JSON Viewer"
+  path: "json-viewer"
+  description: "An online JSON viewer. Display JSON data in tree view and with syntax highlighting."
+  category: "code"
+  color: "#4fa9aa"
+  icon: "icon.svg"

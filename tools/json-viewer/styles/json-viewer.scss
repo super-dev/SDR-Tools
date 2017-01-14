@@ -1,0 +1,42 @@
+.editor-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
+}
+
+textarea, textarea:focus {
+  border: none;
+  border: 1px solid #eee;
+}
+
+
+.json-input,
+.json-renderer {
+  display: inline-block;
+  width: 50%;
+  min-height: 600px;
+  margin: 0;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 0;
+  overflow-y: auto;
+}
+
+.json-input {  
+  resize: none;
+  outline: none;
+  float: left;
+  background-color: #fff;
+  font-size: 14px;
+  font-family: 'Monaco', courier, monospace;
+  padding: 20px 20px 60px;
+}
+
+.json-renderer {
+  float: right;
+  font-size: 14px;
+  background: #fafafa;
+  padding: 0 20px 60px;
+}
