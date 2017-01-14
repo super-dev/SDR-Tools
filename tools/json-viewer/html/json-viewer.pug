@@ -36,3 +36,27 @@ scripts:
         ]
       }
     pre#json-renderer
+
+.container-readable
+    .section
+      h2.h3 How to View JSON Online?
+      ul.divider
+        li Enter the JSON data as text in the textarea on the left.
+        li You can also enter a JSON data URL in the input box above the textarea to fetch the JSON string from the URL.
+        li JSON view will be automatically generated if there are no errors in parsing/fetching the JSON.
+        li You can fold and expand the child nodes in the JSON view by clicking on the small traingle icons.
+        li Any links inside the JSON data will be clickable in the rendered JSON view.
+        li When displaying the JSON from URL, the input textarea gets hidden. You can start over by reloading the page.
+        li We do not store any of your JSON data as everything is done client side.
+    .section.text-small
+      h2.h3 Credits
+      ul.divider
+        li
+          a(href='https://jquery.com/', target='_blank') jQuery
+          |  - jQuery is a fast, small, and feature-rich JavaScript library
+        li
+          a(href='https://github.com/abodelot/jquery.json-viewer', target='_blank') jQuery.json-viewer
+          |  - jQuery plugin for displaying JSON data
+        li
+          a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
+          |  - A minimal modern CSS framework for building beautiful websites
