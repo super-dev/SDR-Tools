@@ -14,7 +14,7 @@ scripts:
 .container.editor-container
   p.text-muted Paste JSON below or fetch from URL
   #editor.section
-    textarea.json-input(autocomplete="off").
+    textarea#json-input(autocomplete="off").
       {
         "id": 1001,
         "type": "donut",
@@ -33,4 +33,4 @@ scripts:
           { "id": 5004, "type": "Maple" }
         ]
       }
-    pre.json-renderer
+    pre#json-renderer
