@@ -29,6 +29,37 @@
   }
 }
 
+ul.tools-categories-menu {
+  font-size: 90%;
+
+  li {
+    margin: 0;
+    line-height: 28px;
+  }
+
+  li a {
+    display: block;
+    width: 100%;
+    opacity: 0.6;
+    padding: 3px 20px 3px 0;
+    line-height: 24px;
+
+    svg {
+      margin-right: 4px;
+    }
+  }
+
+  li a.current-menu-item, li a:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  li a.current-menu-item {
+    font-size: 110%;
+    font-weight: 500;
+  }
+}
+
 ul.divider {
   padding-left: 0;
   line-height: 1.3;
