@@ -19,11 +19,11 @@ block header-right
 
 mixin listtools(tools, category)
   #tools
-    if tools.length >= 5
+    if tools && tools.length >= 5
       .sdr-list-search
         input.search(type="search", placeholder="Search...")
     ul.list.sdr-list
-      if tools.length
+      if tools && tools.length
         each tool in tools
           li
             .media.media-left
@@ -32,7 +32,7 @@ mixin listtools(tools, category)
                 h2.entry-title        
                   a(href=tool.url) #{tool.name}
                 div.entry-content #{tool.description}
-      if tools.length == 0
+      if !tools || tools.length == 0
         p.text-center Our code monkeys are working on adding <strong>#{category}</strong> tools. Please check back later..
       else if tools.length < 3
         p.section-large.text-center.text-muted.text-small Our code monkeys are working on adding more <strong>#{category}</strong> tools.<br>If you have a suggestion, please don't hesitate to <a href="https://superdevresources.com/contact/">contact</a>.
@@ -62,6 +62,9 @@ block content
                 li
                   a(href="/writing" class=(page.path === '/writing') ? 'current-menu-item' : '')
                     |  Writing Tools
+                li
+                  a(href="/code" class=(page.path === '/code') ? 'current-menu-item' : '')
+                    |  Code Tools
       .one-half.animated.fadeIn
         .section
           +listtools(data.tools[page.category], page.category)
