@@ -4,10 +4,7 @@ path = require('path');
 
 exports.data = function() {
   var data = {
-    all: [],
-    design: [],
-    development: [],
-    marketing: []
+    all: []
   }
   
   // get data path
@@ -24,6 +21,10 @@ exports.data = function() {
       }
 
       toolItem.url = ('/' + toolItem.path).replace(/\\/g, '/')
+
+      if(!data[toolItem.category]) {
+        data[toolItem.category] = []
+      }
 
       data[toolItem.category].push(toolItem)
     }

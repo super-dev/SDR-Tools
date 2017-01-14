@@ -42,15 +42,15 @@ block content
     .container-readable
       .sdr-submenu
         a.button.button-text(href="/" class=(page.path === '/') ? 'router-link-active': '') All
-        a.button.button-text(href="/design" class=(page.path === '/design') ? 'router-link-active' : '')
+        a.button.button-text(href="/color" class=(page.path === '/color') ? 'router-link-active' : '')
           include ./../_includes/icons/_brush.svg              
-          | Design
-        a.button.button-text(href="/development" class=(page.path === '/development') ? 'router-link-active' : '')
+          | Color Tools
+        a.button.button-text(href="/image" class=(page.path === '/image') ? 'router-link-active' : '')
           include ./../_includes/icons/_code.svg              
-          |  Development
-        a.button.button-text(href="/marketing" class=(page.path === '/marketing') ? 'router-link-active' : '')
+          |  Image Tools
+        a.button.button-text(href="/writing" class=(page.path === '/writing') ? 'router-link-active' : '')
           include ./../_includes/icons/_bullhorn.svg              
-          |  Marketing
+          |  Writing Tools
     .container-readable.animated.fadeIn
       .section
         +listtools(data.tools[page.category], page.category)
