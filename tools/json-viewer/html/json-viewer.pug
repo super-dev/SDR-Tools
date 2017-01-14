@@ -12,7 +12,9 @@ scripts:
 ---
 
 .container.editor-container
-  p.text-muted Paste JSON below or fetch from URL
+  div
+    p.text-muted Paste JSON below or fetch data from URL
+    input#json-url(type="text", placeholder="http://example.com/data.json")
   #editor.section
     textarea#json-input(autocomplete="off").
       {
