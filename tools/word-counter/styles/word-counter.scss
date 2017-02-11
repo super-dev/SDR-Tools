@@ -1,13 +1,47 @@
 #app {
-  textarea {
+  .grid {
+    border: 1px solid #ddd;
     min-height: 450px;
   }
 
-  .one-half:first-child {
-    width: 70%;
+  textarea {
+    min-height: 450px;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    resize: none;
+    background: #fafafa;
   }
   
   .one-half:last-child {
-    width: 25%;
+    background: #ebebeb;
+    min-height: 450px;
+    padding: 1em;
   }
+
+  @media (min-width: 980px) {
+    .one-half:first-child {
+      width: 70%;
+      margin: 0;
+    }
+    
+    .one-half:last-child {
+      width: 30%;
+    }
+  }
+}
+
+ul.stats {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+strong.keywords-title {
+  font-weight: 600;
+}
+
+ul.keywords {
+  margin-top: 1em;
+  font-weight: bold;
+  line-height: 1.2;
 }

@@ -11,22 +11,21 @@ scripts:
   - 'scripts/word-counter.js'
 ---
 
-#app.container-content.section
-  .gird
+#app.container-content.section-medium
+  .grid
     .one-half
       textarea(:value="input", @input="update", placeholder="Enter text here..")
     .one-half
-      ul.out
-        li Words: {{ words }}
-        li Characters: {{ chars }}
-        li Whitespaces: {{ whitespaces }}
-        li Sentences: {{ sentences }}
-        li Paragraphs: {{ paragraphs }}
-        li Reading Time: {{ readingTime }}
-        li Readablity Index: {{ readablityIndex }}
-        li {{ suitableFor }}
+      ul.stats.bare
+        li Words: <strong>{{ words }}</strong>
+        li Characters: <strong>{{ chars }}</strong>
+        li Whitespaces: <strong>{{ whitespaces }}</strong>
+        li Sentences: <strong>{{ sentences }}</strong>
+        li Paragraphs: <strong>{{ paragraphs }}</strong>
+        li Reading Time: <strong>{{ readingTime }}</strong>
+        li Readablity Index: <strong>{{ readablityIndex }} <br>({{ suitableFor }})</strong>
 
       p
-        strong Top Keywords
-      ul.keywords
+        strong.keywords-title Top Keywords
+      ul.keywords.bare
         li(v-for="keyword in topKeywords") {{keyword.word}} - {{keyword.count}}
