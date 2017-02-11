@@ -73,8 +73,8 @@ new Vue({
   },
   methods: {
     update: function (e) {
-      this.input = e.target.value.trim()
-      this.topKeywords = this.findTopKeywords(e.target.value.trim())
+      this.input = e.target.value
+      this.topKeywords = this.findTopKeywords(e.target.value)
     },
     count: function(regex) {
       if(this.input.length != 0) {
