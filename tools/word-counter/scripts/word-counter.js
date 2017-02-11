@@ -116,7 +116,7 @@ new Vue({
       var topKeywords = []
 
       sortedArray.forEach(function (entity) {
-        if(stopWords.indexOf(entity.word) < 0 && topKeywords.length < 8) {
+        if(stopWords.indexOf(entity.word) < 0 && topKeywords.length < 6) {
           topKeywords.push(entity)
         }
       })
