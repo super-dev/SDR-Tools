@@ -7,6 +7,7 @@ styles:
 scripts:
   - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
   - 'scripts/readablity.js'
+  - 'scripts/stopwords.js'
   - 'scripts/word-counter.js'
 ---
 
@@ -24,3 +25,8 @@ scripts:
         li Reading Time: {{ readingTime }}
         li Readablity Index: {{ readablityIndex }}
         li {{ suitableFor }}
+
+      p
+        strong Top Keywords
+      ul.keywords
+        li(v-for="keyword in topKeywords") {{keyword.word}} - {{keyword.count}}

@@ -1,5 +1,9 @@
  // https://github.com/regexhq/whitespace-regex/blob/master/index.js
 var whitespaceRegex = /[\s\f\n\r\t\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u2028\u2029\u202f\u205f\u3000\ufeff\x09\x0a\x0b\x0c\x0d\x20\xa0]/g
+
+// https://github.com/regexhq/word-regex/blob/master/index.js
+var wordRegex =  /[a-zA-Z0-9_\u0392-\u03c9\u0400-\u04FF]+|[\u4E00-\u9FFF\u3400-\u4dbf\uf900-\ufaff\u3040-\u309f\uac00-\ud7af\u0400-\u04FF]+|\w+/g
+
 var sentenceRegex = /\w[.?!](\s|$)/
 var paragraphRegex = /[\r\n\t]+/
 var wordsPerMinute = 275
@@ -7,14 +11,15 @@ var wordsPerMinute = 275
 new Vue({
   el: '#app',
   data: {
-    input: ''
+    input: '',
+    topKeywords: []
   },
   computed: {
     chars: function () {
       return this.input.length
     },
     words: function () {      
-      return this.splitCount(whitespaceRegex)
+      return this.count(wordRegex)
     },
     sentences: function () {
       return this.splitCount(sentenceRegex)
@@ -69,6 +74,7 @@ new Vue({
   methods: {
     update: function (e) {
       this.input = e.target.value.trim()
+      this.topKeywords = this.findTopKeywords(e.target.value.trim())
     },
     count: function(regex) {
       if(this.input.length != 0) {
@@ -86,6 +92,36 @@ new Vue({
       }
 
       return count
+    },
+    findTopKeywords: function(text) {
+      var words = text.match(wordRegex)
+      var keywordsMap = {}
+      words.forEach(function (word) {
+        word = word.toLowerCase()
+        if(word.length > 0 && !keywordsMap[word]) keywordsMap[word] = 0
+        
+        keywordsMap[word]++
+      })
+
+      // convert from map to array
+      var keywordsArray = []
+      for(var key in keywordsMap) {
+        if (keywordsMap.hasOwnProperty(key)) {
+          keywordsArray.push({word: key, count: keywordsMap[key]})
+        }
+      }
+
+      var sortedArray = keywordsArray.sort(function(a, b) { return b.count - a.count })
+
+      var topKeywords = []
+
+      sortedArray.forEach(function (entity) {
+        if(stopWords.indexOf(entity.word) < 0 && topKeywords.length < 8) {
+          topKeywords.push(entity)
+        }
+      })
+
+      return topKeywords
     }
   }
 })
