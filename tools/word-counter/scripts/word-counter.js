@@ -30,6 +30,15 @@ new Vue({
       var minutes = Math.floor(time)
       var seconds = (time - minutes) * 60
       return minutes + "m " + Math.ceil(seconds) + "s"
+    },
+    readablityIndex: function() {
+      return automatedReadability(
+        {
+          sentence: this.sentences,
+          word: this.words,
+          character: this.chars - this.whitespaces
+        }
+      ).toFixed(2)
     }
   },
   methods: {
