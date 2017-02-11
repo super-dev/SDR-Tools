@@ -39,6 +39,31 @@ new Vue({
           character: this.chars - this.whitespaces
         }
       ))
+    },
+    suitableFor: function () {
+      // https://en.wikipedia.org/wiki/Automated_readability_index
+      
+      var indexMap = [
+        'Age: 5-6	Kindergarten',
+        'Age: 6-7	First Grade',
+        'Age: 7-8	Second Grade',
+        'Age: 8-9	Third Grade',
+        'Age: 9-10	Fourth Grade',
+        'Age: 10-11	Fifth Grade',
+        'Age: 11-12	Sixth Grade',
+        'Age: 12-13	Seventh Grade',
+        'Age: 13-14	Eighth Grade',
+        'Age: 14-15	Ninth Grade',
+        'Age: 15-16	Tenth Grade',
+        'Age: 16-17	Eleventh grade',
+        'Age: 17-18	Twelfth grade',
+        'Age: 18-22	College'
+      ]
+      var index = this.readablityIndex
+      if(index < 1) index = 1
+      if(index > 14) index = 14
+
+      return indexMap[index - 1]
     }
   },
   methods: {

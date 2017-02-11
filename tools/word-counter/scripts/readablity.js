@@ -28,7 +28,7 @@ var BASE = 21.43;
  */
 function automatedReadability(counts) {
   if (!counts || !counts.sentence || !counts.word || !counts.character) {
-    return NaN;
+    return 0;
   }
 
   return (CHARACTER_WEIGHT * (counts.character / counts.word)) +
