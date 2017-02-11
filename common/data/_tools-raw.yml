@@ -11,6 +11,13 @@
   category: "writing"
   color: "#8BC34A"
   icon: "icon.svg"
+  
+- name: "Word Counter"
+  path: "word-counter"
+  description: "Online Word Counter for counting words, characters, sentences and paragraphs in a text."
+  category: "writing"
+  color: "#634fc9"
+  icon: "icon.svg"
 
 - name: "Image to Base64"
   path: "base64-image"
