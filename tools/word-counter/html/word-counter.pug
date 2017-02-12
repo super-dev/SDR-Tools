@@ -23,18 +23,18 @@ scripts:
         li Sentences: <strong>{{ sentences }}</strong>
         li Paragraphs: <strong>{{ paragraphs }}</strong>
         li Reading Time: <strong>{{ readingTime }}</strong>
-        li Readablity Index: <strong>{{ readablityIndex }} <br>({{ suitableFor }})</strong>
+        li Readability Index: <strong>{{ readablityIndex }} <br>({{ suitableFor }})</strong>
 
       p
         strong.keywords-title Top Keywords
       ul.keywords.bare
         li(v-for="keyword in topKeywords") {{keyword.word}} - {{keyword.count}}
   .section
-      h2.h3 How to use Word Counter and Readablity Checker?
+      h2.h3 How to use Word Counter and Readability Checker?
       ul.divider
         li Enter your text content in the area above.
         li Count of words, characters, whitespaces, sentences and paragraphs will be automatically displayed.
         li Reading time is displayed based on a reading speed of 275 words per minute.
-        li Readablity Index is calculated using <a href="https://en.wikipedia.org/wiki/Automated_readability_index" target="_blank">Automated readablity index</a>.
+        li Readability Index is calculated using <a href="https://en.wikipedia.org/wiki/Automated_readability_index" target="_blank">Automated readability index</a>.
         li Top 6 most used keywords in the content will also be shown. This does not include <a href="https://en.wikipedia.org/wiki/Stop_words" target="_blank">Stop words</a>.
         li We do not store any of your content as everything is done client side.
