@@ -8,7 +8,7 @@ html:
   sitemap: ''
 
 assets:  
-  dest: '../../publicword-counter'
+  dest: '../../public/word-counter'
 
 styles:  
   dest: '../../public/word-counter/styles'
