@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Tools for Developers and Designers by SDR",
   "scripts": {
+    "new": "node new-tool.js",
     "clean": "node mmpilot-wrapper.js clean",
     "build": "node mmpilot-wrapper.js build",
     "serve": "node mmpilot-wrapper.js serve",

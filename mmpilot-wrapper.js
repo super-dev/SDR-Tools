@@ -2,11 +2,8 @@ var fs = require('fs')
 var path = require('path')
 require('shelljs/global');
 
-if (!which('git')) {
-  echo('Sorry, this script requires git');
-  exit(1);
-}
 
+// verbose shelljs
 config.verbose = true;
 
 // get root path
