@@ -21,12 +21,16 @@ exports.data = function() {
       }
 
       toolItem.url = ('/' + toolItem.path).replace(/\\/g, '/')
+      var categories = toolItem.categories
 
-      if(!data[toolItem.category]) {
-        data[toolItem.category] = []
-      }
+      categories.forEach(function (category) {
 
-      data[toolItem.category].push(toolItem)
+          if(!data[category]) {
+            data[category] = []
+          }
+
+          data[category].push(toolItem)
+      })
     }
   } catch (e) {
     console.log(e);

@@ -1,0 +1,32 @@
+clean: ['../../public/linear-gradient']
+
+includes: '../../common/_includes'
+layouts: '../../common/_layouts'
+out: '.'
+html:
+  dest: '../../public'
+  sitemap: ''
+
+assets:
+  dest: '../../public/linear-gradient'
+
+styles:
+  dest: '../../public/linear-gradient/styles'
+
+scripts:
+  dest: '../../public/linear-gradient/scripts'
+
+data: '../../common/data'
+
+## additional data for site available as site.{key} in pug templates
+site:
+  url: 'https://tools.superdevresources.com'
+  title: SDR Tools
+  icon: sdr-logo
+  analytics: 'UA-37350394-3'
+
+## overrides when built with -d or --development option
+development:
+  site:
+    url: 'http://localhost:3000'
+    analytics: ''

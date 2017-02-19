@@ -1,55 +1,62 @@
 - name: "Image Cropper"
   path: "image-cropper"
   description: "Online tool for cropping images. Download cropped image in JPG or PNG format."
-  category: "image"
+  categories: ["image"]
   color: "#607D8B"
   icon: "icon.svg"
 
 - name: "Markdown Writer"
   path: "markdown-writer"
   description: "Online Markdown editor with real-time preview."
-  category: "writing"
+  categories: ["writing"]
   color: "#8BC34A"
   icon: "icon.svg"
   
 - name: "Word Counter"
   path: "word-counter"
   description: "Online Word Counter for counting words, characters, sentences and paragraphs in a text."
-  category: "writing"
+  categories: ["writing"]
   color: "#634fc9"
   icon: "icon.svg"
 
 - name: "Image to Base64"
   path: "base64-image"
   description: "Convert Image to base64 string online for use in HTML img tag and in CSS files as data URI."
-  category: "image"
+  categories: ["image"]
   color: "#f06292"
   icon: "icon.svg"
 
 - name: "Color Shades"
   path: "color-shades"
   description: "Enter color in RGB, HEX, HSL or HSV and get different shades of the color."
-  category: "color"
+  categories: ["color"]
   color: "#a156c3"
   icon: "icon.svg"
 
 - name: "Color Converter"
   path: "color-converter"
   description: "Convert colors from RGB to HEX, HEX to RGB, RGB to HSL, HSL to RGB, RGB to HSV etc."
-  category: "color"
+  categories: ["color"]
   color: "#6780b2"
   icon: "icon.svg"
 
 - name: "Color Extractor"
   path: "color-extractor"
   description: "Extract colors from an Image. Builds a color palette from dominant colors in an image."
-  category: "color"
+  categories: ["color"]
   color: "#dda73b"
   icon: "icon.svg"
 
 - name: "JSON Viewer"
   path: "json-viewer"
   description: "An online JSON viewer. Display JSON data in tree view and with syntax highlighting."
-  category: "code"
+  categories: ["code"]
   color: "#4fa9aa"
+  icon: "icon.svg"
+
+- name: "Linear Gradient Generator"
+  path: "linear-gradient"
+  description: "Generate Leniear Gradient CSS and Background Images with custom configuration options."
+  categories: ["image", code]
+  color: "#8f44fc"
   icon: "icon.svg"
