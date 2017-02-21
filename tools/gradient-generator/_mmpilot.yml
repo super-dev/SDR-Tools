@@ -1,4 +1,4 @@
-clean: ['../../public/linear-gradient']
+clean: ['../../public/gradient-generator']
 
 includes: '../../common/_includes'
 layouts: '../../common/_layouts'
@@ -8,13 +8,13 @@ html:
   sitemap: ''
 
 assets:
-  dest: '../../public/linear-gradient'
+  dest: '../../public/lgradient-generator'
 
 styles:
-  dest: '../../public/linear-gradient/styles'
+  dest: '../../public/gradient-generator/styles'
 
 scripts:
-  dest: '../../public/linear-gradient/scripts'
+  dest: '../../public/gradient-generator/scripts'
 
 data: '../../common/data'
 

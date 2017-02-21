@@ -1,21 +1,21 @@
 ---
-title: 'Linear Gradient Generator'
-description: 'Generate Linear Gradient CSS and Background Images with custom configuration options. Get CSS code or JPG, PNG image.'
+title: 'Gradient Background Generator'
+description: 'Generate Linear and Radial Gradient as CSS and Background Images with custom configuration options. Get CSS code or JPG, PNG image.'
 layout: 'tools'
 styles:
   - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css'
-  - 'styles/linear-gradient.css'
+  - 'styles/gradient-generator.css'
 scripts:
   - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
   - 'https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js'
   - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js'
-  - 'scripts/linear-gradient.js'
+  - 'scripts/gradient-generator.js'
 ---
 
 #app.container.section-medium
   .grid
     .one-half
-        #linear-gradient(:style="gradient")
+        #gradient(:style="gradient")
     .one-half
       label.color(for="primaryColor") Primary Color
         button.button-ghost(@click='randomPrimary') Random
