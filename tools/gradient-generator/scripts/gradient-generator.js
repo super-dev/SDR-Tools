@@ -4,7 +4,9 @@ new Vue({
     return {
       primaryColor: '#0224ab',      
       secondaryColor: '#fad0c4',
-      direction: 0
+      gradientType: 'linear',
+      direction: 0,
+      position: 'top'
     }
   },
   computed: {
@@ -15,7 +17,12 @@ new Vue({
       return 'background-color: ' + this.secondaryColor;
     },
     gradient: function() {
-      return 'background: linear-gradient(' + this.direction + 'deg, ' + this.primaryColor + ' 0%, ' + this.secondaryColor + ' 100%)'
+      if(this.gradientType === 'linear') {
+        return 'background: linear-gradient(' + this.direction + 'deg, ' + this.primaryColor + ' 0%, ' + this.secondaryColor + ' 100%)'
+      }
+      else {
+        return 'background: radial-gradient(at ' + this.position + ', ' + this.primaryColor + ' , ' + this.secondaryColor + ')'
+      }
     }
   },
   methods: {
@@ -32,7 +39,6 @@ new Vue({
   watch: {
     // whenever gradient changes, this function will run
     gradient: function (newgradient) {
-      console.log(this.$refs.cssCode)
       var t = this
       Vue.nextTick(function () {
         hljs.highlightBlock(t.$refs.cssCode);

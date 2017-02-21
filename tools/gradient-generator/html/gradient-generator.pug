@@ -21,11 +21,19 @@ scripts:
         button.button-ghost(@click='randomPrimary') Random
         input#primaryColor(type="text", v-model="primaryColor")
         span.colorPreview(:style="primaryColorBackground")
+
       label.color(for="secondaryColor") Secondary Color        
         button.button-ghost(@click='randomSecondary') Random
         input#secondaryColor(type="text", v-model="secondaryColor")
         span.colorPreview(:style="secondaryColorBackground")
-      label(for="direction") Direction
+
+      label(for="gradientType") Gradient Type
+      input(type="radio", id="linear", value="linear", v-model="gradientType")
+      label.label-inline(for="linear") Linear Gradient        
+      input(type="radio", id="radial", value="radial", v-model="gradientType")
+      label.label-inline(for="radial") Radial Gradient
+
+      label(for="direction", v-if="gradientType == 'linear'") Direction
         select#direction(v-model="direction", ref="directionSelect")
           option(value=180) &darr; Top to Bottom
           option(value=225) &swarr; Top-Right to Bottom-Left
@@ -35,11 +43,23 @@ scripts:
           option(value=45) &nearr; Bottom-Left to Top-Right
           option(value=90) &larr; Left to Right
           option(value=135) &searr; Top-Left to Bottom-Right
+
+      label(for="position", v-if="gradientType == 'radial'") Position
+        select#direction(v-model="position", ref="positionSelect")
+          option(value='center') Center
+          option(value='top') Top
+          option(value='right top') Top-Right
+          option(value='right') Right
+          option(value='right bottom') Bottom-Right
+          option(value='bottom') Bottom
+          option(value='left bottom') Bottom-Left
+          option(value='left') Left
+          option(value='left top') Top-Left
+
       label(for="cssOutput") CSS code
         button.button-ghost(@click='randomSecondary') Copy
         pre#cssOutput
           code.css(v-html="gradient", ref="cssCode")
-
 
       label(for="gradientDownload") Gradient Image
         #gradientDownload
