@@ -153,5 +153,10 @@ function createLinearGradient(canvas, ctx, direction, primaryColor, secondaryCol
 }
 
 function downloadImage(dataURI, type) {
-  download(dataURI, "gradient." + type, "image/" + type);
+  if (Modernizr.adownload) {
+    download(dataURI, "gradient." + type, "image/" + type);
+  }
+  else {
+    window.open(dataURI);
+  }
 }
