@@ -24,9 +24,11 @@ label {
   font-size: 90%;
   position: relative;
   display: block;
-
-  &:first-child {
-    margin-top: 0;
+  
+  @media (min-width: 980px) {
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   > * {
