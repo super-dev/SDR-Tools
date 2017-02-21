@@ -21,7 +21,7 @@ new Vue({
         return 'background: linear-gradient(' + this.direction + 'deg, ' + this.primaryColor + ' 0%, ' + this.secondaryColor + ' 100%)'
       }
       else {
-        return 'background: radial-gradient(at ' + this.position + ', ' + this.primaryColor + ' , ' + this.secondaryColor + ')'
+        return 'background: radial-gradient(circle at ' + this.position + ', ' + this.primaryColor + ' , ' + this.secondaryColor + ')'
       }
     }
   },
@@ -42,14 +42,14 @@ new Vue({
         grd = createLinearGradient(canvas, ctx, this.direction, this.primaryColor, this.secondaryColor)
       }
       else {
-
+        grd = createRadialGradient(canvas, ctx, this.position, this.primaryColor, this.secondaryColor)
       }
 
       ctx.fillStyle = grd
       ctx.fillRect(0,0,canvas.width,canvas.height)
 
       if(isJPG) {
-        downloadImage(canvas.toDataURL("image/jpeg", 0.9), 'jpeg')
+        downloadImage(canvas.toDataURL("image/jpeg", 1), 'jpeg')
       }
       else {
         downloadImage(canvas.toDataURL(), 'png')
@@ -152,8 +152,86 @@ function createLinearGradient(canvas, ctx, direction, primaryColor, secondaryCol
   return grd
 }
 
+
+function createRadialGradient(canvas, ctx, position, primaryColor, secondaryColor) {
+  var x0, y0, r0, x1, y1, r1
+  r0 = 0
+  var diag = Math.sqrt(canvas.width*canvas.width + canvas.height*canvas.height)
+  switch(position) {
+    case 'center':
+      x0 = canvas.width / 2
+      y0 = canvas.height / 2
+      x1 = canvas.width / 2
+      y1 = canvas.height / 2
+      r1 = canvas.height
+      break;
+    case 'top':
+      x0 = canvas.width / 2
+      y0 = 0
+      x1 = canvas.width / 2
+      y1 = 0
+      r1 = canvas.width
+      break;
+    case 'right top':
+      x0 = canvas.width
+      y0 = 0
+      x1 = canvas.width
+      y1 = 0
+      r1 = diag
+      break;
+    case 'right':
+      x0 = canvas.width
+      y0 = canvas.height / 2
+      x1 = canvas.width
+      y1 = canvas.height / 2
+      r1 = canvas.width
+      break;
+    case 'right bottom':
+      x0 = canvas.width
+      y0 = canvas.height
+      x1 = canvas.width
+      y1 = canvas.height
+      r1 = diag
+      break;
+    case 'bottom':
+      x0 = canvas.width / 2
+      y0 = canvas.height
+      x1 = canvas.width / 2
+      y1 = canvas.height
+      r1 = canvas.width
+      break;
+    case 'left bottom':
+      x0 = 0
+      y0 = canvas.height
+      x1 = 0
+      y1 = canvas.height
+      r1 = diag
+      break;
+    case 'left':
+      x0 = 0
+      y0 = canvas.height / 2
+      x1 = 0
+      y1 = canvas.height / 2
+      r1 = canvas.width
+      break;
+    case 'left top':
+      x0 = 0
+      y0 = 0
+      x1 = 0
+      y1 = 0
+      r1 = diag
+      break;
+  }
+
+  var grd = ctx.createRadialGradient(x0, y0, r0, x1, y1, r1);
+  grd.addColorStop(0, primaryColor);
+  grd.addColorStop(1, secondaryColor);
+
+  return grd
+}
+
 function downloadImage(dataURI, type) {
-  if (Modernizr.adownload) {
+  if (!Modernizr.adownload) {
     download(dataURI, "gradient." + type, "image/" + type);
   }
   else {
