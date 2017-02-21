@@ -55,10 +55,14 @@ label {
     border-radius: 3px;
   }
 
-  button {
+  .button-ghost {
     margin: 0;
     font-size: 80%;
     margin-left: 1rem;
+  }
+
+  .button {
+    margin: 0;
   }
 }
 

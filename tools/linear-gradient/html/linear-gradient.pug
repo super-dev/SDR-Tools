@@ -39,3 +39,9 @@ scripts:
         button.button-ghost(@click='randomSecondary') Copy
         pre#cssOutput
           code.css(v-html="gradient", ref="cssCode")
+
+
+      label(for="gradientDownload") Gradient Image
+        #gradientDownload
+          button.button(@click='randomSecondary') Download PNG
+          button.button(@click='randomSecondary') Download JPG
