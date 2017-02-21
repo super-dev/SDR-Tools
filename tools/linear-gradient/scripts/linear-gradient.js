@@ -28,7 +28,17 @@ new Vue({
     copyCode: function() {
       return
     }
-  },  
+  }, 
+  watch: {
+    // whenever gradient changes, this function will run
+    gradient: function (newgradient) {
+      console.log(this.$refs.cssCode)
+      var t = this
+      Vue.nextTick(function () {
+        hljs.highlightBlock(t.$refs.cssCode);
+      })      
+    }
+  },
   mounted: function () {
     var primary = tinycolor.mix(tinycolor.random().saturate(10), tinycolor('#fff'), amount = 50)
     this.primaryColor = primary.toHexString()

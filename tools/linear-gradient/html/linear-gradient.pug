@@ -27,15 +27,15 @@ scripts:
         span.colorPreview(:style="secondaryColorBackground")
       label(for="direction") Direction
         select#direction(v-model="direction", ref="directionSelect")
-          option(value=180) Top to Bottom
-          option(value=225) Top-Right to Bottom-Left
-          option(value=270) Right to Left
-          option(value=315) Bottom-Right to Top-Left
-          option(value=0) Bottom to Top
-          option(value=45) Bottom-Left to Top-Right
-          option(value=90) Left to Right
-          option(value=135) Top-Left to Bottom-Right
+          option(value=180) &darr; Top to Bottom
+          option(value=225) &swarr; Top-Right to Bottom-Left
+          option(value=270) &rarr; Right to Left
+          option(value=315) &nwarr; Bottom-Right to Top-Left
+          option(value=0) &uarr; Bottom to Top
+          option(value=45) &nearr; Bottom-Left to Top-Right
+          option(value=90) &larr; Left to Right
+          option(value=135) &searr; Top-Left to Bottom-Right
       label(for="cssOutput") CSS code
         button.button-ghost(@click='randomSecondary') Copy
         pre#cssOutput
-          code.css(v-html="gradient")
+          code.css(v-html="gradient", ref="cssCode")
