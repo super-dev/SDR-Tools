@@ -24,7 +24,7 @@ scripts:
         input#secondaryColor(type="text", v-model="secondaryColor")
         span.colorPreview(:style="secondaryColorBackground")
       label(for="direction") Direction
-        select#direction(v-model="direction")
+        select#direction(v-model="direction", ref="directionSelect")
           option(value=180) Top to Bottom
           option(value=225) Top-Right to Bottom-Left
           option(value=270) Right to Left

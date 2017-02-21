@@ -25,5 +25,13 @@ new Vue({
     randomSecondary: function () {
       this.secondaryColor = tinycolor.random().toHexString()
     }
+  },  
+  mounted: function () {
+    var primary = tinycolor.random()
+    this.primaryColor = primary.toHexString()
+    this.secondaryColor = primary.complement().toHexString()
+
+    var options = this.$refs.directionSelect.options.length
+    this.direction = this.$refs.directionSelect.options[Math.floor(Math.random() * options)].value
   }
 })
