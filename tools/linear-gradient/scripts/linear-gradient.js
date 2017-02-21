@@ -27,7 +27,7 @@ new Vue({
     }
   },  
   mounted: function () {
-    var primary = tinycolor.random()
+    var primary = tinycolor.mix(tinycolor.random().saturate(10), tinycolor('#fff'), amount = 50)
     this.primaryColor = primary.toHexString()
     this.secondaryColor = primary.complement().toHexString()
 
