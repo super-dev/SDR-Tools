@@ -16,18 +16,20 @@ scripts:
         #linear-gradient(:style="gradient")
     .one-half
       label.color(for="primaryColor") Primary Color
+        button.button-ghost(@click='randomPrimary') Random
         input#primaryColor(type="text", v-model="primaryColor")
         span.colorPreview(:style="primaryColorBackground")
-      label.color(for="secondaryColor") Secondary Color
+      label.color(for="secondaryColor") Secondary Color        
+        button.button-ghost(@click='randomSecondary') Random
         input#secondaryColor(type="text", v-model="secondaryColor")
         span.colorPreview(:style="secondaryColorBackground")
       label(for="direction") Direction
         select#direction(v-model="direction")
-          option(value=0) Top to Bottom
-          option(value=45) Top-Right to Bottom-Left
-          option(value=90) Right to Left
-          option(value=135) Bottom-Right to Top-Left
-          option(value=180) Bottom to Top
-          option(value=-135) Bottom-Left to Top-Right
-          option(value=-90) Left to Right
-          option(value=-45) Top-Left to Bottom-Right
+          option(value=180) Top to Bottom
+          option(value=225) Top-Right to Bottom-Left
+          option(value=270) Right to Left
+          option(value=315) Bottom-Right to Top-Left
+          option(value=0) Bottom to Top
+          option(value=45) Bottom-Left to Top-Right
+          option(value=90) Left to Right
+          option(value=135) Top-Left to Bottom-Right

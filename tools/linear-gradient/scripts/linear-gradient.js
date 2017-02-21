@@ -18,6 +18,12 @@ new Vue({
       return 'background:  linear-gradient(' + this.direction + 'deg, ' + this.primaryColor + ' 0%, ' + this.secondaryColor + ' 100%)'
     }
   },
-  mounted: function() {
+  methods: {
+    randomPrimary: function () {
+      this.primaryColor = tinycolor.random().toHexString()
+    },    
+    randomSecondary: function () {
+      this.secondaryColor = tinycolor.random().toHexString()
+    }
   }
 })
