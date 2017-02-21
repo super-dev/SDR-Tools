@@ -34,11 +34,11 @@ label {
   }
 }
 
-label.color {
+label {
   position: relative;
   width: 100%;
 
-  input {
+  &.color input {
     width: 87%;
     display: block;
   }
@@ -60,4 +60,14 @@ label.color {
     font-size: 80%;
     margin-left: 1rem;
   }
+}
+
+#cssOutput {
+  padding: 0;
+}
+
+.hljs {
+  padding: 1em;
+  border-radius: 3px;
+  min-height: 200px;
 }

@@ -3,10 +3,12 @@ title: 'Linear Gradient Generator'
 description: 'Generate Linear Gradient CSS and Background Images with custom configuration options. Get CSS code or JPG, PNG image.'
 layout: 'tools'
 styles:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css'
   - 'styles/linear-gradient.css'
 scripts:
   - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
   - 'https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js'
   - 'scripts/linear-gradient.js'
 ---
 
@@ -33,3 +35,7 @@ scripts:
           option(value=45) Bottom-Left to Top-Right
           option(value=90) Left to Right
           option(value=135) Top-Left to Bottom-Right
+      label(for="cssOutput") CSS code
+        button.button-ghost(@click='randomSecondary') Copy
+        pre#cssOutput
+          code.css(v-html="gradient")

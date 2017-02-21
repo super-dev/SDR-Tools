@@ -15,7 +15,7 @@ new Vue({
       return 'background-color: ' + this.secondaryColor;
     },
     gradient: function() {
-      return 'background:  linear-gradient(' + this.direction + 'deg, ' + this.primaryColor + ' 0%, ' + this.secondaryColor + ' 100%)'
+      return 'background: linear-gradient(' + this.direction + 'deg, ' + this.primaryColor + ' 0%, ' + this.secondaryColor + ' 100%)'
     }
   },
   methods: {
@@ -24,6 +24,9 @@ new Vue({
     },    
     randomSecondary: function () {
       this.secondaryColor = tinycolor.random().toHexString()
+    },
+    copyCode: function() {
+      return
     }
   },  
   mounted: function () {
@@ -33,5 +36,7 @@ new Vue({
 
     var options = this.$refs.directionSelect.options.length
     this.direction = this.$refs.directionSelect.options[Math.floor(Math.random() * options)].value
+
+    hljs.initHighlightingOnLoad()
   }
 })
