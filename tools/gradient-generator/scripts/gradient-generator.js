@@ -231,7 +231,7 @@ function createRadialGradient(canvas, ctx, position, primaryColor, secondaryColo
 }
 
 function downloadImage(dataURI, type) {
-  if (!Modernizr.adownload) {
+  if (Modernizr.adownload) {
     download(dataURI, "gradient." + type, "image/" + type);
   }
   else {
