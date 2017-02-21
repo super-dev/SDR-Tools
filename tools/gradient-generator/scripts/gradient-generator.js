@@ -31,9 +31,6 @@ new Vue({
     },    
     randomSecondary: function () {
       this.secondaryColor = tinycolor.random().toHexString()
-    },
-    copyCode: function() {
-      return
     }
   }, 
   watch: {
@@ -54,5 +51,21 @@ new Vue({
     this.direction = this.$refs.directionSelect.options[Math.floor(Math.random() * options)].value
 
     hljs.initHighlightingOnLoad()
+
+    // setup copy to clipboard
+    var clipboard = new Clipboard('.button-copy');
+
+    clipboard.on('success', function(e) {
+        e.trigger.innerHTML = "Copied!"
+        e.clearSelection()
+        setTimeout(function() {
+          e.trigger.innerHTML = "Copy"
+        }, 1000)
+    });
+
+    clipboard.on('error', function(e) {
+        console.error('Action:', e.action)
+        console.error('Trigger:', e.trigger)
+    });
   }
 })

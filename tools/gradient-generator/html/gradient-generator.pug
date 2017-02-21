@@ -9,6 +9,7 @@ scripts:
   - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
   - 'https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js'
   - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js'
   - 'scripts/gradient-generator.js'
 ---
 
@@ -57,7 +58,7 @@ scripts:
           option(value='left top') Top-Left
 
       label(for="cssOutput") CSS code
-        button.button-ghost(@click='randomSecondary') Copy
+        button.button-ghost.button-copy(data-clipboard-target="#cssOutput") Copy
         pre#cssOutput
           code.css(v-html="gradient", ref="cssCode")
 
