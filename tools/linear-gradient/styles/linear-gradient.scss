@@ -1,0 +1,28 @@
+#app {
+  @media (min-width: 980px) {
+    .one-half:first-child {
+      width: 70%;
+      margin-right: 3%;
+    }
+    
+    .one-half:last-child {
+      width: 27%;
+    }
+  }
+}
+
+#linear-gradient {
+  width: 100%;
+  height: 500px;
+  height: 80vh;
+  position: relative;
+}
+
+label {
+  color: #898989;
+  font-weight: 400;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
