@@ -1,11 +1,12 @@
 ---
 title: 'Linear Gradient Generator'
-description: 'Generate Leniear Gradient CSS and Background Images with custom configuration options. Get CSS code or JPG, PNG image.'
+description: 'Generate Linear Gradient CSS and Background Images with custom configuration options. Get CSS code or JPG, PNG image.'
 layout: 'tools'
 styles:
   - 'styles/linear-gradient.css'
 scripts:
   - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
+  - 'https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js'
   - 'scripts/linear-gradient.js'
 ---
 
@@ -14,17 +15,19 @@ scripts:
     .one-half
         #linear-gradient(:style="gradient")
     .one-half
-      label(for="primaryColor") Primary Color
-      input#primaryColor(type="text", v-model="primaryColor")
-      label(for="secondaryColor") Secondary Color
-      input#secondaryColor(type="text", v-model="secondaryColor")
+      label.color(for="primaryColor") Primary Color
+        input#primaryColor(type="text", v-model="primaryColor")
+        span.colorPreview(:style="primaryColorBackground")
+      label.color(for="secondaryColor") Secondary Color
+        input#secondaryColor(type="text", v-model="secondaryColor")
+        span.colorPreview(:style="secondaryColorBackground")
       label(for="direction") Direction
-      select#direction(v-model="direction")
-        option(value=0) Top to Bottom (0°)
-        option(value=45) Top-Right to Bottom-Left (45°)
-        option(value=90) Right to Left (90°)
-        option(value=135) Bottom-Right to Top-Left (135°)
-        option(value=180) Bottom to Top (180°)
-        option(value=-135) Bottom-Left to Top-Right (-135°)
-        option(value=-90) Left to Right (-90°)
-        option(value=-45) Top-Left to Bottom-Right (-45°)
+        select#direction(v-model="direction")
+          option(value=0) Top to Bottom
+          option(value=45) Top-Right to Bottom-Left
+          option(value=90) Right to Left
+          option(value=135) Bottom-Right to Top-Left
+          option(value=180) Bottom to Top
+          option(value=-135) Bottom-Left to Top-Right
+          option(value=-90) Left to Right
+          option(value=-45) Top-Left to Bottom-Right

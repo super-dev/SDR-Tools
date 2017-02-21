@@ -56,7 +56,7 @@
 
 - name: "Linear Gradient Generator"
   path: "linear-gradient"
-  description: "Generate Leniear Gradient CSS and Background Images with custom configuration options."
+  description: "Generate Linear Gradient CSS and Background Images with custom configuration options."
   categories: ["image", code]
   color: "#8f44fc"
   icon: "icon.svg"

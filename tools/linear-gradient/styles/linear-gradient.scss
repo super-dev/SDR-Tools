@@ -21,8 +21,37 @@
 label {
   color: #898989;
   font-weight: 400;
+  font-size: 90%;
 
   &:first-child {
     margin-top: 0;
+  }
+
+  > * {
+    color: #676767;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+label.color {
+  position: relative;
+  width: 100%;
+
+  input {
+    width: 87%;
+    display: block;
+  }
+
+  .colorPreview {
+    position: absolute;
+    display: block;
+    content: "";
+    margin: 0;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    width: 10%;
+    border-radius: 3px;
   }
 }
