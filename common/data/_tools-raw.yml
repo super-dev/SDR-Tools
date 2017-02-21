@@ -56,7 +56,7 @@
 
 - name: "Gradient Generator"
   path: "gradient-generator"
-  description: "Generate Linear and Radial Gradient as CSS and Background Images."
+  description: "Generate Linear and Radial Gradient CSS code and Background Images."
   categories: ["image", code]
   color: "#8f44fc"
   icon: "icon.svg"
