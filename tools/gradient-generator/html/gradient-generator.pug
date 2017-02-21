@@ -10,6 +10,7 @@ scripts:
   - 'https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js'
   - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js'
   - 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js'
+  - 'https://unpkg.com/downloadjs@1.4.6/download.min.js'
   - 'scripts/gradient-generator.js'
 ---
 
@@ -64,5 +65,5 @@ scripts:
 
       label(for="gradientDownload") Gradient Image
         #gradientDownload
-          button.button(@click='randomSecondary') Download PNG
-          button.button(@click='randomSecondary') Download JPG
+          button.button(@click='download(false)') Download PNG
+          button.button(@click='download(true)') Download JPG

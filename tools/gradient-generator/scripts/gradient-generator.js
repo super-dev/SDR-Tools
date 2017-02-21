@@ -31,6 +31,29 @@ new Vue({
     },    
     randomSecondary: function () {
       this.secondaryColor = tinycolor.random().toHexString()
+    },
+    download: function(isJPG) {
+      var canvas = document.createElement('canvas')
+      canvas.width = 3000
+      canvas.height = 2000
+      var ctx = canvas.getContext("2d")
+      var grd
+      if(this.gradientType === 'linear') {
+        grd = createLinearGradient(canvas, ctx, this.direction, this.primaryColor, this.secondaryColor)
+      }
+      else {
+
+      }
+
+      ctx.fillStyle = grd
+      ctx.fillRect(0,0,canvas.width,canvas.height)
+
+      if(isJPG) {
+        downloadImage(canvas.toDataURL("image/jpeg", 0.9), 'jpeg')
+      }
+      else {
+        downloadImage(canvas.toDataURL(), 'png')
+      }
     }
   }, 
   watch: {
@@ -69,3 +92,66 @@ new Vue({
     });
   }
 })
+
+function createLinearGradient(canvas, ctx, direction, primaryColor, secondaryColor) {
+  var x0, y0, x1, y1
+  switch(direction) {
+    case '0': // Bottom to Top
+      x0 = canvas.width / 2
+      y0 = canvas.height
+      x1 = canvas.width / 2
+      y1 = 0
+      break;
+    case '45': // Bottom-Left to Top-Right
+      x0 = 0
+      y0 = canvas.height
+      x1 = canvas.width
+      y1 = 0
+      break;
+    case '90': // Left to Right
+      x0 = 0
+      y0 = canvas.height / 2
+      x1 = canvas.width
+      y1 = canvas.height / 2
+      break;
+    case '135': // Top-Left to Bottom-Right
+      x0 = 0
+      y0 = 0
+      x1 = canvas.width
+      y1 = canvas.height
+      break;
+    case '180': // Top to Bottom
+      x0 = canvas.width/2
+      y0 = 0
+      x1 = canvas.width/2
+      y1 = canvas.height
+      break;
+    case '225': // Top-Right to Bottom-Left
+      x0 = canvas.width
+      y0 = 0
+      x1 = 0
+      y1 = canvas.height
+      break;
+    case '270': // Right to Left
+      x0 = canvas.width
+      y0 = canvas.height / 2
+      x1 = 0
+      y1 = canvas.height / 2
+      break;
+    case '315': // Bottom-Right to Top-Left
+      x0 = canvas.width
+      y0 = canvas.height
+      x1 = 0
+      y1 = 0
+      break;
+  }
+  var grd = ctx.createLinearGradient(x0, y0, x1, y1);
+  grd.addColorStop(0, primaryColor);
+  grd.addColorStop(1, secondaryColor);
+
+  return grd
+}
+
+function downloadImage(dataURI, type) {
+  download(dataURI, "gradient." + type, "image/" + type);
+}
