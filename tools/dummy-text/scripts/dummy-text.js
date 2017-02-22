@@ -25,7 +25,7 @@ new Vue({
           
           for(var i = 0; i < 5; i++) {
             if(i == 0) {
-              lines[i] = "## " + list()
+              lines[i] = "## " + bytes(Math.floor(Math.random() * 15) + 30).replace('.', '').replace(',', '')
             }
             else {
               lines[i] = "- "+ list()
@@ -53,7 +53,7 @@ new Vue({
 
       if(this.isArticle) {
         // add a title
-        var title = sentences(1).split(',')[0]
+        var title = bytes(Math.floor(Math.random() * 40) + 40).replace('.', '').replace(',', '')
         text = "# " + title + '\n\n' + text
       }
       
