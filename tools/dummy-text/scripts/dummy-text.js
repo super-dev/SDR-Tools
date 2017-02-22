@@ -15,17 +15,16 @@ new Vue({
       var nextStop = paraStop
       while(count < this.words && count < 10000) {
         var sentence = sentences(1, false, count == 0)
-        text += sentence
+        if(this.generator === 'blocks') {
+          sentence = sentence.replace(/[^\s]/g, "▅");
+        }
+        text += (sentence + ' ')
         count += sentence.split(' ').length
 
         if(count > nextStop) {
           text += '</p><p>'
           nextStop += paraStop
         }
-        
-        console.log(sentence)
-        console.log(count)
-        console.log(nextStop)
       }
 
       text += "</p>"

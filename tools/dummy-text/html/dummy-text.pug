@@ -1,6 +1,6 @@
 ---
 title: 'Dummy Text Generator'
-description: 'Generate Dummy text lorem ipsum and alternatives like hipster ipsum in HTML, markdown and plain text'
+description: 'Generate Dummy text lorem ipsum and alternatives in HTML, markdown and plain text'
 layout: 'tools'
 styles:
   - 'styles/dummy-text.css'
@@ -21,7 +21,6 @@ scripts:
         label(for="generator") Generator
           select#generator(v-model="generator", ref="generatorSelect")
             option(value='lorem') Lorem Ipsum
-            option(value='hipster') Hipster Ipsum
             option(value='blocks') Blocks
 
         label.color(for="words") Number of Words
