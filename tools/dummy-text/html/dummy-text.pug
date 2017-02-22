@@ -6,6 +6,7 @@ styles:
   - 'styles/dummy-text.css'
 scripts:
   - 'scripts/lorem.js'
+  - 'https://unpkg.com/marked@0.3.6'
   - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
   - 'scripts/dummy-text.js'
 ---
@@ -27,8 +28,12 @@ scripts:
             option(value='lorem') Lorem Ipsum
             option(value='blocks') Blocks
 
-        label.color(for="words") Number of Words
+        label(for="words") Number of Words
           input#words(type="number", v-model="words")
         
-        label.color(for="paragraphs") Number of Paragraphs
+        label(for="paragraphs") Number of Paragraphs
           input#paragraphs(type="number", v-model="paragraphs")
+
+        label Additional Options
+        input#article(type="checkbox", v-model="isArticle")
+        label.label-inline(for="article") Make it look like an Article
