@@ -14,6 +14,10 @@ scripts:
   .grid
     .one-half
       #dummyText
+        .buttonGroup.text-center
+          button(v-bind:class="[type === 'plain' ? 'button' : 'button-ghost']" @click="type = 'plain'") Plain Text
+          button(v-bind:class="[type === 'markdown' ? 'button' : 'button-ghost']" @click="type = 'markdown'") Markdown
+          button(v-bind:class="[type === 'html' ? 'button' : 'button-ghost']" @click="type = 'html'") HTML
         .container-readable
           div(v-html='loremText')
     .one-half

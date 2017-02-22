@@ -2,6 +2,7 @@ new Vue({
   el: '#app',
   data() {
     return {
+      type: 'plain',
       generator: 'lorem',      
       words: 250,
       paragraphs: 4
