@@ -3,10 +3,13 @@ title: 'Dummy Text Generator'
 description: 'Generate Dummy text lorem ipsum and alternatives in HTML, markdown and plain text'
 layout: 'tools'
 styles:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css'
   - 'styles/dummy-text.css'
 scripts:
   - 'scripts/lorem.js'
   - 'https://unpkg.com/marked@0.3.6'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.6.11/beautify-html.min.js'
   - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
   - 'scripts/dummy-text.js'
 ---
@@ -16,11 +19,15 @@ scripts:
     .one-half
       #dummyText
         .buttonGroup.text-center
-          button(v-bind:class="[type === 'plain' ? 'button' : 'button-ghost']" @click="type = 'plain'") Plain Text
-          button(v-bind:class="[type === 'markdown' ? 'button' : 'button-ghost']" @click="type = 'markdown'") Markdown
-          button(v-bind:class="[type === 'html' ? 'button' : 'button-ghost']" @click="type = 'html'") HTML
+          button(v-bind:class="[type === 'plain' ? 'button' : 'button-ghost']" @click="changeType('plain')") Plain Text
+          button(v-bind:class="[type === 'markdown' ? 'button' : 'button-ghost']" @click="changeType('markdown')") Markdown
+          button(v-bind:class="[type === 'html' ? 'button' : 'button-ghost']" @click="changeType('html')") HTML
         .container-readable
-          div(v-html='loremText')
+          div(v-html='loremText.plain', v-if="type=='plain'")
+          div(v-if="type=='markdown'")
+            code.markdown(v-html='loremText.markdown', ref="markdownCode")
+          div(v-if="type=='html'")
+            code.html(v-text='loremText.html', ref="htmlCode")
     .one-half
       #controls
         label(for="generator") Generator
@@ -36,4 +43,4 @@ scripts:
 
         label Additional Options
         input#article(type="checkbox", v-model="isArticle")
-        label.label-inline(for="article") Make it look like an Article
+        label.label-inline(for="article") Content for an Article

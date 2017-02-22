@@ -61,12 +61,38 @@ new Vue({
         text = text.replace(/[^\s]/g, "▅")
       }
 
-      if(this.type === 'plain') {
-        return  marked(text, { sanitize: false })
+      var markdown = marked(text, { sanitize: false })
+      return {
+        plain: markdown,
+        markdown: text,
+        html: html_beautify(markdown, {
+          'extra_liners': ['p', 'h2', 'ul'],
+          'wrap_line_length': 0,
+        })
       }
-      else {
-        return text.replace(/[\n]+/g, "<br><br>")
-      }
+    }
+  },
+  watch: {
+    // whenever lorem text changes, this function will run
+    loremText : function (newtext) {
+      this.highlight()   
+    }
+  },
+  methods: {
+    changeType: function(typeName) {
+      this.type = typeName
+      this.highlight()
+    },
+    highlight: function() {
+      var t = this
+      Vue.nextTick(function() {
+        if(t.type == 'markdown') {
+          hljs.highlightBlock(t.$refs.markdownCode);
+        }
+        else if(t.type == 'html') {
+          hljs.highlightBlock(t.$refs.htmlCode);
+        }
+      })
     }
   }
 })
