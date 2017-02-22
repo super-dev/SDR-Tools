@@ -5,5 +5,24 @@ layout: 'tools'
 styles:
   - 'styles/dummy-text.css'
 scripts:
+  - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
   - 'scripts/dummy-text.js'
 ---
+
+#app.container.section-medium
+  .grid
+    .one-half
+      #dummyText
+    .one-half
+      #controls
+        label(for="generator") Generator
+          select#generator(v-model="generator", ref="generatorSelect")
+            option(value='lorem') Lorem Ipsum
+            option(value='hipster') Hipster Ipsum
+            option(value='blocks') Blocks
+
+        label.color(for="words") Number of Words
+          input#words(type="number", v-model="words")
+        
+        label.color(for="paragraphs") Number of Paragraphs
+          input#paragraphs(type="number", v-model="paragraphs")

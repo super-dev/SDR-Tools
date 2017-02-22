@@ -1,0 +1,63 @@
+#app {
+  @media (min-width: 980px) {
+    .one-half:first-child {
+      width: 70%;
+      margin-right: 3%;
+    }
+    
+    .one-half:last-child {
+      width: 27%;
+    }
+  }
+}
+
+
+#dummyText {
+  width: 100%;
+  height: 500px;
+  height: 80vh;
+  background: #fff;
+  border: 1px solid #f2f2f2;
+  border-radius: 3px;
+}
+
+#controls {  
+  width: 100%;
+  min-height: 500px;
+  min-height: 80vh;
+  background: #fafafa;
+  border: 1px solid #f2f2f2;
+  border-radius: 3px;
+  padding: 0 1.5em;
+}
+
+
+label {
+  color: #676767;
+  font-weight: 400;
+  font-size: 90%;
+
+  select, input {
+    background-color: #fff!important;
+  }
+
+  > * {
+    color: #454545;
+    margin: 12px 12px 12px 0;
+  }
+
+  &.label-inline {
+    color: #454545;
+    margin: 12px 12px 0 0;
+  }
+
+  .button-ghost {
+    margin: 0;
+    font-size: 80%;
+    margin-left: 1rem;
+  }
+
+  .button {
+    margin: 0;
+  }
+}
