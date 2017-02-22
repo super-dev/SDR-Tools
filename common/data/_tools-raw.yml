@@ -60,3 +60,10 @@
   categories: ["image", code]
   color: "#8f44fc"
   icon: "icon.svg"
+
+- name: "Dummy Text"
+  path: "dummy-text"
+  description: "Generate lorem ipsum dummy text and alternatives in HTML, markdown and plain text"
+  categories: ["writing"]
+  color: "#a2dab4"
+  icon: "icon.svg"
