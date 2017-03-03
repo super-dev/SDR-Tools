@@ -2,11 +2,12 @@ new Vue({
   el: '#app',
   data: function() {
     return {
-      bodyText: 'Text on Image',
+      bodyText: 'A quick brown fox jumped over the lazy old dog',
       backgroundType: 'color',
       font: 'sans-serif',
       position: 'center-middle',
-      backgroundColor: '#9b4ec7',      
+      hasShadow: true,
+      backgroundColor: '#47998d',      
       primaryColor: '#ae81bf',
       secondaryColor: '#7e8a9b',
     }
@@ -46,16 +47,27 @@ new Vue({
         ctx.fillStyle = grd       
         ctx.fillRect(0,0,canvas.width,canvas.height)
       }
-      //opacity layer
-      ctx.globalAlpha = 0.3;
-      ctx.fillStyle = "black";
-      ctx.fillRect(-10,-10,820,540);
-      ctx.globalAlpha = 1.0;
+      else {
+        //opacity layer
+        ctx.globalAlpha = 0.3;
+        ctx.fillStyle = "black";
+        ctx.fillRect(-10,-10,canvas.width + 10,canvas.height + 10)
+        ctx.globalAlpha = 1.0;
+      }
+
+      
       ctx.fillStyle = "white";
-      ctx.shadowColor = "black";
-      ctx.shadowOffsetX = 5; 
-      ctx.shadowOffsetY = 5; 
-      ctx.shadowBlur = 7;
+
+      if (this.hasShadow) {
+        ctx.shadowColor = "#222222";
+        ctx.shadowOffsetX = 3; 
+        ctx.shadowOffsetY = 3; 
+        ctx.shadowBlur = 7;
+      }
+      else {        
+        ctx.shadowColor = "transparent";
+      }
+      
       ctx.textBaseline = 'top';
       ctx.scale(1,1);
       ctx.lineWidth = 1;

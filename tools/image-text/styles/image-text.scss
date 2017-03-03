@@ -27,7 +27,7 @@ label {
   }
 
   > * {    
-    color: #676767;
+    color: #454545;
     margin: 12px 12px 0 0;
   }
 
@@ -62,5 +62,20 @@ label {
 
   .button {
     margin: 0;
+  }
+}
+
+#backgroundDiv {
+  background-color: #fafafa;
+  padding: 1em;
+  margin-top: 2em;
+  
+  select, input {
+    background-color: #fff!important;
+  }
+
+  
+  label {
+    color: #676767;
   }
 }

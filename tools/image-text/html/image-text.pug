@@ -30,7 +30,11 @@ scripts:
           option(value='sans-serif') Sans Serif
           option(value='serif') Serif
 
-      label(for="font") Position
+      
+      input#shadow(type="checkbox", v-model="hasShadow")
+      label.label-inline(for="shadow") Text Shadow
+
+      label(for="font") Text Position
         select#position(v-model="position", ref="positionSelect")
           option(value='left-top') Top-Left
           option(value='center-top') Top-Center
@@ -42,28 +46,29 @@ scripts:
           option(value='center-bottom') Bottom-Center
           option(value='right-bottom') Bottom-Right
 
-      label(for="backgroundType") Background Type
-      input(type="radio", id="image", value="image", v-model="backgroundType")
-      label.label-inline(for="image") Image     
-      input(type="radio", id="color", value="color", v-model="backgroundType")
-      label.label-inline(for="color") Color        
-      input(type="radio", id="gradient", value="gradient", v-model="backgroundType")
-      label.label-inline(for="gradient") Gradient
+      #backgroundDiv
+        label(for="backgroundType") Background Type
+        input(type="radio", id="image", value="image", v-model="backgroundType")
+        label.label-inline(for="image") Image     
+        input(type="radio", id="color", value="color", v-model="backgroundType")
+        label.label-inline(for="color") Color        
+        input(type="radio", id="gradient", value="gradient", v-model="backgroundType")
+        label.label-inline(for="gradient") Gradient
 
-      .section
+        .section
 
-        label.color(for="backgroundCol", v-if="backgroundType == 'color'") Background Color
-          button.button-ghost(@click='backgroundColor = randomColor()') Random
-          input#backgroundCol(type="text", v-model="backgroundColor")
-          span.colorPreview(:style="backgroundFromColor(backgroundColor)")
+          label.color(for="backgroundCol", v-if="backgroundType == 'color'") Background Color
+            button.button-ghost(@click='backgroundColor = randomColor()') Random
+            input#backgroundCol(type="text", v-model="backgroundColor")
+            span.colorPreview(:style="backgroundFromColor(backgroundColor)")
 
-        div(v-if="backgroundType == 'gradient'")          
-          label.color(for="primaryColor") Primary Color
-            button.button-ghost(@click='primaryColor = randomColor()') Random
-            input#primaryColor(type="text", v-model="primaryColor")
-            span.colorPreview(:style="backgroundFromColor(primaryColor)")
+          div(v-if="backgroundType == 'gradient'")          
+            label.color(for="primaryColor") Primary Color
+              button.button-ghost(@click='primaryColor = randomColor()') Random
+              input#primaryColor(type="text", v-model="primaryColor")
+              span.colorPreview(:style="backgroundFromColor(primaryColor)")
 
-          label.color(for="secondaryColor") Secondary Color        
-            button.button-ghost(@click='secondaryColor= randomColor()') Random
-            input#secondaryColor(type="text", v-model="secondaryColor")
-            span.colorPreview(:style="backgroundFromColor(secondaryColor)")
+            label.color(for="secondaryColor") Secondary Color        
+              button.button-ghost(@click='secondaryColor= randomColor()') Random
+              input#secondaryColor(type="text", v-model="secondaryColor")
+              span.colorPreview(:style="backgroundFromColor(secondaryColor)")
