@@ -5,5 +5,45 @@ layout: 'tools'
 styles:
   - 'styles/image-text.css'
 scripts:
+  - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
+  - 'https://unpkg.com/downloadjs@1.4.6/download.min.js'
+  - '/scripts/shared/modernizer-adownload.js'
   - 'scripts/image-text.js'
 ---
+
+#app.container.section-medium
+  .grid
+    .one-half
+        canvas#imageText(width="800", height="520", style="border:1px solid #eee;", ref="canvasElement")
+
+        #gradientDownload
+          button.button(@click='download(false)') Download PNG
+          button.button(@click='download(true)') Download JPG
+    .one-half
+      label.color(for="bodyText")   Text
+        textArea#bodyText(rows="3", v-model="bodyText")
+
+      label(for="font") Font
+        select#font(v-model="font", ref="fontSelect")
+          option(value='sans-serif') Sans Serif
+          option(value='serif') Serif
+
+      label(for="font") Position
+        select#position(v-model="position", ref="positionSelect")
+          option(value='left-top') Top-Left
+          option(value='top') Top-Center
+          option(value='right-top') Top-Right
+          option(value='left') Left
+          option(value='center') Center
+          option(value='right') Right
+          option(value='left-bottom') Bottom-Left
+          option(value='bottom') Bottom-Center
+          option(value='right-bottom') Bottom-Right
+
+      label(for="backgroundType") Background Type
+      input(type="radio", id="linear", value="linear", v-model="backgroundType")
+      label.label-inline(for="linear") Image     
+      input(type="radio", id="linear", value="linear", v-model="backgroundType")
+      label.label-inline(for="linear") Color        
+      input(type="radio", id="radial", value="radial", v-model="backgroundType")
+      label.label-inline(for="radial") Gradient
