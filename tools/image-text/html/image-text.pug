@@ -6,6 +6,7 @@ styles:
   - 'styles/image-text.css'
 scripts:
   - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
+  - 'https://unpkg.com/canvas-text-wrapper@0.9.3/canvas-text-wrapper.min.js'
   - 'https://unpkg.com/downloadjs@1.4.6/download.min.js'
   - '/scripts/shared/modernizer-adownload.js'
   - 'scripts/image-text.js'
@@ -31,19 +32,19 @@ scripts:
       label(for="font") Position
         select#position(v-model="position", ref="positionSelect")
           option(value='left-top') Top-Left
-          option(value='top') Top-Center
+          option(value='center-top') Top-Center
           option(value='right-top') Top-Right
-          option(value='left') Left
-          option(value='center') Center
-          option(value='right') Right
+          option(value='left-middle') Left
+          option(value='center-middle') Center
+          option(value='right-middle') Right
           option(value='left-bottom') Bottom-Left
-          option(value='bottom') Bottom-Center
+          option(value='center-bottom') Bottom-Center
           option(value='right-bottom') Bottom-Right
 
       label(for="backgroundType") Background Type
-      input(type="radio", id="linear", value="linear", v-model="backgroundType")
-      label.label-inline(for="linear") Image     
-      input(type="radio", id="linear", value="linear", v-model="backgroundType")
-      label.label-inline(for="linear") Color        
-      input(type="radio", id="radial", value="radial", v-model="backgroundType")
-      label.label-inline(for="radial") Gradient
+      input(type="radio", id="image", value="image", v-model="backgroundType")
+      label.label-inline(for="image") Image     
+      input(type="radio", id="color", value="color", v-model="backgroundType")
+      label.label-inline(for="color") Color        
+      input(type="radio", id="gradient", value="gradient", v-model="backgroundType")
+      label.label-inline(for="gradient") Gradient
