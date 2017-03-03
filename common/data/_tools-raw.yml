@@ -67,3 +67,10 @@
   categories: ["writing"]
   color: "#a2dab4"
   icon: "icon.svg"
+
+- name: "Text on Image"
+  path: "image-text"
+  description: "Online tool to add text on Images and save it in JPG or PNG format"
+  categories: ["image"]
+  color: "#de6e74"
+  icon: "icon.svg"
