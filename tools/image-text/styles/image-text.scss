@@ -14,9 +14,11 @@
 
 
 label {  
-  color: #676767;
+  color: #898989;
   font-weight: 400;
   font-size: 90%;
+  position: relative;
+  display: block;
   
   @media (min-width: 980px) {
     &:first-child {
@@ -24,13 +26,41 @@ label {
     }
   }
 
-  > * {
-    color: #454545;
+  > * {    
+    color: #676767;
     margin: 12px 12px 0 0;
   }
 
-  &.label-inline {
-    color: #454545;
+  &.label-inline {    
+    color: #676767;
     margin: 12px 12px 0 0;
+  }
+  
+
+  &.color input {
+    width: 87%;
+    display: block;
+  }
+
+  .colorPreview {
+    position: absolute;
+    display: block;
+    content: "";
+    margin: 0;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    width: 10%;
+    border-radius: 3px;
+  }
+
+  .button-ghost {
+    margin: 0;
+    font-size: 80%;
+    margin-left: 1rem;
+  }
+
+  .button {
+    margin: 0;
   }
 }

@@ -6,6 +6,7 @@ styles:
   - 'styles/image-text.css'
 scripts:
   - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
+  - 'https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js'
   - 'https://unpkg.com/canvas-text-wrapper@0.9.3/canvas-text-wrapper.min.js'
   - 'https://unpkg.com/downloadjs@1.4.6/download.min.js'
   - '/scripts/shared/modernizer-adownload.js'
@@ -48,3 +49,21 @@ scripts:
       label.label-inline(for="color") Color        
       input(type="radio", id="gradient", value="gradient", v-model="backgroundType")
       label.label-inline(for="gradient") Gradient
+
+      .section
+
+        label.color(for="backgroundCol", v-if="backgroundType == 'color'") Background Color
+          button.button-ghost(@click='backgroundColor = randomColor()') Random
+          input#backgroundCol(type="text", v-model="backgroundColor")
+          span.colorPreview(:style="backgroundFromColor(backgroundColor)")
+
+        div(v-if="backgroundType == 'gradient'")          
+          label.color(for="primaryColor") Primary Color
+            button.button-ghost(@click='primaryColor = randomColor()') Random
+            input#primaryColor(type="text", v-model="primaryColor")
+            span.colorPreview(:style="backgroundFromColor(primaryColor)")
+
+          label.color(for="secondaryColor") Secondary Color        
+            button.button-ghost(@click='secondaryColor= randomColor()') Random
+            input#secondaryColor(type="text", v-model="secondaryColor")
+            span.colorPreview(:style="backgroundFromColor(secondaryColor)")

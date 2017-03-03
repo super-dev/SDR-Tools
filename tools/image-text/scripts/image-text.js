@@ -3,26 +3,30 @@ new Vue({
   data: function() {
     return {
       bodyText: 'Text on Image',
-      backgroundType: 'image',
-      font: 'serif',
-      position: 'center-middle'
-    }
-  },
-  watch: {
-    bodyText: function (val) {
-      this.refreshCanvas()
-    },
-    font: function (val) {
-      this.refreshCanvas()
-    },    
-    position: function (val) {
-      this.refreshCanvas()
+      backgroundType: 'color',
+      font: 'sans-serif',
+      position: 'center-middle',
+      backgroundColor: '#9b4ec7',      
+      primaryColor: '#ae81bf',
+      secondaryColor: '#7e8a9b',
     }
   },
   mounted: function() {
     this.refreshCanvas()
+    // Refresh canvas if any of the data property changes
+    for (var k in this.$data) {
+      if (this.$data.hasOwnProperty(k)) {
+        this.$watch(k, this.refreshCanvas);
+      }
+    }
   },
   methods: {
+    randomColor: function () {
+      return tinycolor.random().toHexString()
+    },
+    backgroundFromColor: function(color) {
+      return 'background-color: ' + color;
+    },
     refreshCanvas: function() {
       // Get canvas context
       var canvas = this.$refs.canvasElement
@@ -30,9 +34,18 @@ new Vue({
       var width = canvas.width
       var height = canvas.height
 
-      // Clear the canvas
-      ctx.clearRect(0, 0, width, height);
-
+      // Clear the canvas with the defined background
+      if(this.backgroundType === 'color') {
+        ctx.fillStyle = this.backgroundColor;        
+        ctx.fillRect(0,0,canvas.width,canvas.height)
+      }
+      else if(this.backgroundType === 'gradient') {
+        var grd = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        grd.addColorStop(0, this.primaryColor);
+        grd.addColorStop(1, this.secondaryColor);
+        ctx.fillStyle = grd       
+        ctx.fillRect(0,0,canvas.width,canvas.height)
+      }
       //opacity layer
       ctx.globalAlpha = 0.3;
       ctx.fillStyle = "black";
@@ -43,7 +56,7 @@ new Vue({
       ctx.shadowOffsetX = 5; 
       ctx.shadowOffsetY = 5; 
       ctx.shadowBlur = 7;
-      ctx.textBaseline = 'alphabetic';
+      ctx.textBaseline = 'top';
       ctx.scale(1,1);
       ctx.lineWidth = 1;
       ctx.strokeStyle = '#ffffff';
