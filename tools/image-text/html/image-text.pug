@@ -76,3 +76,38 @@ scripts:
               button.button-ghost(@click='secondaryColor= randomColor()') Random
               input#secondaryColor(type="text", v-model="secondaryColor")
               span.colorPreview(:style="backgroundFromColor(secondaryColor)")
+
+.container-readable
+  .section
+    h2.h3 How to Create Text on Image?
+    ul.divider
+      li Enter the text you want on Image in the textarea above.
+      li You can choose a Google Font for writing the text (works best on Google Chrome).
+      li You can show or hide the text shadow using the checkbox.
+      li Specify the position of the text on Image: Left, Center, Top, Top-Left, Top-Center, Top-Right, Bottom-Left, Bottom-Center or Bottom-Right.
+      li Background can be an image, plain color background or a gradient background.
+      li If background type is image, you can drag and drop an image from your local system in the box to render it behind the text.
+      li If background type is color then you can specify a color in Hex, RGB or HSL format or use the random button for a random color.
+      li If background type is gradient then you can specify the primary and secondary color for a linear gradient to be generated in the background.
+      li We do not store any of the images you create and everything is done inside your browser.
+  .section.text-small
+    h2.h3 Credits
+    ul.divider      
+      li
+        a(href='http://vuejs.org/', target='_blank') vue.js
+        |  - The Progressive JavaScript Framework
+      li
+        a(href='https://github.com/namniak/canvas-text-wrapper', target='_blank') canvas-text-wrapper
+        |  - Splits canvas text into lines on specified rule
+      li
+        a(href='https://github.com/typekit/webfontloader', target='_blank') webfontloader
+        |  - Web Font Loader loads fonts from Google Fonts
+      li
+        a(href='https://github.com/bgrins/TinyColor', target='_blank') TinyColor
+        |  - Fast, small color manipulation and conversion for JavaScript
+      li
+        a(href='https://github.com/rndme/download', target='_blank') download.js
+        |  - Client-side file downloading using JS and HTML5 by dandavis
+      li
+        a(href='https://mmcss.kunruchcreations.com/', target='_blank') MMCSS
+        |  - A minimal modern CSS framework for building beautiful websites
