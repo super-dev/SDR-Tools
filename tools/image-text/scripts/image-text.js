@@ -108,8 +108,9 @@ new Vue({
         ctx.globalAlpha = 1.0;
         
         if(this.image) {
-          console.log(this.image)
-          ctx.drawImage(this.$refs.loadedImage, 0, 0, canvas.width, canvas.height);
+          drawImageScaled(this.$refs.loadedImage, ctx);
+
+          // ctx.drawImage(this.$refs.loadedImage, 0, 0, canvas.width, canvas.height);
         }
       }
 
@@ -160,4 +161,15 @@ function downloadImage(dataURI, type) {
   else {
     window.open(dataURI);
   }
+}
+
+function drawImageScaled(img, ctx) {
+   var canvas = ctx.canvas
+   var hRatio = canvas.width  / img.naturalWidth
+   var vRatio =  canvas.height / img.naturalHeight
+   var ratio  = Math.max ( hRatio, vRatio )
+   var centerShift_x = ( canvas.width - img.naturalWidth*ratio ) / 2
+   var centerShift_y = ( canvas.height - img.naturalHeight*ratio ) / 2
+   ctx.drawImage(img, 0,0, img.naturalWidth, img.naturalHeight,
+                      centerShift_x,centerShift_y,img.naturalWidth*ratio, img.naturalHeight*ratio)
 }
