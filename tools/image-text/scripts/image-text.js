@@ -82,6 +82,24 @@ new Vue({
         strokeText: false
       }
       CanvasTextWrapper(canvas, this.bodyText, options);
+    },
+    download: function(isJPG) {
+      if(isJPG) {
+        downloadImage(this.$refs.canvasElement.toDataURL("image/jpeg", 0.9), 'jpeg')
+      }
+      else {
+        downloadImage(this.$refs.canvasElement.toDataURL(), 'png')
+      }
     }
   }
 })
+
+
+function downloadImage(dataURI, type) {
+  if (Modernizr.adownload) {
+    download(dataURI, "text-on-image." + type, "image/" + type);
+  }
+  else {
+    window.open(dataURI);
+  }
+}
