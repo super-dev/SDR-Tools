@@ -56,6 +56,10 @@ scripts:
         label.label-inline(for="gradient") Gradient
 
         .section
+          #click-target(v-if="backgroundType == 'image'")
+            input(type='file', id="fileUpload", @change="loadImage")
+            #load-prompt(v-if="!image") Drag and Drop image in box or Click here
+            img#imgLoaded(:src="image", v-if="image")
 
           label.color(for="backgroundCol", v-if="backgroundType == 'color'") Background Color
             button.button-ghost(@click='backgroundColor = randomColor()') Random

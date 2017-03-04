@@ -9,14 +9,14 @@ new Vue({
       ],
       position: 'center-middle',
       hasShadow: true,
-      backgroundColor: '#47998d',      
-      primaryColor: '#ae81bf',
-      secondaryColor: '#7e8a9b',
+      image: '',
+      backgroundColor: '#3690bc',      
+      primaryColor: '#e86a8d',
+      secondaryColor: '#4d669c',
     }
   },
   watch: {
     font: function() {
-       console.log(this.font)
        var self = this
        WebFont.load({
           google: {
@@ -60,6 +60,26 @@ new Vue({
         .catch(function (error) {
           console.log(error);
         });
+    },
+    loadImage: function(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (files && files[0]) {
+        var file = files[0]
+        //	Prevent any non-image file type from being read.
+        if (!file.type.match(/image.*/)) {
+          alert("The dropped file is not an image: ", file.type);
+          return;
+        }
+
+        var image = new Image();
+        var reader = new FileReader();
+        var vm = this;
+
+        reader.onload = (e) => {
+          vm.image = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
     },
     refreshCanvas: function() {
       // Get canvas context
