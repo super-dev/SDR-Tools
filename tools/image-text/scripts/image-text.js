@@ -3,7 +3,7 @@ new Vue({
   data: function() {
     return {
       bodyText: 'A quick brown fox jumped over the lazy old dog',
-      backgroundType: 'color',
+      backgroundType: 'gradient',
       font: '',
       fontOptions: [
       ],
@@ -98,14 +98,19 @@ new Vue({
         grd.addColorStop(0, this.primaryColor);
         grd.addColorStop(1, this.secondaryColor);
         ctx.fillStyle = grd       
-        ctx.fillRect(0,0,canvas.width,canvas.height)
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
       }
       else {
         //opacity layer
         ctx.globalAlpha = 0.3;
         ctx.fillStyle = "black";
-        ctx.fillRect(-10,-10,canvas.width + 10,canvas.height + 10)
+        ctx.fillRect(-10, -10, canvas.width + 10, canvas.height + 10)
         ctx.globalAlpha = 1.0;
+        
+        if(this.image) {
+          console.log(this.image)
+          ctx.drawImage(this.$refs.loadedImage, 0, 0, canvas.width, canvas.height);
+        }
       }
 
       
