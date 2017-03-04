@@ -4,7 +4,9 @@ new Vue({
     return {
       bodyText: 'A quick brown fox jumped over the lazy old dog',
       backgroundType: 'color',
-      font: 'sans-serif',
+      font: '',
+      fontOptions: [
+      ],
       position: 'center-middle',
       hasShadow: true,
       backgroundColor: '#47998d',      
@@ -12,11 +14,28 @@ new Vue({
       secondaryColor: '#7e8a9b',
     }
   },
+  watch: {
+    font: function() {
+       console.log(this.font)
+       var self = this
+       WebFont.load({
+          google: {
+            families: [this.font]
+          },
+          fontactive: function() {
+            self.refreshCanvas()
+          }
+        });
+    }
+  },
+  created: function() {
+    this.fetchGoogleFonts()
+  },
   mounted: function() {
     this.refreshCanvas()
     // Refresh canvas if any of the data property changes
     for (var k in this.$data) {
-      if (this.$data.hasOwnProperty(k)) {
+      if (this.$data.hasOwnProperty(k) && k !== 'font') {
         this.$watch(k, this.refreshCanvas);
       }
     }
@@ -27,6 +46,20 @@ new Vue({
     },
     backgroundFromColor: function(color) {
       return 'background-color: ' + color;
+    },
+    fetchGoogleFonts: function() {
+      this.fontOptions = []
+      var self = this
+      axios.get('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAUj9zWFPTFQmZsyXJPcebLA-BJQERnGqc')
+        .then(function (response) {
+          response.data.items.forEach(function (font) {
+            self.fontOptions.push(font.family)
+          })
+          self.font = self.fontOptions[0]
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     },
     refreshCanvas: function() {
       // Get canvas context

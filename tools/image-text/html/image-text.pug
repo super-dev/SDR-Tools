@@ -6,6 +6,8 @@ styles:
   - 'styles/image-text.css'
 scripts:
   - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
+  - 'https://unpkg.com/axios/dist/axios.min.js'
+  - 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
   - 'https://unpkg.com/tinycolor2@1.4.1/dist/tinycolor-min.js'
   - 'https://unpkg.com/canvas-text-wrapper@0.9.3/canvas-text-wrapper.min.js'
   - 'https://unpkg.com/downloadjs@1.4.6/download.min.js'
@@ -25,12 +27,10 @@ scripts:
       label.color(for="bodyText")   Text
         textArea#bodyText(rows="3", v-model="bodyText")
 
-      label(for="font") Font
+      label(for="font") Google Font
         select#font(v-model="font", ref="fontSelect")
-          option(value='sans-serif') Sans Serif
-          option(value='serif') Serif
+          option(v-for="option in fontOptions", v-bind:value="option") {{ option }}
 
-      
       input#shadow(type="checkbox", v-model="hasShadow")
       label.label-inline(for="shadow") Text Shadow
 
