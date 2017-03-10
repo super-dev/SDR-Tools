@@ -5,6 +5,7 @@ new Vue({
       password: '',
       type: 'strong',
       length: 15,
+      unit: 'characters',
       count: 0
     }
   },
@@ -17,6 +18,12 @@ new Vue({
       else {
         return ""
       }
+    },
+    unit: function() {
+      if(this.type == 'strong' || this.type == 'alphanumeric')
+        return 'characters'
+      else
+        return 'words'
     }
   },
   watch: {
