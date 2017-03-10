@@ -4,12 +4,14 @@ new Vue({
     return {
       password: '',
       type: 'strong',
-      length: 15
+      length: 15,
+      count: 0
     }
   },
   computed: {
     password: function() {
-      if(this.length >= 1) {
+      this.count++ // just used for generating another password via vue dependency
+      if(this.length >= 1 && this.count) {
         return this.generate()
       }
       else {
@@ -17,22 +19,32 @@ new Vue({
       }
     }
   },
+  watch: {
+    type: function() {
+      if(this.type == 'strong' || this.type == 'alphanumeric')
+        this.length = 15
+      else
+        this.length = 3
+    }
+  },
   methods: {
     generate: function() {
+      var pass = ''
       switch(this.type) {
         case 'strong':
-          return passhelp.character(this.length, passhelp.alphabets.full_friendly);
+          pass = passhelp.character(this.length, passhelp.alphabets.full_friendly);
         break;
         case 'alphanumeric':
-          return passhelp.character(this.length, passhelp.alphabets.alphanumeric, true);
+          pass = passhelp.character(this.length, passhelp.alphabets.alphanumeric, true);
         break;
         case 'phrase':
-          return passhelp.phrase(this.length);
+          pass = passhelp.phrase(this.length);
         break;
         case 'phrase_special_chars':
-          return passhelp.phrase(this.length, true);
+          pass = passhelp.phrase(this.length, true);
         break;
       }
+      return pass
     },
     copy: function() {
 
