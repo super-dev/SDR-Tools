@@ -13,7 +13,10 @@ Free Tools for Web Designers and Developers by Super Dev Resources Team
  - [Color Converter](https://tools.superdevresources.com/color-converter/) - Convert colors from RGB to HEX, HEX to RGB, RGB to HSL, HSL to RGB, RGB to HSV etc.
  - [Color Extractor](https://tools.superdevresources.com/color-extractor/) - Extract colors from an Image. Builds a color palette from dominant colors in an image.
  - [JSON Viewer](https://tools.superdevresources.com/json-viewer/) - An online JSON viewer. Display JSON data in tree view and with syntax highlighting.
-
+ - [Gradient Generator](https://tools.superdevresources.com/gradient-generator) - Generate Linear and Radial Gradient CSS code and Background Images.
+ - [Dummy Text Generator](https://tools.superdevresources.com/dummy-text) - Generate lorem ipsum dummy text and alternatives in HTML, markdown and plain text.
+ - [Text on Image](https://tools.superdevresources.com/image-text) - Online tool to add text on Images and save it in JPG or PNG format.
+ - [Strong Password Generator](hhttps://tools.superdevresources.com/passwordgen) - Generator strong passwords with alphabets, numebrs and special characters or with phrases.
 ## Credits
 
  - [MMCSS](https://mmcss.kunruchcreations.com/) - CSS Framework used for design

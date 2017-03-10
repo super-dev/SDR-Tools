@@ -75,10 +75,9 @@
   color: "#de6e74"
   icon: "icon.svg"
 
-
 - name: "Password Generator"
   path: "passwordgen"
-  description: "Generator strong passwords with alphabets, numebrs and special characters or with phrases."
+  description: "Generate strong passwords with alphabets, numbers and special characters or with phrases."
   categories: ["social"]
   color: "#27b14f"
   icon: "icon.svg"
