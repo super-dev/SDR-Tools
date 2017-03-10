@@ -34,6 +34,23 @@ new Vue({
         this.length = 3
     }
   },
+  mounted: function() {    
+    // setup copy to clipboard
+    var clipboard = new Clipboard('.button-copy');
+
+    clipboard.on('success', function(e) {
+        e.trigger.innerHTML = "Copied!"
+        e.clearSelection()
+        setTimeout(function() {
+          e.trigger.innerHTML = "Copy Password"
+        }, 1000)
+    });
+
+    clipboard.on('error', function(e) {
+        console.error('Action:', e.action)
+        console.error('Trigger:', e.trigger)
+    });
+  },
   methods: {
     generate: function() {
       var pass = ''
@@ -52,9 +69,6 @@ new Vue({
         break;
       }
       return pass
-    },
-    copy: function() {
-
-    },
+    }
   }
 })
