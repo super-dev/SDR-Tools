@@ -65,6 +65,9 @@ block content
                 li
                   a(href="/code" class=(page.path === '/code') ? 'current-menu-item' : '')
                     |  Code Tools
+                li
+                  a(href="/social" class=(page.path === '/social') ? 'current-menu-item' : '')
+                    |  Social Tools
       .one-half.animated.fadeIn
         .section
           +listtools(data.tools[page.category], page.category)

@@ -71,6 +71,14 @@
 - name: "Text on Image"
   path: "image-text"
   description: "Online tool to add text on Images and save it in JPG or PNG format."
-  categories: ["image"]
+  categories: ["image", "social"]
   color: "#de6e74"
+  icon: "icon.svg"
+
+
+- name: "Password Generator"
+  path: "passwordgen"
+  description: "Generator strong passwords with alphabets, numebrs and special characters or with phrases."
+  categories: ["social"]
+  color: "#27b14f"
   icon: "icon.svg"
