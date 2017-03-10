@@ -7,12 +7,32 @@ new Vue({
       length: 15
     }
   },
-  mounted: function() {
-    this.generate()
+  computed: {
+    password: function() {
+      if(this.length >= 1) {
+        return this.generate()
+      }
+      else {
+        return ""
+      }
+    }
   },
   methods: {
     generate: function() {
-      this.password = 'password'
+      switch(this.type) {
+        case 'strong':
+          return passhelp.character(this.length, passhelp.alphabets.full_friendly);
+        break;
+        case 'alphanumeric':
+          return passhelp.character(this.length, passhelp.alphabets.alphanumeric, true);
+        break;
+        case 'phrase':
+          return passhelp.phrase(this.length);
+        break;
+        case 'phrase_special_chars':
+          return passhelp.phrase(this.length, true);
+        break;
+      }
     },
     copy: function() {
 
