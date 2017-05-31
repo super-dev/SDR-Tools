@@ -1,40 +1,82 @@
-.container {
-  padding-right: $size-element-spacing;
-  padding-left: $size-element-spacing;
+body {
+  background: $color-background-light;
 }
 
-#wrapper {
-  position: relative;
-}
-
-#content-wrapper {
-  float: left;
-  width: 100%;
-}
-
-#content {
-  margin-right: 320px;
-  clear: both;
-  overflow: auto;
-}
-
-#sidebar {
-  position: relative;
-  width: 300px;
-  margin-left: -300px;
-  float: right;
-  overflow: hidden;
-  font-size: 90%;
+.content {
+  background: #fff;
 }
 
 @include desktop {
-  .grid-sidebar-left > .one-half:first-child {
-    width: 20%;
-    border-right: 1px solid #f2f2f2;
-    margin-top: 32px;
+  .wrapper {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 90vh;
   }
 
-  .grid-sidebar-left > .one-half:last-child {
-    width: 75%;
+  .content {
+    flex: 1;    
+    border-left: 1px solid $color-default-border;
+    border-right: 1px solid $color-default-border;
+
+    .container-readable {
+      padding: 0 30px;
+    }
+  }
+
+  .sidebar-left {
+    flex: 0 0 230px;
+    order: -1;
+  }
+
+  .sidebar-right {
+    flex: 0 0 320px;
+  }
+  
+  .sidebar-content {
+    width: 100%;
+    margin: 2em 1.2em;
+  }
+}
+
+.footer {
+    margin-top: 0;
+}
+
+@include desktop {
+  .footer .one-fourth:first-child {
+    width: 37%;
+  }
+
+  .footer .one-fourth {
+    width: 16%;
+  }
+}
+
+.footer-main {
+  margin: 3rem auto 2.5rem;
+}
+
+.footer-credit {
+  border-top: 1px dashed #ddd;
+}
+
+@media only screen and (max-width: 1180px) {
+  .sidebar-right {
+    display: none;
+  }
+}
+
+@include mobile {
+  body {
+    background-color: #fff;
+  }
+
+  .sidebar-right {
+    display: none;
+  }
+
+  .footer-credit {
+    padding-bottom: 5rem;
   }
 }
