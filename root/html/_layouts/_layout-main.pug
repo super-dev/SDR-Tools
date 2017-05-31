@@ -39,41 +39,46 @@ mixin listtools(tools, category)
 
 block content
   .main
-    .grid.grid-sidebar-left.container-content.section
-      .one-half
-        .menu-toggle
-          input#category-toggle(type="checkbox")
-          label(class="alignright" for="category-toggle")
-            span(class="css-icon-hamburger")
-              span Toggle
-            span Categories
-          .menu-toggle-content
-            nav
-              ul.tools-categories-menu
-                li
-                  a(href="/" class=(page.path === '/') ? 'current-menu-item': '') All Tools
-                li.menu-header Categories
-                li
-                  a(href="/color" class=(page.path === '/color') ? 'current-menu-item' : '')
-                    | Color Tools
-                li
-                  a(href="/image" class=(page.path === '/image') ? 'current-menu-item' : '')
-                    |  Image Tools
-                li
-                  a(href="/writing" class=(page.path === '/writing') ? 'current-menu-item' : '')
-                    |  Writing Tools
-                li
-                  a(href="/code" class=(page.path === '/code') ? 'current-menu-item' : '')
-                    |  Code Tools
-                li
-                  a(href="/social" class=(page.path === '/social') ? 'current-menu-item' : '')
-                    |  Social Tools
-      .one-half.animated.fadeIn
-        .section
-          +listtools(data.tools[page.category], page.category)
-        .section
-          +adlinks1('text-center')
-
+    .container-wide
+      .wrapper
+        .content
+          .container-readable
+            .animated.fadeIn
+              .section
+                +listtools(data.tools[page.category], page.category)
+              .section
+                +adlinks1('text-center')
+        .sidebar.sidebar-left
+          .menu-toggle
+            input#category-toggle(type="checkbox")
+            label(class="alignright" for="category-toggle")
+              span(class="css-icon-hamburger")
+                span Toggle
+              span Categories
+            .menu-toggle-content.sidebar-content
+              nav
+                ul.tools-categories-menu
+                  li.menu-header Categories
+                  li
+                    a(href="/" class=(page.path === '/') ? 'current-menu-item': '') All Tools
+                  li
+                    a(href="/color" class=(page.path === '/color') ? 'current-menu-item' : '')
+                      | Color Tools
+                  li
+                    a(href="/image" class=(page.path === '/image') ? 'current-menu-item' : '')
+                      |  Image Tools
+                  li
+                    a(href="/writing" class=(page.path === '/writing') ? 'current-menu-item' : '')
+                      |  Writing Tools
+                  li
+                    a(href="/code" class=(page.path === '/code') ? 'current-menu-item' : '')
+                      |  Code Tools
+                  li
+                    a(href="/social" class=(page.path === '/social') ? 'current-menu-item' : '')
+                      |  Social Tools
+        .sidebar.sidebar-right
+          .sidebar-content
+            div(style="background:rgba(0,0,0,0.01);width:300px;height:250px;margin-bottom:2em;border:1px solid #eee;")
 block footer
   footer.footer
     .footer-main.container-content 
