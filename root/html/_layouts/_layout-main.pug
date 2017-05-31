@@ -19,7 +19,7 @@ block header-right
 
 mixin listtools(tools, category)
   #tools
-    if tools && tools.length >= 5
+    if tools && tools.length >= 1
       .sdr-list-search
         input.search(type="search", placeholder="Search...")
     ul.list.sdr-list
@@ -34,7 +34,7 @@ mixin listtools(tools, category)
                 div.entry-content #{tool.description}
       if !tools || tools.length == 0
         p.text-center Our code monkeys are working on adding <strong>#{category}</strong> tools. Please check back later..
-      else if tools.length < 3
+      else if tools.length < 5
         p.section-large.text-center.text-muted.text-small Our code monkeys are working on adding more <strong>#{category}</strong> tools.<br>If you have a suggestion, please don't hesitate to <a href="https://superdevresources.com/contact/">contact</a>.
 
 block content
@@ -46,8 +46,6 @@ block content
             .animated.fadeIn
               .section
                 +listtools(data.tools[page.category], page.category)
-              .section
-                +adlinks1('text-center')
         .sidebar.sidebar-left
           .menu-toggle
             input#category-toggle(type="checkbox")
@@ -79,6 +77,8 @@ block content
         .sidebar.sidebar-right
           .sidebar-content
             div(style="background:rgba(0,0,0,0.01);width:300px;height:250px;margin-bottom:2em;border:1px solid #eee;")
+              a(href="https://creativemarket.com/free-goods?u=monikaratan", target="_blank")
+                img(src="/img/partners/creative-market-free-goods.jpg", width="300", height="250")
 block footer
   footer.footer
     .footer-main.container-content 

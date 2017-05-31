@@ -14,14 +14,14 @@
   
 - name: "Word Counter"
   path: "word-counter"
-  description: "Online Word Counter for counting words, characters, sentences and paragraphs in a text."
+  description: "Count words, characters, sentences and paragraphs in a text."
   categories: ["writing"]
   color: "#634fc9"
   icon: "icon.svg"
 
 - name: "Image to Base64"
   path: "base64-image"
-  description: "Convert Image to base64 string online for use in HTML img tag and in CSS files as data URI."
+  description: "Convert Image to base64 string for use in HTML img tag and in CSS files as data URI."
   categories: ["image"]
   color: "#f06292"
   icon: "icon.svg"
@@ -77,7 +77,7 @@
 
 - name: "Password Generator"
   path: "passwordgen"
-  description: "Generate strong passwords with alphabets, numbers and special characters or with phrases."
+  description: "Generate strong passwords with alphabets, numbers, special characters and phrases."
   categories: ["social"]
   color: "#27b14f"
   icon: "icon.svg"
