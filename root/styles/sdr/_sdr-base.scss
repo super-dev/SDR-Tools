@@ -26,6 +26,31 @@
   }
 }
 
+@include desktop {
+
+  .header .menu {
+    text-align: left;
+    margin-left: 84px;
+  }
+
+  .header .menu-item {
+    font-size: 90%;
+    letter-spacing: 1px;
+    font-weight: 400;
+
+    svg {
+      font-size: 122%;
+    }
+
+    &.current-menu-item {
+      font-weight: 600;
+
+      > a {
+        color: inherit;
+      }
+    }
+  }
+}
 
 @include mobile {
   .header-right .menu {
