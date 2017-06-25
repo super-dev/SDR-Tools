@@ -1,26 +1,8 @@
 extends ./_layout.pug
 
-block styles
-  if page.styles
-    each style in page.styles
-      link(href=style, rel='stylesheet')
-
-block title
-  h1.h4.hidden-mobile
-    span.hidden-mobile!= page.title
-
-block header-right
-  .header-right
-    a.button.button-primary.header-right-elem(href="/") &larr; All Tools
-
-block footer
-  if !page.hideFooter
-    footer.footer
-      .container-readable.section.text-center
-        +horizontal-menu(data.menu.footer)
-        p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
-          br
-          | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a> and <a href="https://mmcss.kunruchcreations.com/" target="_blank">mmcss</a>.
+block content
+  h1.h3.text-muted.text-center!= page.title
+  != page.content
 
 block scripts
   if page.scripts

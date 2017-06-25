@@ -3,20 +3,6 @@ extends ./../../../common/_layouts/_layout.pug
 block title
   h1.title.screen-reader-text #{page.title}
 
-block header-right
-  .menu-toggle
-    input(type="checkbox")#menu-toggle
-    label(for="menu-toggle").header-right
-      span.css-icon-hamburger
-        span Toggle
-      span Menu
-    .menu-toggle-content      
-      +menu(data.menu.main, 'menu')
-      .header-right        
-        +menu(data.menu.secondary, 'menu')
-        .expandable-search
-          include ./../_includes/search-form.html
-
 mixin listtools(tools, category)
   #tools
     if tools && tools.length >= 1
@@ -48,11 +34,11 @@ block content
                 +listtools(data.tools[page.category], page.category)
         .sidebar.sidebar-left
           .menu-toggle
-            input#category-toggle(type="checkbox")
-            label(class="alignright" for="category-toggle")
+            input#menu-toggle(type="checkbox")
+            label(class="alignright" for="menu-toggle")
               span(class="css-icon-hamburger")
                 span Toggle
-              span Categories
+              span Menu
             .menu-toggle-content.sidebar-content
               nav
                 ul.tools-categories-menu
@@ -79,31 +65,7 @@ block content
             div(style="background:rgba(0,0,0,0.01);width:300px;height:250px;margin-bottom:2em;border:1px solid #eee;")
               a(href="https://creativemarket.com/free-goods?u=monikaratan", target="_blank")
                 img(src="/img/partners/creative-market-free-goods.jpg", width="300", height="250")
-block footer
-  footer.footer
-    .footer-main.container-content 
-      div.grid        
-        div.one-fourth
-          a(href='https://superdevresources.com/')
-            img.footer-logo(src="/img/sdr-logo.png")
-          div We collect, create and publish awesome free web design and development resources.
-            |  <a class="text-small" href="https://superdevresources.com/about/">Learn More</a>
-            p Join our <a href="https://superdevresources.com/subscribe/">Newsletter</a> for updates.
-        div.one-fourth
-          h3.h4 Browse
-          +menu(data.menu.main)
-        div.one-fourth
-          h3.h4 About
-          +menu(data.menu.footer)
-        div.one-fourth
-          h3.h4 Follow
-          +menu(data.menu.social)
-    div.footer-credit.section.text-center
-      div.container-content
-        div.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
-          br
-          | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a> and <a href="https://mmcss.kunruchcreations.com/" target="_blank">mmcss</a>
-          | - <a href="#top" data-uk-smooth-scroll="">↑ Back to top</a>
+
 
 block scripts
   script(src='https://unpkg.com/list.js@1.2.0/dist/list.min.js')
