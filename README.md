@@ -16,7 +16,7 @@ Free Tools for Web Designers and Developers by Super Dev Resources Team
  - [Gradient Generator](https://tools.superdevresources.com/gradient-generator) - Generate Linear and Radial Gradient CSS code and Background Images.
  - [Dummy Text Generator](https://tools.superdevresources.com/dummy-text) - Generate lorem ipsum dummy text and alternatives in HTML, markdown and plain text.
  - [Text on Image](https://tools.superdevresources.com/image-text) - Online tool to add text on Images and save it in JPG or PNG format.
- - [Strong Password Generator](hhttps://tools.superdevresources.com/passwordgen) - Generator strong passwords with alphabets, numebrs and special characters or with phrases.
+ - [Strong Password Generator](https://tools.superdevresources.com/passwordgen) - Generator strong passwords with alphabets, numebrs and special characters or with phrases.
 ## Credits
 
  - [MMCSS](https://mmcss.kunruchcreations.com/) - CSS Framework used for design
