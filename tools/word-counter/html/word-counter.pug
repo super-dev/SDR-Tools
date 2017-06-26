@@ -3,6 +3,7 @@ title: 'Word Counter Online'
 description: 'Online Word Counter for counting words, characters, sentences and paragraphs in a text.'
 layout: 'tools'
 styles:
+  - '/styles/tools.css'
   - 'styles/word-counter.css'
 scripts:
   - 'https://unpkg.com/vue@2.0.3/dist/vue.js'
@@ -11,7 +12,7 @@ scripts:
   - 'scripts/word-counter.js'
 ---
 
-#app.container-content.section-medium
+#app.container-content.section
   .grid
     .one-half
       textarea(:value="input", @input="update", placeholder="Enter text here..")

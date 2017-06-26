@@ -3,6 +3,7 @@ title: 'Text on Image Online'
 description: 'Online tool to add text on Images and save it in JPG/PNG. Choose from multiple Google Fonts for writing text on image.'
 layout: 'tools'
 styles:
+  - '/styles/tools.css'
   - 'styles/image-text.css'
 scripts:
   - 'https://unpkg.com/axios/dist/axios.min.js'
@@ -77,7 +78,7 @@ scripts:
               input#secondaryColor(type="text", v-model="secondaryColor")
               span.colorPreview(:style="backgroundFromColor(secondaryColor)")
 
-.container-readable
+.container-content
   .section
     h2.h3 How to Create Text on Image?
     ul.divider

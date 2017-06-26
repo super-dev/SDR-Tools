@@ -4,6 +4,7 @@ description: 'Generate Dummy text lorem ipsum and alternatives in HTML, markdown
 layout: 'tools'
 styles:
   - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css'
+  - '/styles/tools.css'
   - 'styles/dummy-text.css'
 scripts:
   - 'scripts/lorem.js'
@@ -14,7 +15,7 @@ scripts:
   - 'scripts/dummy-text.js'
 ---
 
-#app.container.section-medium
+#app.container.section
   .grid
     .one-half
       #dummyText
@@ -45,7 +46,7 @@ scripts:
         input#article(type="checkbox", v-model="isArticle")
         label.label-inline(for="article") Content for an Article
 
-  .container-readable
+  .container-content
     .section
       h2.h3 How to Generate Dummy Text?
       ul.divider

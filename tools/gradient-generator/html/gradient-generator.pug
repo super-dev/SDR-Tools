@@ -3,6 +3,7 @@ title: 'Gradient Background Generator'
 description: 'Generate Linear and Radial Gradient CSS code and Background Images with custom configuration options.'
 layout: 'tools'
 styles:
+  - '/styles/tools.css'
   - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css'
   - 'styles/gradient-generator.css'
 scripts:
@@ -15,7 +16,7 @@ scripts:
   - 'scripts/gradient-generator.js'
 ---
 
-#app.container.section-medium
+#app.container.section
   .grid
     .one-half
         #gradient(:style="gradient")
@@ -69,7 +70,7 @@ scripts:
           button.button(@click='download(false)') Download PNG
           button.button(@click='download(true)') Download JPG
 
-  .container-readable
+  .container-content
     .section
       h2.h3 How to Generate Gradient Background Image and CSS?
       ul.divider

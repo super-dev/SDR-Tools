@@ -46,10 +46,11 @@
   width: 100%;
   min-height: 500px;
   min-height: 80vh;
-  background: #fafafa;
-  border: 1px solid #f2f2f2;
-  border-radius: 3px;
-  padding: 0 1.5em;
+  padding: 0;
+
+  > label:first-child {
+    margin-top: 0;
+  }
 }
 
 
