@@ -50,14 +50,14 @@
 - name: "JSON Viewer"
   path: "json-viewer"
   description: "An online JSON viewer. Display JSON data in tree view and with syntax highlighting."
-  categories: ["code"]
+  categories: ["dev"]
   color: "#4fa9aa"
   icon: "icon.svg"
 
 - name: "Gradient Generator"
   path: "gradient-generator"
   description: "Generate Linear and Radial Gradient CSS code and Background Images."
-  categories: ["image", code]
+  categories: ["image", "dev"]
   color: "#8f44fc"
   icon: "icon.svg"
 
@@ -81,3 +81,11 @@
   categories: ["social"]
   color: "#27b14f"
   icon: "icon.svg"
+  
+- name: "WhatVersion"
+  path: ""
+  url: https://whatversion.superdevresources.com/
+  description: "Online tool for checking what version of Browser and Operating System you are using."
+  categories: ["dev"]
+  color: "#27b14f"
+  icon: "/tools/whatversion.png"

@@ -13,10 +13,10 @@ mixin listtools(tools, category)
         each tool in tools
           li
             .media.media-left
-              a.thumbnail.thumbnail-small.thumbnail-rounded(href=tool.url, style='background-color:' + tool.color)!= tool.icon
+              a.thumbnail.thumbnail-small(href=tool.url, style='background-color:' + tool.color)!= tool.icon
               .media-body
                 h2.entry-title        
-                  a(href=tool.url) #{tool.name}
+                  a(href=tool.url, target=tool.target) #{tool.name}
                 div.entry-content #{tool.description}
       if !tools || tools.length == 0
         p.text-center Our code monkeys are working on adding <strong>#{category}</strong> tools. Please check back later..
@@ -55,8 +55,8 @@ block content
                     a(href="/writing" class=(page.path === '/writing') ? 'current-menu-item' : '')
                       |  Writing Tools
                   li
-                    a(href="/code" class=(page.path === '/code') ? 'current-menu-item' : '')
-                      |  Code Tools
+                    a(href="/dev" class=(page.path === '/dev') ? 'current-menu-item' : '')
+                      |  Dev Tools
                   li
                     a(href="/social" class=(page.path === '/social') ? 'current-menu-item' : '')
                       |  Social Tools
